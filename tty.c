@@ -421,10 +421,8 @@ ttresize()
 		newrow = 24;
 		newcol = 80;
 	}
-	if (vtresize(1, newrow, newcol))
+	if (vtresize(1, newrow, newcol) != TRUE)
 		panic("vtresize failed");
-	nrow = newrow;
-	ncol = newcol;
 }
 
 /*
