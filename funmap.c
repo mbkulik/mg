@@ -43,6 +43,7 @@ static struct funmap functnames[] = {
 #ifndef	NO_HELP
 	{apropos_command, "apropos",},
 #endif /* !NO_HELP */
+	{ auto_execute, "auto-execute", },
 	{fillmode, "auto-fill-mode",},
 	{indentmode, "auto-indent-mode",},
 	{backchar, "backward-char",},

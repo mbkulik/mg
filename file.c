@@ -128,12 +128,22 @@ readin(fname)
 	char *fname;
 {
 	MGWIN	*wp;
-	int	 status;
+	int	 status, i;
+	PF	 *ael;
 
 	/* might be old */
 	if (bclear(curbp) != TRUE)
 		return TRUE;
 	status = insertfile(fname, fname, TRUE);
+
+	/*
+	 * Call auto-executing function if we need to.
+	 */
+	if ((ael = find_autoexec(fname)) != NULL) {
+		for (i = 0; ael[i] != NULL; i++)
+			(*ael[i])(0, 1);
+		free(ael);
+	}
 
 	/* no change */
 	curbp->b_flag &= ~BFCHG;

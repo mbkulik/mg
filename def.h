@@ -589,6 +589,11 @@ int	 undo_add_delete(LINE *, int, int);
 int	 undo_add_change(LINE *, int, int);
 int	 undo(int, int);
 
+/* autoexec.c X */
+int	 auto_execute(int, int);
+PF	*find_autoexec(const char *);
+int	 add_autoexec(const char *, const char *);
+
 /*
  * Externals.
  */
