@@ -56,12 +56,7 @@ ttinit()
 {
 	char	*tv_stype, *p;
 
-/* system dependent function to determine terminal type, if necessary. */
-#ifndef gettermtype
-	char	*gettermtype();
-#endif /* gettermtype */
-
-	if ((tv_stype = gettermtype()) == NULL)
+	if ((tv_stype = getenv("TERM")) == NULL)
 		panic("Could not determine terminal type!");
 
 	if (setupterm(tv_stype, 1, NULL)) {

@@ -56,7 +56,7 @@ ttykeymapinit()
 #endif /* FKEYS */
 
 #ifndef	NO_STARTUP
-	if ((cp = gettermtype())) {
+	if ((cp = getenv("TERM"))) {
 		if (((cp = startupfile(cp)) != NULL) && (load(cp) != TRUE))
 			ewprintf("Error reading key initialization file");
 	}
