@@ -148,7 +148,7 @@ static const char *talk[] = {
 	"#ifdef is for emacs developers.",
 	"Many well known people become net-kooks in their later life, because they lose touch with reality.",
 	"You're not allowed to have an opinion.",
-	"tweep tweep tweep".
+	"tweep tweep tweep"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
