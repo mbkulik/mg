@@ -7,7 +7,7 @@
 
 #include "def.h"
 
-char	version[] = "Mg 2a";
+const char	version[] = "Mg 2a";
 
 /*
  * Display the version. All this does
