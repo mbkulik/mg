@@ -17,7 +17,7 @@
 int		 thisflag;			/* flags, this command	*/
 int		 lastflag;			/* flags, last command	*/
 int		 curgoal;			/* goal column		*/
-int		 startrow;			/* row to start         */
+int		 startrow;			/* row to start		*/
 BUFFER		*curbp;				/* current buffer	*/
 BUFFER		*bheadp;			/* BUFFER list head */
 MGWIN		*curwp;				/* current window	*/

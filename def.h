@@ -201,7 +201,7 @@ typedef struct MGWIN {
 	char		w_force;	/* If NZ, forcing row.		*/
 	char		w_flag;		/* Flags.			*/
 	LIST_HEAD(, undo_rec) w_undo;	/* Undo actions list */
-	int             w_undopos;      /* Where we were during the last
+	int		w_undopos;	/* Where we were during the last
 					   undo action */
 	struct undo_rec *w_undoptr;
 	struct LINE	*w_wrapline;
