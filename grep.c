@@ -213,6 +213,8 @@ retry:
 	free(line);
 
 	adjf = adjustname(fname);
+	if (adjf == NULL)
+		return (FALSE);
 	if ((bp = findbuffer(adjf)) == NULL)
 		return FALSE;
 	if ((wp = popbuf(bp)) == NULL)

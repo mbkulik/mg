@@ -63,9 +63,11 @@ main(int argc, char **argv)
 #endif	/* !NO_STARTUP */
 	while (--argc > 0) {
 		cp = adjustname(*++argv);
-		curbp = findbuffer(cp);
-		(void)showbuffer(curbp, curwp, 0);
-		(void)readin(cp);
+		if (cp != NULL) {
+			curbp = findbuffer(cp);
+			(void)showbuffer(curbp, curwp, 0);
+			(void)readin(cp);
+		}
 	}
 
 	/* fake last flags */
