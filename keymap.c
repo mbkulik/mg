@@ -39,36 +39,6 @@ static struct KEYMAPE (2 + IMAPEXT) helpmap = {
 };
 #endif /* !NO_HELP */
 
-static struct KEYMAPE (1 + IMAPEXT) extramap1 = {
-	0,
-	1 + IMAPEXT,
-	rescan
-};
-
-static struct KEYMAPE (1 + IMAPEXT) extramap2 = {
-	0,
-	1 + IMAPEXT,
-	rescan
-};
-
-static struct KEYMAPE (1 + IMAPEXT) extramap3 = {
-	0,
-	1 + IMAPEXT,
-	rescan
-};
-
-static struct KEYMAPE (1 + IMAPEXT) extramap4 = {
-	0,
-	1 + IMAPEXT,
-	rescan
-};
-
-static struct KEYMAPE (1 + IMAPEXT) extramap5 = {
-	0,
-	1 + IMAPEXT,
-	rescan
-};
-
 static PF cX4cF[] = {
 	poptofile,		/* ^f */
 	ctrlg,			/* ^g */
@@ -597,11 +567,6 @@ static MAPS map_table[] = {
 	{(KEYMAP *) &metamap, "esc prefix",},
 	{(KEYMAP *) &cXmap, "c-x prefix",},
 	{(KEYMAP *) &cX4map, "c-x 4 prefix",},
-	{(KEYMAP *) &extramap1, "extra prefix 1",},
-	{(KEYMAP *) &extramap2, "extra prefix 2",},
-	{(KEYMAP *) &extramap3, "extra prefix 3",},
-	{(KEYMAP *) &extramap4, "extra prefix 4",},
-	{(KEYMAP *) &extramap5, "extra prefix 5",},
 #ifndef NO_HELP
 	{(KEYMAP *) &helpmap, "help",},
 #endif
