@@ -168,14 +168,15 @@ fbackupfile(const char *fn)
 	char		buf[BUFSIZ];
 	char		*nname;
 
+	if (stat(fn, &sb) == -1) {
+		ewprintf("Can't stat %s : %s", fn, strerror(errno));
+		return (FALSE);
+	}
+
 	if (asprintf(&nname, "%s~", fn) == -1) {
 		ewprintf("Can't allocate temp file name : %s",
 		    strerror(errno));
 		return (ABORT);
-	}
-	if (stat(fn, &sb) == -1) {
-		ewprintf("Can't stat %s : %s", fn, strerror(errno));
-		return (FALSE);
 	}
 
 	if ((from = open(fn, O_RDONLY)) == -1) {
