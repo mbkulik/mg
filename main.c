@@ -5,6 +5,7 @@
  */
 
 #include	"def.h"
+#include	"kbd.h"
 #include	"funmap.h"
 
 #ifndef NO_MACRO
@@ -37,6 +38,7 @@ main(argc, argv)
 	dirinit();		/* Get current directory.	*/
 #endif	/* !NO_DIR */
 	edinit();		/* Buffers, windows.		*/
+	maps_init();		/* Keymaps and modes.		*/
 	funmap_init();		/* Functions.			*/
 	ttykeymapinit();	/* Symbols, bindings.		*/
 

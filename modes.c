@@ -12,7 +12,7 @@
 static int	changemode	__P((int, int, char *));
 
 int	 defb_nmodes = 0;
-MAPS	*defb_modes[PBMODES] = { &map_table[0] };
+MAPS	*defb_modes[PBMODES] = { &fundamental_mode };
 int	 defb_flag = 0;
 
 static int
