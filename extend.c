@@ -319,7 +319,7 @@ dobind(KEYMAP *curmap, const char *p, int unbind)
 	PF	 funct;
 	char	 prompt[80];
 	char	*pep;
-	int	 c, s;
+	int	 c, s, n;
 
 #ifndef NO_MACRO
 	if (macrodef) {
@@ -345,7 +345,10 @@ dobind(KEYMAP *curmap, const char *p, int unbind)
 	} else {
 #endif /* !NO_STARTUP */
 #endif /* !NO_MACRO */
-		pep = prompt + strlcpy(prompt, p, sizeof(prompt));
+		n = strlcpy(prompt, p, sizeof prompt);
+		if (n >= sizeof prompt)
+			n = sizeof prompt - 1;
+		pep = prompt + n;
 		for (;;) {
 			ewprintf("%s", prompt);
 			pep[-1] = ' ';
