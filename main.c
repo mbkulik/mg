@@ -48,8 +48,10 @@ main(argc, argv)
 	 */
 	{
 		extern void grep_init(void);
+		extern void theo_init(void);
 
 		grep_init();
+		theo_init();
 	}
 
 	/*
