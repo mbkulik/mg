@@ -107,6 +107,15 @@ ffputbuf(BUFFER *bp)
 		if (lforw(lp) != lpend)		/* no implied \n on last line */
 			putc('\n', ffp);
 	}	
+	/*
+	 * XXX should be variable controlled (once we have variables)
+	 */
+	if (llength(lback(lpend)) != 0) {
+		if (eyorn("No newline at end of file, add one") == TRUE) {
+			lnewline_at(lback(lpend), llength(lback(lpend)));
+			putc('\n', ffp);
+		}
+	}
 	return (FIOSUC);
 }
 
