@@ -96,7 +96,7 @@ findbuffer(fname)
 {
 	BUFFER		*bp;
 	char		 bname[NBUFN];
-	unsigned int	 count = 1;
+	unsigned int	 count;
 
 	for (bp = bheadp; bp != NULL; bp = bp->b_bufp) {
 		if (strcmp(bp->b_fname, fname) == 0)

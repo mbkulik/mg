@@ -166,7 +166,7 @@ forwline(f, n)
 		}
 		curwp->w_doto = 0;
 		while (n-- >= 0) {
-			if ((dlp = lallocx(0)) == NULL)
+			if ((dlp = lalloc(0)) == NULL)
 				return FALSE;
 			dlp->l_fp = curbp->b_linep;
 			dlp->l_bp = lback(dlp->l_fp);
