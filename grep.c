@@ -37,6 +37,8 @@ static BUFFER	*compile_mode(char *name, char *command);
 
 void grep_init(void);
 
+static char compile_last_command[NFILEN] = "make ";
+
 /*
  * Hints for next-error
  *
@@ -100,9 +102,10 @@ compile(int f, int n)
 	BUFFER *bp;
 	MGWIN *wp;
 
-	(void)strlcpy(prompt, "make ", sizeof prompt);
+	(void)strlcpy(prompt, compile_last_command, sizeof prompt);
 	if (eread("Compile command: ", prompt, NFILEN, EFDEF|EFNEW|EFCR) == ABORT)
 		return ABORT;
+	(void)strlcpy(compile_last_command, prompt, sizeof compile_last_command);
 
 	(void)snprintf(command, sizeof command, "%s 2>&1", prompt);
 
