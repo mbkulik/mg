@@ -201,8 +201,7 @@ linsert(int n, int c)
 			if (wp->w_markp == lp1)
 				wp->w_markp = lp2;
 		}
-		if (!undoaction)
-			undo_add_insert(lp2, 0, n);
+		undo_add_insert(lp2, 0, n);
 		curwp->w_doto = n;
 		return TRUE;
 	}
@@ -232,8 +231,7 @@ linsert(int n, int c)
 				wp->w_marko += n;
 		}
 	}
-	if (!undoaction)
-		undo_add_insert(curwp->w_dotp, doto, n);
+	undo_add_insert(curwp->w_dotp, doto, n);
 	return TRUE;
 }
 
@@ -255,11 +253,9 @@ lnewline(void)
 
 	lchange(WFHARD);
 
-	if (!undoaction) {
-		/* XXX */
-		undo_add_custom(INSERT, curwp->w_dotp, curwp->w_doto,
-		    strdup("\n"), 1);
-	}
+	/* XXX */
+	undo_add_custom(1,INSERT, curwp->w_dotp, curwp->w_doto,
+	    strdup("\n"), 1);
 
 	/* Get the address and offset of "." */
 	lp1 = curwp->w_dotp;
@@ -328,9 +324,7 @@ ldelete(RSIZE n, int kflag)
 		return FALSE;
 	}
 
-	if (!undoaction) {
-		undo_add_delete(curwp->w_dotp, curwp->w_doto, n);
-	}
+	undo_add_delete(curwp->w_dotp, curwp->w_doto, n);
 
 	/*
 	 * HACK - doesn't matter, and fixes back-over-nl bug for empty
@@ -494,6 +488,8 @@ lreplace(RSIZE plen, char *st, int f)
 		ewprintf("Buffer is read only");
 		return FALSE;
 	}
+
+	undo_add_change(curwp->w_dotp, curwp->w_doto, plen);
 
 	/*
 	 * Find the capitalization of the word that was found.  f says use
