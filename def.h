@@ -360,6 +360,7 @@ int	 notmodified		__P((int, int));
 int	 popbuftop		__P((BUFFER *));
 
 /* display.c */
+int	vtresize		__P((int, int, int));
 void	vtinit			__P((void));
 void	vttidy			__P((void));
 void	update			__P((void));
