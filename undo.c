@@ -403,7 +403,7 @@ undo_dump(void)
 		}
 		snprintf(tmp, sizeof tmp, " [%d]", rec->region.r_size);
 		strlcat(buf, tmp, sizeof buf);
-		addlinef(bp, buf);
+		addlinef(bp, "%s", buf);
 	}
 	return (TRUE);
 }
