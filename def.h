@@ -325,6 +325,8 @@ int	 d_expunge(int, int);
 int	 d_copy(int, int);
 int	 d_del(int, int);
 int	 d_rename(int, int);
+int	 d_shell_command(int, int);
+int	 d_create_directory(int, int);
 
 /* file.c X */
 int	 fileinsert(int, int);

@@ -347,6 +347,7 @@ vtpute(int c)
 	}
 }
 
+
 /*
  * Erase from the end of the software cursor to the end of the line on which
  * the software cursor is located. The display routines will decide if a
