@@ -390,7 +390,7 @@ bfind(bname, cflag)
 
 	bp = bheadp;
 	while (bp != NULL) {
-		if (fncmp(bname, bp->b_bname) == 0)
+		if (strcmp(bname, bp->b_bname) == 0)
 			return bp;
 		bp = bp->b_bufp;
 	}

@@ -328,7 +328,6 @@ int	 poptofile		__P((int, int));
 BUFFER  *findbuffer		__P((char *));
 int	 readin			__P((char *));
 int	 insertfile		__P((char *, char *, int));
-VOID     makename		__P((char *, char *));
 int	 filewrite		__P((int, int));
 int	 filesave		__P((int, int));
 int	 buffsave		__P((BUFFER *));
