@@ -182,9 +182,9 @@ last_was_boundary()
 int
 undo_enable(int on)
 {
-	undo_disable_flag = on ? 0 : 1;
-
-	return (on);
+	int pon = undo_disable_flag;
+	undo_disable_flag = (on == TRUE) ? 0 : 1;
+	return (pon ? FALSE : TRUE);
 }
 
 int
