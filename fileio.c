@@ -174,6 +174,7 @@ fbackupfile(const char *fn)
 	}
 	if (stat(fn, &sb) == -1) {
 		ewprintf("Can't stat %s : %s", fn, strerror(errno));
+		free(nname);
 		return (FALSE);
 	}
 
@@ -191,8 +192,8 @@ fbackupfile(const char *fn)
 	}
 	while ((nread = read(from, buf, sizeof(buf))) > 0) {
 		if (write(to, buf, nread) != nread) {
-		    nread = -1;
-		    break;
+			nread = -1;
+			break;
 		}
 	}
 	serrno = errno;
