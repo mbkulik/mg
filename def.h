@@ -407,7 +407,6 @@ int	 d_makename		__P((LINE  *, char *));
 LIST    *make_file_list		__P((char *));
 
 /* keymap.c X */
-int	 complete_function	__P((char *, int));
 LIST	*complete_function_list	__P((char *, int));
 
 /* kbd.c X */
