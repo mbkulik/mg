@@ -67,7 +67,6 @@ refresh(f, n)
 		wp->w_ntrows = nrow - wp->w_toprow - 2;
 		sgarbf = TRUE;
 		update();
-		ewprintf("New size %d by %d", nrow, ncol);
 	} else
 		sgarbf = TRUE;
 	return TRUE;
