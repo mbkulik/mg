@@ -654,7 +654,7 @@ eformat(fp, ap)
 				c = *fp++;
 				switch (c) {
 				case 'd':
-					eputl((long)va_arg(ap, long), 10);
+					eputl(va_arg(ap, long), 10);
 					break;
 				default:
 					eputc(c);
