@@ -382,7 +382,7 @@ char	*adjustname		__P((char *));
 char	*startupfile		__P((char *));
 int	 copy			__P((char *, char *));
 BUFFER  *dired_			__P((char *));
-int	 d_makename		__P((LINE  *, char *));
+int	 d_makename		__P((LINE  *, char *, int));
 LIST	*make_file_list		__P((char *));
 
 /* kbd.c X */
