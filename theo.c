@@ -100,7 +100,8 @@ static const char *talk[] = {
 	"screw this operating system shit, i just want to drive!",
 	"That is the most stupid thing I have heard all week.",
 	"Search for fuck.  Anytime you see that word, you have a paragraph to write.",
-	"what I'm doing [...] is hell. it's kind of fun."
+	"what I'm doing [...] is hell. it's kind of fun.",
+	"Yes, but the ports people are into S&M."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
