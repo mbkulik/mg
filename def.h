@@ -360,6 +360,8 @@ int	 kinsert(int, int);
 int	 kremove(int);
 
 /* window.c X */
+MGWIN	*new_window(BUFFER *);
+void	 free_window(MGWIN *);
 int	 reposition(int, int);
 int	 refresh(int, int);
 int	 nextwind(int, int);
