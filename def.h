@@ -43,8 +43,8 @@ typedef int     (*PF)();	/* generally useful type */
 /*
  * Table sizes, etc.
  */
-#define NFILEN	80		/* Length, file name.		 */
-#define NBUFN	24		/* Length, buffer name.		 */
+#define NFILEN	1024		/* Length, file name.		 */
+#define NBUFN	NFILEN		/* Length, buffer name.		 */
 #define NLINE	256		/* Length, line.		 */
 #define PBMODES 4		/* modes per buffer		 */
 #define NKBDM	256		/* Length, keyboard macro.	 */
