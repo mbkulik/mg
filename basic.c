@@ -239,8 +239,9 @@ getgoal(LINE *dlp)
 			col++;
 		else {
 			char tmp[5];
-			col += snprintf(tmp, sizeof tmp, "\\%o",
-			    c);
+
+			snprintf(tmp, sizeof tmp, "\\%o", c);
+			col += strlen(tmp);
 		}
 		if (col > curgoal)
 			break;
