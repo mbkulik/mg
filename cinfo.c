@@ -93,6 +93,7 @@ char *
 keyname(char *cp, size_t len, int k)
 {
 	const char  *np;
+	size_t copied;
 
 	if (k < 0)
 		k = CHARMASK(k);/* sign extended char */
@@ -143,5 +144,8 @@ keyname(char *cp, size_t len, int k)
 		*cp = '\0';
 		return cp;
 	}
-	return cp + strlcpy(cp, np, len);
+	copied = strlcpy(cp, np, len);
+	if (copied >= len)
+		copied = len - 1;
+	return cp + copied;
 }
