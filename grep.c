@@ -150,6 +150,7 @@ compile_mode(char *name, char *command)
 	bp = bfind(name, TRUE);
 	if (bclear(bp) != TRUE)
 		return NULL;
+	bp->b_flag |= BFREADONLY;
 
 	addlinef(bp, "Running (%s).", command);
 	addline(bp, "");

@@ -264,6 +264,7 @@ makelist(void)
 	if (bclear(blp) != TRUE)
 		return NULL;
 	blp->b_flag &= ~BFCHG;		/* Blow away old.	 */
+	blp->b_flag |= BFREADONLY;
 
 	listbuf_ncol = ncol;		/* cache ncol for listbuf_goto_buffer */
 

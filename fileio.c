@@ -414,6 +414,9 @@ copy(frname, toname)
 	}
 }
 
+/*
+ * dirname needs to have enough place to store an additional '/'.
+ */
 BUFFER *
 dired_(dirname)
 	char	*dirname;
@@ -439,6 +442,7 @@ dired_(dirname)
 	}
 	if (bclear(bp) != TRUE)
 		return FALSE;
+	bp->b_flag |= BFREADONLY;
 	if (snprintf(line, sizeof(line), "ls -al %s", dirname) >= sizeof(line)){
 		ewprintf("Path too long");
 		return NULL;
