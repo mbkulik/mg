@@ -22,6 +22,7 @@ new_window(BUFFER *bp)
 	wp->w_marko = 0;
 	wp->w_flag = 0;
 	wp->w_force = 0;
+	wp->w_wrapline = NULL;
 	if (bp)
 		bp->b_nwnd++;
 	LIST_INIT(&wp->w_undo);

@@ -205,6 +205,7 @@ typedef struct MGWIN {
 	int             w_undopos;      /* Where we were during the last
 					   undo action */
 	struct undo_rec *w_undoptr;
+	struct LINE	*w_wrapline;
 } MGWIN;
 #define w_wndp	w_list.l_p.l_wp
 #define w_name	w_list.l_name
@@ -349,6 +350,7 @@ LINE	*lalloc(int);
 int	 lrealloc(LINE *, int);
 void	 lfree(LINE *);
 void	 lchange(int);
+int	 linsert_str(const char *, int);
 int	 linsert(int, int);
 int	 lnewline(void);
 int	 ldelete(RSIZE, int);

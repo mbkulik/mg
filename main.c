@@ -169,8 +169,8 @@ edinit(PF init_fcn)
 	curwp = wp;
 	wp->w_wndp = NULL;			/* Initialize window.	 */
 	wp->w_linep = wp->w_dotp = bp->b_linep;
-	wp->w_ntrows = nrow - 2;		/* 2 = mode, echo.	 */
-	wp->w_flag = WFMODE | WFHARD;		/* Full.		 */
+	wp->w_ntrows = nrow - 2;		/* 2 = mode, echo. */
+	wp->w_flag = WFMODE | WFHARD;		/* Full. */
 
 	if (init_fcn)
 		init_fcn(0, 1);
