@@ -299,7 +299,7 @@ doneread:
 		}
 	}
 endoffile:
-	undo_add_insert(olp, opos, siz);
+	undo_add_insert(olp, opos, siz-1);
 
 	/* ignore errors */
 	ffclose(NULL);
