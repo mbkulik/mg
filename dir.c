@@ -19,8 +19,11 @@ static char	cwd[NFILEN];
 void
 dirinit(void)
 {
-	if ((wdir = getcwd(cwd, sizeof(cwd))) == NULL)
-		panic("Can't get current directory!");
+	if ((wdir = getcwd(cwd, sizeof(cwd))) == NULL) {
+		ewprintf("Can't get current directory!");
+		chdir("/");
+		strlcpy(cwd, "/", sizeof(cwd));
+	}
 }
 
 /*
