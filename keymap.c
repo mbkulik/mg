@@ -139,7 +139,7 @@ static PF cXcar[] = {
 	rescan,			/* q */
 	rescan,			/* r */
 	savebuffers,		/* s */
-	NULL,			/* t */
+	rescan,			/* t */
 	undo			/* u */
 };
 
