@@ -171,7 +171,7 @@ ttgetc(void)
 		} else if (ret == 1)
 			break;
 	} while (1);
-	return ((int) c);
+	return ((int) c) & 0xFF;
 }
 
 /*
