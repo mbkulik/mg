@@ -30,9 +30,6 @@ main(argc, argv)
 {
 	char	*cp;
 
-#ifdef SYSINIT
-	SYSINIT;		/* System dependent.		*/
-#endif	/* SYSINIT */
 	vtinit();		/* Virtual terminal.		*/
 #ifndef NO_DIR
 	dirinit();		/* Get current directory.	*/

@@ -384,7 +384,7 @@ selfinsert(f, n)
 			maclcur->l_used += n;
 			/* Copy in the new data */
 			for (count = maclcur->l_used - n;
-			     count < maclcur->l_used; count++)
+			    count < maclcur->l_used; count++)
 				maclcur->l_text[count] = c;
 		} else {
 			macro[macrocount - 1].m_funct = insert;
