@@ -108,7 +108,7 @@ notnum:
 				(void)showbuffer(curbp, curwp, 0);
 				(void)readin(cp);
 				if (init_fcn_name)
-					init_fcn();
+					init_fcn(0, 1);
 			}
 		}
 		argc--;
@@ -178,7 +178,7 @@ edinit(PF init_fcn)
 	wp->w_flag = WFMODE | WFHARD;		/* Full.		 */
 
 	if (init_fcn)
-		init_fcn();
+		init_fcn(0, 1);
 }
 
 /*

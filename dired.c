@@ -8,6 +8,8 @@
 
 #ifndef NO_DIRED
 
+int d_findfile(int, int);
+
 static PF dired_pf[] = {
 	d_findfile,
 };

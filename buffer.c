@@ -11,7 +11,7 @@
 static BUFFER  *makelist(void);
 
 int
-togglereadonly(void)
+togglereadonly(int f, int n)
 {
 	if (!(curbp->b_flag & BFREADONLY)) {
 		curbp->b_flag |= BFREADONLY;

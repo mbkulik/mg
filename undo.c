@@ -359,7 +359,7 @@ undo_add_change(LINE *lp, int offset, int size)
  * Show the undo records for the current buffer in a new buffer.
  */
 int
-undo_dump(void)
+undo_dump(int f, int n)
 {
 	struct undo_rec *rec;
 	BUFFER *bp;
