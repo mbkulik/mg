@@ -269,7 +269,6 @@ struct undo_rec {
 	enum {
 		INSERT = 1,
 		DELETE,
-		CHANGE,
 		BOUNDARY
 	} type;
 	REGION		 region;
