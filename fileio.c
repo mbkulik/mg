@@ -90,39 +90,23 @@ ffclose(BUFFER *bp)
 }
 
 /*
- * Write a buffer to the already
- * opened file. bp points to the
+ * Write a buffer to the already opened file. bp points to the
  * buffer. Return the status.
- * Check only at the newline and
- * end of buffer.
  */
 int
 ffputbuf(BUFFER *bp)
 {
-	char   *cp;
-	char   *cpend;
-	LINE   *lp;
-	LINE   *lpend;
+	LINE   *lp, *lpend;
 
 	lpend = bp->b_linep;
-	lp = lforw(lpend);
-	do {
-		cp = &ltext(lp)[0];		/* beginning of line	 */
-		cpend = &cp[llength(lp)];	/* end of line		 */
-		while (cp != cpend) {
-			putc(*cp, ffp);
-			cp++;			/* putc may evaluate arguments
-						   more than once */
+	for (lp = lforw(lpend); lp != lpend; lp = lforw(lp)) {
+		if (fwrite(ltext(lp), 1, llength(lp), ffp) != llength(lp)) {
+			ewprintf("Write I/O error");
+			return FIOERR;
 		}
-		lp = lforw(lp);
-		if (lp == lpend)
-			break;			/* no implied \n on last line */
-		putc('\n', ffp);
-	} while (!ferror(ffp));
-	if (ferror(ffp)) {
-		ewprintf("Write I/O error");
-		return FIOERR;
-	}
+		if (lforw(lp) != lpend)		/* no implied \n on last line */
+			putc('\n', ffp);
+	}	
 	return (FIOSUC);
 }
 
