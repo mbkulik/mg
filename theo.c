@@ -150,6 +150,7 @@ static const char *talk[] = {
 	"You're not allowed to have an opinion.",
 	"tweep tweep tweep",
 	"Quite frankly, SSE's alignment requirement is the most utterly retarded idea since eating your own shit."
+	"Holy verbose prom startup Batman."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
