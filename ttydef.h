@@ -15,10 +15,6 @@
 #define STANDOUT_GLITCH			/* possible standout glitch	 */
 #define TERMCAP				/* for possible use in ttyio.c	 */
 
-#ifndef XKEYS
-#define ttykeymapinit() {}
-#endif
-
 #define	putpad(str, num)	tputs(str, num, ttputc)
 
 #define	KFIRST	K00

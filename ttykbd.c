@@ -77,4 +77,11 @@ ttykeymaptidy(void)
 		putpad(keypad_local, 1);
 }
 
+#else
+
+void
+ttykeymapinit(void)
+{
+}
+
 #endif /* XKEYS */
