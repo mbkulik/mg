@@ -409,8 +409,8 @@ wpopup()
 {
 	MGWIN	*wp;
 
-	if (wheadp->w_wndp == NULL
-	    && splitwind(FFRAND, 0) == FALSE)
+	if (wheadp->w_wndp == NULL &&
+	    splitwind(FFRAND, 0) == FALSE)
 		return NULL;
 
 	/* find a window to use */

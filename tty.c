@@ -371,7 +371,7 @@ ttnowindow()
 {
 	if (change_scroll_region) {
 		putpad(tgoto(change_scroll_region,
-		       (nrow > lines ? nrow : lines) - 1, 0), nrow - ttrow);
+		    (nrow > lines ? nrow : lines) - 1, 0), nrow - ttrow);
 		ttrow = HUGE;	/* Unknown.		 */
 		ttcol = HUGE;
 		tttop = HUGE;	/* No scroll region.	 */

@@ -100,7 +100,7 @@ compile(int f, int n)
 	BUFFER *bp;
 	MGWIN *wp;
 
-	strcpy(prompt, "make ");
+	strlcpy(prompt, "make ", sizeof prompt);
 	if (eread("Compile command: ", prompt, NFILEN, EFDEF|EFNEW|EFCR) == ABORT)
 		return ABORT;
 
@@ -151,7 +151,7 @@ compile_mode(char *name, char *command)
 	if (bclear(bp) != TRUE)
 		return NULL;
 
-	addlinef(bp, "Running (%s).", command); 
+	addlinef(bp, "Running (%s).", command);
 	addline(bp, "");
 
 	if ((pipe = popen(command, "r")) == NULL) {
@@ -224,14 +224,14 @@ retry:
 	gotoline(FFARG, lineno);
 	return TRUE;
 fail:
- 	free(line);
+	free(line);
 	if (curwp->w_dotp != lback(curbp->b_linep)) {
 		curwp->w_dotp = lforw(curwp->w_dotp);
 		curwp->w_flag |= WFMOVE;
 		goto retry;
 	}
 	ewprintf("No more hits");
- 	return FALSE;
+	return FALSE;
 }
 
 static int

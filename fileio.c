@@ -202,7 +202,7 @@ fbackupfile(fn)
 	}
 	free(nname);
 	errno = serrno;
-	
+
 	return (nread == -1 ? FALSE : TRUE);
 }
 #endif
