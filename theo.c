@@ -86,7 +86,8 @@ static const char *talk[] = {
 	"That's the most ridiculous thing I've heard in the last two or three minutes!",
 	"I'm not just doing this for crowd response. I need to be right.",
 	"i admit you are better than i am...",
-	"I'd put a fan on my bomb.. And blinking lights..."
+	"I'd put a fan on my bomb.. And blinking lights...",
+	"I love to fight"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
