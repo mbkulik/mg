@@ -214,7 +214,7 @@ makelist()
 	RSIZE   nbytes;
 	BUFFER *blp;
 	char    b[6 + 1];
-	char    line[128];
+	char    line[NBUFN+128];
 
 	if ((blp = bfind("*Buffer List*", TRUE)) == NULL)
 		return NULL;
