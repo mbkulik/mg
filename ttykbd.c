@@ -20,7 +20,7 @@
  * extend.c.
  */
 
-char           *keystrings[] = {NULL};
+char	*keystrings[] = {NULL};
 #endif /* FKEYS */
 
 /*

@@ -23,8 +23,8 @@ static void	 edinit		__P((void));
 
 int
 main(argc, argv)
-	int    argc;
-	char **argv;
+	int	argc;
+	char	**argv;
 {
 	char	*cp;
 
@@ -139,7 +139,7 @@ quit(f, n)
 }
 
 /*
- * User abort.  Should be called by any input routine that sees a C-g to abort 
+ * User abort.  Should be called by any input routine that sees a C-g to abort
  * whatever C-g is aborting these days. Currently does nothing.
  */
 /* ARGSUSED */

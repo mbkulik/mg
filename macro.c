@@ -60,7 +60,7 @@ executemacro(f, n)
 	int	 i, j, flag, num;
 	PF	 funct;
 
-	if (macrodef || 
+	if (macrodef ||
 	    (macrocount >= MAXMACRO && macro[MAXMACRO].m_funct != finishmacro))
 		return FALSE;
 

@@ -1,7 +1,7 @@
 /*	$OpenBSD$	*/
 
 /*
- * Help functions for Mg 2 
+ * Help functions for Mg 2
  */
 
 #include "def.h"
@@ -230,6 +230,6 @@ findbind(KEYMAP *map, PF fun, char *buf, size_t len)
 		}
 	}
 
-	return FALSE;	
+	return FALSE;
 }
 #endif /* !NO_HELP */

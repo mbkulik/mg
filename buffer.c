@@ -330,7 +330,7 @@ bfind(bname, cflag)
 {
 	BUFFER	*bp;
 	LINE	*lp;
-	int	 i; 
+	int	 i;
 
 	bp = bheadp;
 	while (bp != NULL) {

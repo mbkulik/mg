@@ -18,8 +18,8 @@ EXTERN union {
 	int	m_count;	/* for count-prefix	 */
 } macro[MAXMACRO];
 
-EXTERN LINE    *maclhead INIT(NULL);
-EXTERN LINE    *maclcur;
+EXTERN LINE	*maclhead INIT(NULL);
+EXTERN LINE	*maclcur;
 
 #undef	EXTERN
 #undef	INIT
