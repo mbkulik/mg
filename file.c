@@ -365,7 +365,7 @@ out:		lp2 = NULL;
  * Ask for a file name and write the contents of the current buffer to that
  * file.  Update the remembered file name and clear the buffer changed flag.
  * This handling of file names is different from the earlier versions and
- * is more compatable with Gosling EMACS than with ITS EMACS.
+ * is more compatible with Gosling EMACS than with ITS EMACS.
  */
 /* ARGSUSED */
 int
