@@ -629,11 +629,15 @@ updext(int currow, int curcol)
 	LINE	*lp;			/* pointer to current line */
 	int	j;			/* index into line */
 
+	if (ncol < 2)
+		return;
+
 	/*
 	 * calculate what column the left bound should be
 	 * (force cursor into middle half of screen)
 	 */
 	lbound = curcol - (curcol % (ncol >> 1)) - (ncol >> 2);
+
 	/*
 	 * scan through the line outputing characters to the virtual screen
 	 * once we reach the left edge
