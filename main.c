@@ -46,7 +46,7 @@ main(int argc, char **argv)
 			init_fcn_name = optarg;
 			break;
 		default:
-			errx(1, "usage: mg [-f <mode>] [files...]");
+			errx(1, "usage: mg [options] [file ...]");
 		}
 	argc -= optind;
 	argv += optind;
