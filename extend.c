@@ -91,7 +91,7 @@ remap(KEYMAP *curmap,		/* pointer to the map being changed */
       )
 {
 	int		 i, n1, n2, nold;
-	KEYMAP		*mp;
+	KEYMAP		*mp, *newmap;
 	PF		*pfp;
 	MAP_ELEMENT	*mep;
 
@@ -136,9 +136,11 @@ remap(KEYMAP *curmap,		/* pointer to the map being changed */
 			ele->k_base = c;
 			ele->k_funcp = pfp;
 		} else {
-			if (curmap->map_num >= curmap->map_max &&
-			    (curmap = reallocmap(curmap)) == NULL)
-				return FALSE;
+			if (curmap->map_num >= curmap->map_max) {
+				if ((newmap = reallocmap(curmap)) == NULL)
+					return FALSE;
+				curmap = newmap;
+			}
 			if ((pfp = malloc(sizeof(PF))) == NULL) {
 				ewprintf("Out of memory");
 				return FALSE;
