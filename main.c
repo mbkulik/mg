@@ -21,7 +21,7 @@ MGWIN		*curwp;				/* current window	*/
 MGWIN		*wheadp;			/* MGWIN listhead	*/
 char		 pat[NPAT];			/* pattern		*/
 
-static void	 edinit		__P((void));
+static void	 edinit(void);
 
 int
 main(argc, argv)

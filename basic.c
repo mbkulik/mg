@@ -11,7 +11,7 @@
  */
 #include "def.h"
 
-void setgoal __P((void));
+void setgoal(void);
 
 /*
  * Go to beginning of line.

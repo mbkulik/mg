@@ -8,7 +8,7 @@
 #include "kbd.h"		/* needed for modes */
 #include <stdarg.h>
 
-static BUFFER  *makelist	__P((void));
+static BUFFER  *makelist(void);
 
 /*
  * Attach a buffer to a window. The values of dot and mark come

@@ -65,18 +65,18 @@ typedef struct {
 	XSHORT	s_cost;		/* Display cost.		 */
 } SCORE;
 
-void	vtmove __P((int, int));
-void	vtputc __P((int));
-void	vtpute __P((int));
-int	vtputs __P((char *));
-void	vteeol __P((void));
-void	updext __P((int, int));
-void	modeline __P((MGWIN *));
-void	setscores __P((int, int));
-void	traceback __P((int, int, int, int));
-void	ucopy __P((VIDEO *, VIDEO *));
-void	uline __P((int, VIDEO *, VIDEO *));
-void	hash __P((VIDEO *));
+void	vtmove(int, int);
+void	vtputc(int);
+void	vtpute(int);
+int	vtputs(char *);
+void	vteeol(void);
+void	updext(int, int);
+void	modeline(MGWIN *);
+void	setscores(int, int);
+void	traceback(int, int, int, int);
+void	ucopy(VIDEO *, VIDEO *);
+void	uline(int, VIDEO *, VIDEO *);
+void	hash(VIDEO *);
 
 
 int	sgarbf = TRUE;		/* TRUE if screen is garbage.	 */

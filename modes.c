@@ -9,7 +9,7 @@
 #include "def.h"
 #include "kbd.h"
 
-static int	changemode	__P((int, int, char *));
+static int	changemode(int, int, char *);
 
 int	 defb_nmodes = 0;
 MAPS	*defb_modes[PBMODES] = { &fundamental_mode };

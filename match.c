@@ -14,8 +14,8 @@
 #include "def.h"
 #include "key.h"
 
-static int	balance		__P((void));
-static void	displaymatch	__P((LINE *, int));
+static int	balance(void);
+static void	displaymatch(LINE *, int);
 
 /*
  * Balance table. When balance() encounters a character that is to be

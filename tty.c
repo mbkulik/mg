@@ -33,7 +33,7 @@
 #include <term.h>
 #include <signal.h>
 
-static int	 charcost	__P((char *));
+static int	 charcost(char *);
 
 static int	 cci;
 static int	 insdel;	/* Do we have both insert & delete line? */

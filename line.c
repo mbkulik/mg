@@ -40,7 +40,7 @@ static RSIZE	 kused = 0;	/* # of bytes used in KB.	 */
 static RSIZE	 ksize = 0;	/* # of bytes allocated in KB.	 */
 static RSIZE	 kstart = 0;	/* # of first used byte in KB.	 */
 
-static int	 kgrow		__P((int));
+static int	 kgrow(int);
 
 /*
  * Allocate a new line of size `used'.  lrealloc() can be called if the line
