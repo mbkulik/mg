@@ -141,7 +141,8 @@ static const char *talk[] = {
 	"Wait a minute, that's a McNally's!",
 	"Your connection is breaking up.",
 	"germans are not allowed to get involved there",
-	"gprs sucks camel dick dryer than the gobi desert"
+	"gprs sucks camel dick dryer than the gobi desert",
+	"I AM NEVER SATISFIED"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
