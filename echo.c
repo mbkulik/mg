@@ -609,7 +609,7 @@ ewprintf(const char *fmt, ...)
 static void
 eformat(const char *fp, va_list ap)
 {
-	char	kname[NKNAME], *cp;
+	char	kname[NKNAME], tmp[100], *cp;
 	int	c;
 
 	while ((c = *fp++) != '\0') {
@@ -639,6 +639,12 @@ eformat(const char *fp, va_list ap)
 
 			case 'o':
 				eputi(va_arg(ap, int), 8);
+				break;
+
+			case 'p':
+				snprintf(tmp, sizeof tmp, "%p",
+				    va_arg(ap, void *));
+				eputs(tmp);
 				break;
 
 			case 's':
