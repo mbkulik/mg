@@ -220,7 +220,7 @@ tteeop(void)
  * Make a noise.
  */
 void
-ttbeep()
+ttbeep(void)
 {
 	putpad(bell, 1);
 	ttflush();
@@ -360,7 +360,7 @@ ttwindow(top, bot)
  * your terminal size.
  */
 void
-ttnowindow()
+ttnowindow(void)
 {
 	if (change_scroll_region) {
 		putpad(tgoto(change_scroll_region,
