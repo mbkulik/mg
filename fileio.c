@@ -53,12 +53,12 @@ ffwopen(const char *fn, BUFFER *bp)
 		ffp = NULL;
 		ewprintf("Cannot open file for writing : %s", strerror(errno));
 		return (FIOERR);
-	}		
+	}
 
 	if ((ffp = fdopen(fd, "w")) == NULL) {
 		ewprintf("Cannot open file for writing : %s", strerror(errno));
 		close(fd);
-		return (FIOERR);	
+		return (FIOERR);
 	}
 
 	/*

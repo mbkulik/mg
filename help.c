@@ -110,7 +110,7 @@ wallchart(f, n)
 	if (bclear(bp) != TRUE)
 		/* clear it out */
 		return FALSE;
-	bp->b_flag |= BFREADONLY;	
+	bp->b_flag |= BFREADONLY;
 	for (m = curbp->b_nmodes; m > 0; m--) {
 		if ((addlinef(bp, "Local keybindings for mode %s:",
 				curbp->b_modes[m]->p_name) == FALSE) ||

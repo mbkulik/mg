@@ -138,7 +138,7 @@ ttflush()
 {
 	ssize_t written;
 	char *buf = obuf;
-	
+
 	if (nobuf == 0)
 		return;
 

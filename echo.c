@@ -498,7 +498,7 @@ complt_list(int flags, int c, char *buf, int cpos)
 		return FALSE;
 	width = 0;
 
-	/* 
+	/*
 	 * We're going to strlcat() into the buffer, so it has to be
 	 * NUL terminated
 	 */
