@@ -100,7 +100,7 @@ keyname(cp, k)
 		k = CHARMASK(k);/* sign extended char */
 	switch (k) {
 	case CCHR('@'):
-		np = "NUL";
+		np = "C-SPC";
 		break;
 	case CCHR('I'):
 		np = "TAB";
