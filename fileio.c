@@ -401,7 +401,7 @@ copy(frname, toname)
 	if ((pid = vfork())) {
 		if (pid == -1)
 			return -1;
-		execl("/bin/cp", "cp", frname, toname, NULL);
+		execl("/bin/cp", "cp", frname, toname, (char *)NULL);
 		_exit(1);	/* shouldn't happen */
 	}
 	waitpid(pid, &status, 0);
