@@ -368,6 +368,7 @@ int	 killbuffer		__P((int, int));
 int	 savebuffers		__P((int, int));
 int	 listbuffers		__P((int, int));
 int	 addline		__P((BUFFER *, char *));
+int	 addlinef		__P((BUFFER *, char *, ...));
 int	 anycb			__P((int));
 int	 bclear			__P((BUFFER *));
 int	 showbuffer		__P((BUFFER *, MGWIN *, int));
