@@ -614,7 +614,6 @@ extern int	 ttcol;
 extern int	 tttop;
 extern int	 ttbot;
 extern int	 tthue;
-extern int	 undoaction;
 extern int	 defb_nmodes;
 extern int	 defb_flag;
 extern const char cinfo[];
