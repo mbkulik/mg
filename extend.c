@@ -410,6 +410,11 @@ bindkey(mapp, fname, keys, kcount)
 		if (doscan(curmap, c = *keys++, &curmap) != NULL) {
 			if (remap(curmap, c, NULL, (KEYMAP *)NULL) != TRUE)
 				return FALSE;
+			/*
+			 * XXX - Bizzarreness. remap creates an empty KEYMAP
+			 *       that the last key is supposed to point to.
+			 */
+			curmap = ele->k_prefmap;
 		}
 	}
 	(VOID)doscan(curmap, c = *keys, NULL);
