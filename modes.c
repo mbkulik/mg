@@ -115,10 +115,12 @@ set_default_mode(int f, int n)
 {
 	int	 i;
 	MAPS	*m;
-	char	 mode[32];
+	char	 mode[32], *bufp;
 
-	if (eread("Set Default Mode: ", mode, 32, EFNEW) != TRUE)
+	if ((bufp = eread("Set Default Mode: ", mode, 32, EFNEW)) == NULL)
 		return ABORT;
+	else if (bufp[0] == '\0')
+		return FALSE;
 	if ((m = name_mode(mode)) == NULL) {
 		ewprintf("can't find mode %s", mode);
 		return FALSE;

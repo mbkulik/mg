@@ -89,14 +89,18 @@ add_autoexec(const char *pattern, const char *func)
 int
 auto_execute(int f, int n)
 {
-	char patbuf[128], funcbuf[128];
+	char patbuf[128], funcbuf[128], *patp, *funcp;
 	int s;
 
-	if ((s = ereply("Filename pattern: ", patbuf, sizeof patbuf)) != TRUE)
-		return (s);
-	if ((s = ereply("Execute: ", funcbuf, sizeof funcbuf)) != TRUE)
-		return (s);
-	if ((s = add_autoexec(patbuf, funcbuf)) != TRUE)
+	if ((patp = ereply("Filename pattern: ", patbuf, sizeof patbuf)) == NULL)
+		return ABORT;
+	else if (patp[0] == '\0')
+		return FALSE;
+	if ((funcp = ereply("Execute: ", funcbuf, sizeof funcbuf)) == NULL)
+		return ABORT;
+	else if (funcp[0] == '\0')
+		return FALSE;
+	if ((s = add_autoexec(patp, funcp)) != TRUE)
 		return (s);
 	return (TRUE);
 }

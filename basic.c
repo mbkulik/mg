@@ -437,16 +437,17 @@ int
 gotoline(int f, int n)
 {
 	LINE  *clp;
-	int    s;
-	char   buf[32], *tmp;
+	char   buf[32], *bufp, *tmp;
 	long   nl;
 
 	if (!(f & FFARG)) {
-		if ((s = ereply("Goto line: ", buf, sizeof(buf))) != TRUE)
-			return s;
+		if ((bufp = ereply("Goto line: ", buf, sizeof(buf))) == NULL)
+			return ABORT;
+		else if (bufp[0] == '\0')
+			return FALSE;
 
-		nl = strtol(buf, &tmp, 10);
-		if (buf[0] == '\0' || *tmp != '\0') {
+		nl = strtol(bufp, &tmp, 10);
+		if (bufp[0] == '\0' || *tmp != '\0') {
 			ewprintf("Invalid number");
 			return FALSE;
 		}

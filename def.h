@@ -404,8 +404,8 @@ void	 eerase(void);
 int	 eyorn(const char *);
 int	 eyesno(const char *);
 void	 ewprintf(const char *fmt, ...);
-int	 ereply(const char *, char *, int, ...);
-int	 eread(const char *, char *, int, int, ...);
+char	*ereply(const char *, char *, size_t, ...);
+char	*eread(const char *, char *, size_t, int, ...);
 int	 getxtra(LIST *, LIST *, int, int);
 void	 free_file_list(LIST *);
 

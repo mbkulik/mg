@@ -182,9 +182,9 @@ apropos_command(f, n)
 {
 	BUFFER		*bp;
 	LIST		*fnames, *el;
-	char		 string[32];
+	char		 string[32], *bufp;
 
-	if (eread("apropos: ", string, sizeof(string), EFNEW) == ABORT)
+	if ((bufp = eread("apropos: ", string, sizeof(string), EFNEW)) == NULL)
 		return ABORT;
 	/* FALSE means we got a 0 character string, which is fine */
 	bp = bfind("*help*", TRUE);

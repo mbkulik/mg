@@ -33,11 +33,10 @@ dirinit(void)
 int
 changedir(int f, int n)
 {
-	int	s;
-	char	bufc[NPAT];
+	char	bufc[NPAT], *bufp;
 
-	if ((s = ereply("Change default directory: ", bufc, NPAT)) != TRUE)
-		return (s);
+	if ((bufp = ereply("Change default directory: ", bufc, NPAT)) == NULL)
+		return ABORT;
 	if (bufc[0] == '\0')
 		(void)strlcpy(bufc, wdir, sizeof bufc);
 	if (chdir(bufc) == -1) {
