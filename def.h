@@ -78,7 +78,7 @@ typedef int	(*PF)();	/* generally useful type */
 #define CMODE	2		/* Mode line color.		 */
 
 /*
- * Flags for keyboard involked functions.
+ * Flags for keyboard invoked functions.
  */
 #define FFUNIV		1	/* universal argument		 */
 #define FFNEGARG	2	/* negitive only argument	 */
