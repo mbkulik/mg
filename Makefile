@@ -12,11 +12,11 @@ DPADD+=	${LIBCURSES}
 #	FKEYS		-- add support for function key sequences.
 #	XKEYS		-- use termcap function key definitions. Warning -
 #				XKEYS and bsmap mode do _not_ get along.
-#	BACKUP		-- enable "make-backup-files"
+#	NOBACKUP	-- disable "make-backup-files"
 #	PREFIXREGION	-- enable function "prefix-region"
 #	REGEX		-- create regular expression functions
 #
-CFLAGS+=-Wall -DDO_METAKEY -DPREFIXREGION -DXKEYS -DFKEYS -DBACKUP -DREGEX
+CFLAGS+=-Wall -DDO_METAKEY -DPREFIXREGION -DXKEYS -DFKEYS -DREGEX
 
 SRCS=	cinfo.c fileio.c spawn.c ttyio.c tty.c ttykbd.c \
 	basic.c dir.c dired.c file.c line.c match.c paragraph.c \
