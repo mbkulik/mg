@@ -8,9 +8,8 @@
  * general definitions and macros. It also contains some
  * conditional compilation flags. All of the per-system and
  * per-terminal definitions are in special header files.
- * The most common reason to edit this file would be to zap
- * the definition of CVMVAS or BACKUP.
  */
+
 #include	"sysdef.h"	/* Order is critical.		 */
 #include	"ttydef.h"
 #include	"chrdef.h"
