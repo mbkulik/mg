@@ -27,12 +27,12 @@
 #include "kbd.h"
 #include "funmap.h"
 
-static int	compile_goto_error(int f, int n);
-static int	next_error(int f, int n);
+static int	compile_goto_error(int, int);
+static int	next_error(int, int);
 static int	grep(int, int);
 static int	compile(int, int);
 static int	gid(int, int);
-static BUFFER	*compile_mode(char *name, char *command);
+static BUFFER	*compile_mode(char *, char *);
 
 
 void grep_init(void);
