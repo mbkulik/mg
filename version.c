@@ -1,7 +1,7 @@
 /*	$OpenBSD$	*/
 
 /*
- * This file contains the string that get written
+ * This file contains the string that gets written
  * out by the emacs-version command.
  */
 
@@ -18,5 +18,5 @@ int
 showversion(int f, int n)
 {
 	ewprintf("%s", version);
-	return TRUE;
+	return (TRUE);
 }

@@ -31,7 +31,7 @@ spawncli(int f, int n)
 		epresf = FALSE;
 	}
 	if (ttcooked() == FALSE)
-		return(FALSE);
+		return (FALSE);
 
 	/* Exit application mode and tidy. */
 	tttidy();
@@ -43,5 +43,5 @@ spawncli(int f, int n)
 
 	/* Force repaint. */
 	sgarbf = TRUE;
-	return ttraw();
+	return (ttraw());
 }

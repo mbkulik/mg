@@ -16,7 +16,7 @@
 /*
  * Get keyboard character.  Very simple if you use keymaps and keys files.
  * Bob was right -- the old XKEYS code is not the right solution.
- * FKEYS code is not usefull other than to help debug FKEYS code in
+ * FKEYS code is not useful other than to help debug FKEYS code in
  * extend.c.
  */
 

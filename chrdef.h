@@ -6,7 +6,7 @@
  */
 
 /*
- * Casting should be at least as efficent as anding with 0xff,
+ * Casting should be at least as efficient as anding with 0xff,
  * and won't have the size problems.  Override in sysdef.h if no
  * unsigned char type.
  */

@@ -23,8 +23,8 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-void	funmap_init(void);
-PF	name_function(const char *);
-const char *function_name(PF);
-LIST	*complete_function_list(const char *, int);
-int	funmap_add(PF, const char *);
+void		 funmap_init(void);
+PF		 name_function(const char *);
+const char	*function_name(PF);
+LIST		*complete_function_list(const char *, int);
+int		 funmap_add(PF, const char *);
