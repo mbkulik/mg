@@ -300,7 +300,7 @@ int	 ttcooked		__P((void));
 int	 ttputc			__P((int));
 VOID	 ttflush		__P((void));
 int	 ttgetc			__P((void));
-int	 ttwait			__P((void));
+int	 ttwait			__P((int));
 VOID	 setttysize		__P((void));
 int	 typeahead		__P((void));
 
