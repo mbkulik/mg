@@ -322,7 +322,7 @@ static PF fund_esc[] = {
 	rescan,			/* ^\ selfinsert is default on fundamental */
 	rescan,			/* ^] */
 	rescan,			/* ^^ */
-	rescan,			/* ^_ */
+	undo,			/* ^_ */
 };
 
 static PF fund_del[] = {
