@@ -135,7 +135,8 @@ static const char *talk[] = {
 	"noone is gonna add that thing to theo.c?  wow, i'm stunned.  no henning?",
 	"I would explain, but I am too drunk.",
 	"Take a picture of my butt, it's what everyone wants.",
-	"You guys are about four days behind on theo.c"
+	"You guys are about four days behind on theo.c",
+	"I'm just talking."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
