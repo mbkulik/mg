@@ -26,7 +26,7 @@ new_window(BUFFER *bp)
 		bp->b_nwnd++;
 	LIST_INIT(&wp->w_undo);
 	wp->w_undoptr = NULL;
-	memset(&wp->w_undopos, 0, sizeof wp->w_undopos);
+	wp->w_undopos = 0;
 
 	return (wp);
 }
