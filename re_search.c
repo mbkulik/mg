@@ -430,7 +430,7 @@ re_readpattern(prompt)
 
 	if (s == TRUE) {
 		/* New pattern given */
-		(void)strcpy(re_pat, tpat);
+		(void)strlcpy(re_pat, tpat, sizeof re_pat);
 		if (casefoldsearch)
 			flags = REG_EXTENDED | REG_ICASE;
 		else

@@ -573,7 +573,7 @@ extern int	 defb_nmodes;
 extern int	 defb_flag;
 extern const char cinfo[];
 extern char	*keystrings[];
-extern char	 pat[];
+extern char	 pat[NPAT];
 #ifndef NO_DPROMPT
 extern char	 prompt[];
 #endif	/* !NO_DPROMPT */

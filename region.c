@@ -298,7 +298,7 @@ setprefix(f, n)
 		s = ereply("Prefix string (default %s): ",
 			   buf, sizeof buf, prefix_string);
 	if (s == TRUE)
-		(void)strcpy(prefix_string, buf);
+		(void)strlcpy(prefix_string, buf, sizeof prefix_string);
 	/* CR -- use old one */
 	if ((s == FALSE) && (prefix_string[0] != '\0'))
 		s = TRUE;
