@@ -149,7 +149,7 @@ static const char *talk[] = {
 	"Many well known people become net-kooks in their later life, because they lose touch with reality.",
 	"You're not allowed to have an opinion.",
 	"tweep tweep tweep",
-	"Quite frankly, SSE's alignment requirement is the most utterly retarded idea since eating your own shit."
+	"Quite frankly, SSE's alignment requirement is the most utterly retarded idea since eating your own shit.",
 	"Holy verbose prom startup Batman."
 };
 
