@@ -138,7 +138,7 @@ static const char *talk[] = {
 	"You guys are about four days behind on theo.c",
 	"I'm just talking.",
 	"Vegetarian my ass",
-	"Hey, that's a McNallys!",
+	"Wait a minute, that's a McNallys!",
 	"Your connection is breaking up."
 };
 
