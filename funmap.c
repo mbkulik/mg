@@ -217,6 +217,7 @@ static struct funmap functnames[] = {
 	{usebuffer, "switch-to-buffer",},
 	{poptobuffer, "switch-to-buffer-other-window",},
 	{twiddle, "transpose-chars",},
+	{ undo, "undo", },
 	{universal_argument, "universal-argument",},
 	{upperregion, "upcase-region",},
 	{upperword, "upcase-word",},

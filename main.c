@@ -41,7 +41,8 @@ main(argc, argv)
 	maps_init();		/* Keymaps and modes.		*/
 	funmap_init();		/* Functions.			*/
 	ttykeymapinit();	/* Symbols, bindings.		*/
-
+	undo_init();
+	
 	/*
 	 * This is where we initialize standalone extensions that should
 	 * be loaded dynamically sometime in the future.
