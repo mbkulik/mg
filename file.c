@@ -166,7 +166,7 @@ readin(char *fname)
 		curbp->b_flag |= BFREADONLY;
 	else
 		curbp->b_flag &=~ BFREADONLY;
-	
+
 	if (startrow)
 		gotoline(FFARG, startrow);
 

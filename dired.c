@@ -96,7 +96,7 @@ static PF dired_pf[] = {
 	rescan,		/* ^N */
 	d_findfile,	/* ^O */
 };
-  
+
 static struct KEYMAPE (4 + IMAPEXT) diredmap = {
 	4,
 	4 + IMAPEXT,
