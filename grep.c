@@ -213,11 +213,13 @@ retry:
 	lineno = strtol(ln, &lp1, 10);
 	if (lp != lp1 + 1)
 		goto fail;
-	free(line);
 
 	adjf = adjustname(fname);
+	free(line);
+
 	if (adjf == NULL)
 		return (FALSE);
+
 	if ((bp = findbuffer(adjf)) == NULL)
 		return FALSE;
 	if ((wp = popbuf(bp)) == NULL)
