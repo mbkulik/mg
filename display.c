@@ -58,7 +58,7 @@ typedef struct {
  * trace trajectory, and the cost of redisplay, when
  * the dynamic programming redisplay code is used.
  * If no fancy redisplay, this isn't used. The trace index
- * fields can be "char", and the score a "short", but
+ * fields can be "char", and the cost a "short", but
  * this makes the code worse on the VAX.
  */
 typedef struct {
