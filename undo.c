@@ -187,6 +187,27 @@ undo_enable(int on)
 }
 
 int
+undo_add_custom(int type, LINE *lp, int offset, void *content, int size)
+{
+	struct undo_rec *rec;
+
+	if (undo_disable_flag)
+		return TRUE;
+	rec = new_undo_record();
+	rec->pos = find_offset(lp, offset);
+	rec->buf = curbp;
+	rec->type = type;
+	rec->content = content;
+	rec->region.r_linep = lp;
+	rec->region.r_offset = offset;
+	rec->region.r_size = size;
+
+	LIST_INSERT_HEAD(&undo_list, rec, next);
+	
+	return TRUE;
+}
+
+int
 undo_add_boundary(void)
 {
 	struct undo_rec *rec;

@@ -248,6 +248,13 @@ lnewline()
 
 	lchange(WFHARD);
 
+	if (!undoaction) {
+		/* XXX */
+		undo_add_custom(INSERT, curwp->w_dotp, curwp->w_doto,
+		    strdup("\n"), 1);
+	}
+
+
 	/* Get the address and offset of "." */
 	lp1 = curwp->w_dotp;
 	doto = curwp->w_doto;

@@ -574,6 +574,7 @@ int	 cntnonmatchlines(int, int);
 /* undo.c X */
 int	 undo_init(void);
 int	 undo_enable(int);
+int	 undo_add_custom(int, LINE *, int, void *, int);
 int	 undo_add_boundary(void);
 int	 undo_add_insert(LINE *, int, int);
 int	 undo_add_delete(LINE *, int, int);
