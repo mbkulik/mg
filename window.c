@@ -190,7 +190,7 @@ splitwind(f, n)
 		ewprintf("Cannot split a %d line window", curwp->w_ntrows);
 		return (FALSE);
 	}
-	if ((wp = (MGWIN *)malloc(sizeof(MGWIN))) == NULL) {
+	if ((wp = malloc(sizeof(MGWIN))) == NULL) {
 		ewprintf("Can't get %d", sizeof(MGWIN));
 		return (FALSE);
 	}

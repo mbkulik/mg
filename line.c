@@ -62,9 +62,9 @@ lalloc(used)
 #ifdef MALLOCROUND
 	MALLOCROUND(size);	/* round up to a size optimal to malloc */
 #endif
-	if ((lp = (LINE *)malloc((unsigned)size)) == NULL) {
+	if ((lp = malloc((unsigned)size)) == NULL) {
 		ewprintf("Can't get %d bytes", size);
-		return (LINE *)NULL;
+		return NULL;
 	}
 	lp->l_size = size - OFFSET(LINE, l_text[0]);
 	lp->l_used = used;

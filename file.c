@@ -22,7 +22,7 @@ fileinsert(f, n)
 	s = eread("Insert file: ", fname, NFILEN, EFNEW | EFCR | EFFILE);
 	if (s != TRUE)
 		return (s);
-	return insertfile(adjustname(fname), (char *)NULL, FALSE);
+	return insertfile(adjustname(fname), NULL, FALSE);
 	/* don't set buffer name */
 }
 
@@ -181,11 +181,11 @@ insertfile(fname, newname, needinfo)
 
 	/* cheap */
 	bp = curbp;
-	if (newname != (char *)NULL)
+	if (newname != NULL)
 		(void)strcpy(bp->b_fname, newname);
 
 	/* hard file open */
-	if ((s = ffropen(fname, needinfo ? bp : (BUFFER *) NULL)) == FIOERR)
+	if ((s = ffropen(fname, needinfo ? bp : NULL)) == FIOERR)
 		goto out;
 	if (s == FIOFNF) {
 		/* file not found */
@@ -262,7 +262,7 @@ doneread:
 	}
 endoffile:
 	/* ignore errors */
-	(void)ffclose((BUFFER *)NULL);
+	ffclose(NULL);
 	/* don't zap an error */
 	if (s == FIOEOF) {
 		if (nline == 1)
