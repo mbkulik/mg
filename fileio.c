@@ -398,14 +398,16 @@ copy(frname, toname)
 	pid_t	pid;
 	int	status;
 
-	if ((pid = vfork())) {
-		if (pid == -1)
-			return -1;
+	switch ((pid = vfork())) {
+	case -1:
+		return -1;
+	case 0:
 		execl("/bin/cp", "cp", frname, toname, (char *)NULL);
 		_exit(1);	/* shouldn't happen */
+	default:
+		waitpid(pid, &status, 0);
+		return (WIFEXITED(status) && WEXITSTATUS(status) == 0);
 	}
-	waitpid(pid, &status, 0);
-	return (WIFEXITED(status) && WEXITSTATUS(status) == 0);
 }
 
 BUFFER *
