@@ -647,7 +647,7 @@ load(fname)
 	char *fname;
 {
 	int	 s = TRUE;
-	int	 nbytes;
+	int	 nbytes = 0;
 	char	 excbuf[128];
 
 	if ((fname = adjustname(fname)) == NULL)
