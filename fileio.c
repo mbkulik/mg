@@ -165,7 +165,7 @@ fbackupfile(const char *fn)
 {
 	struct stat	sb;
 	int		from, to, serrno;
-	size_t		nread;
+	ssize_t		nread;
 	char		buf[BUFSIZ];
 	char		*nname;
 
@@ -194,8 +194,8 @@ fbackupfile(const char *fn)
 	}
 	while ((nread = read(from, buf, sizeof(buf))) > 0) {
 		if (write(to, buf, nread) != nread) {
-		    nread = -1;
-		    break;
+			nread = -1;
+			break;
 		}
 	}
 	serrno = errno;
