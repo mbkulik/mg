@@ -209,6 +209,7 @@ fbackupfile(const char *fn)
 		if (rename(tname, nname) == -1) {
 			ewprintf("Can't rename temp : %s", strerror(errno));
 			(void) unlink(tname);
+			nread = -1;
 		}
 	}
 	free(nname);
