@@ -625,7 +625,7 @@ evalfile(int f, int n)
 int
 load(const char *fname)
 {
-	int	 s = TRUE;
+	int	 s = TRUE, line;
 	int	 nbytes = 0;
 	char	 excbuf[128];
 
@@ -636,11 +636,13 @@ load(const char *fname)
 	if (ffropen(fname, NULL) != FIOSUC)
 		return FALSE;
 
+	line = 0;
 	while ((s = ffgetline(excbuf, sizeof(excbuf) - 1, &nbytes)) == FIOSUC) {
+		line++;
 		excbuf[nbytes] = '\0';
 		if (excline(excbuf) != TRUE) {
 			s = FIOERR;
-			ewprintf("Error loading file %s", fname);
+			ewprintf("Error loading file %s at line %d", fname, line);
 			break;
 		}
 	}
