@@ -70,7 +70,7 @@ find_offset(LINE *lp, int off)
 
 	for (p = curwp->w_linep; p != lp; p = lforw(p)) {
 		if (count != 0) {
-			if (p == curbp->b_linep) {
+			if (p == curwp->w_linep) {
 				ewprintf("Error: Undo stuff called with a"
 				    "nonexistent line\n");
 				return FALSE;
@@ -265,9 +265,10 @@ undo_add_delete(LINE *lp, int offset, int size)
 	reg.r_size = size;
 
 	pos = find_offset(lp, offset);
-	
-	if (size == 1 && lgetc(lp, offset) == '\n')
+
+	if (size == 1 && llength(lp) == 0) {
 		skip = 1;
+	}
 
 	/*
 	 * Again, try to reuse last undo record, if we can
