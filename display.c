@@ -15,6 +15,8 @@
 #include	"def.h"
 #include	"kbd.h"
 
+#include <ctype.h>
+
 /*
  * You can change these back to the types
  * implied by the name if you get tight for space. If you
@@ -302,8 +304,13 @@ vtputc(int c)
 	} else if (ISCTRL(c)) {
 		vtputc('^');
 		vtputc(CCHR(c));
-	} else
+	} else if (isprint(c))
 		vp->v_text[vtcol++] = c;
+	else {
+		char bf[5];
+		snprintf(bf, sizeof bf, "\\%o", c);
+		vtputs(bf);
+	}
 }
 
 /*
