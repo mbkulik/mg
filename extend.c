@@ -507,8 +507,7 @@ unbindtokey(int f, int n)
 }
 
 int
-localunbind(f, n)
-	int f, n;
+localunbind(int f, int n)
 {
 	return dobind(curbp->b_modes[curbp->b_nmodes]->p_map,
 	    "Local unset key: ", TRUE);

@@ -561,7 +561,7 @@ lreplace(RSIZE plen, char *st, int f)
  * case the buffer has grown to an immense size.  No errors.
  */
 void
-kdelete()
+kdelete(void)
 {
 	if (kbufp != NULL) {
 		free((char *)kbufp);
@@ -578,8 +578,7 @@ kdelete()
  * Print a message on errors.  Dir says whether to put it at back or front.
  */
 int
-kinsert(c, dir)
-	int c, dir;
+kinsert(int c, int dir)
 {
 	if (kused == ksize && dir == KFORW && kgrow(FALSE) == FALSE)
 		return FALSE;

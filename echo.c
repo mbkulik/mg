@@ -194,7 +194,7 @@ veread(const char *fp, char *buf, int nbuf, int flag, va_list ap)
 		switch (c) {
 		case CCHR('J'):
 			c = CCHR('M');
-			/* and continue */
+			/* FALLTHROUGH */
 		case CCHR('M'):			/* return, done */
 			if ((flag & EFFUNC) != 0) {
 				if ((i = complt(flag, c, buf, cpos)) == 0)
@@ -288,7 +288,7 @@ veread(const char *fp, char *buf, int nbuf, int flag, va_list ap)
 		case CCHR('\\'):
 		case CCHR('Q'):			/* quote next */
 			c = getkey(FALSE);
-			/* and continue */
+			/* FALLTHROUGH */
 		default:			/* all the rest */
 			if (cpos < nbuf - 1) {
 				buf[cpos++] = (char)c;
