@@ -266,6 +266,10 @@ addlinef(BUFFER *bp, char *fmt, ...)
 
 	va_start(ap, fmt);
 	ntext = vsnprintf(dummy, 1, fmt, ap) + 1;
+	if (ntext == -1) {
+		va_end(ap);
+		return FALSE;
+	}
 	if ((lp = lalloc(ntext)) == NULL) {
 		va_end(ap);
 		return FALSE;
