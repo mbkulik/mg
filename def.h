@@ -404,7 +404,7 @@ char    *startupfile		__P((char *));
 int      copy			__P((char *, char *));
 BUFFER  *dired_			__P((char *));
 int	 d_makename		__P((LINE  *, char *));
-LIST    *make_file_list		__P((char *, int));
+LIST    *make_file_list		__P((char *));
 
 /* keymap.c X */
 int	 complete_function	__P((char *, int));
