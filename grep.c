@@ -77,11 +77,11 @@ grep(int f, int n)
 	BUFFER *bp;
 	MGWIN *wp;
 
-	strcpy(prompt, "grep -n ");
+	strlcpy(prompt, "grep -n ", sizeof prompt);
 	if (eread("Run grep: ", prompt, NFILEN, EFDEF|EFNEW|EFCR) == ABORT)
 		return ABORT;
 
-	sprintf(command, "%s /dev/null", prompt);
+	snprintf(command, sizeof command, "%s /dev/null", prompt);
 
 	if ((bp = compile_mode("*grep*", command)) == NULL)
 		return FALSE;
@@ -104,7 +104,7 @@ compile(int f, int n)
 	if (eread("Compile command: ", prompt, NFILEN, EFDEF|EFNEW|EFCR) == ABORT)
 		return ABORT;
 
-	sprintf(command, "%s 2>&1", prompt);
+	snprintf(command, sizeof command, "%s 2>&1", prompt);
 
 	if ((bp = compile_mode("*compile*", command)) == NULL)
 		return FALSE;
@@ -127,7 +127,7 @@ gid(int f, int n)
 	if (eread("Run gid (with args): ", prompt, NFILEN, EFNEW|EFCR) == ABORT)
 		return ABORT;
 
-	sprintf(command, "gid %s", prompt);
+	snprintf(command, sizeof command, "gid %s", prompt);
 
 	if ((bp = compile_mode("*gid*", command)) == NULL)
 		return FALSE;

@@ -137,7 +137,7 @@ showall(BUFFER *bp, KEYMAP *map, char *prefix)
 		if (fun == rescan || fun == selfinsert)
 			continue;
 		keyname(buf, sizeof(buf), c);
-		sprintf(key, "%s%s ", prefix, buf);
+		snprintf(key, sizeof key, "%s%s ", prefix, buf);
 		if (fun == NULL) {
 			if (showall(bp, newmap, key) == FALSE)
 				return FALSE;

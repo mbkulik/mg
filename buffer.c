@@ -303,7 +303,8 @@ anycb(f)
 	for (bp = bheadp; bp != NULL; bp = bp->b_bufp) {
 		if (*(bp->b_fname) != '\0'
 		    && (bp->b_flag & BFCHG) != 0) {
-			sprintf(prompt, "Save file %s", bp->b_fname);
+			snprintf(prompt, sizeof prompt, "Save file %s",
+			    bp->b_fname);
 			if ((f == TRUE || (save = eyorn(prompt)) == TRUE)
 			    && buffsave(bp) == TRUE) {
 				bp->b_flag &= ~BFCHG;
