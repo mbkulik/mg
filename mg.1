@@ -8,7 +8,8 @@
 .Nd emacs-like text editor
 .Sh SYNOPSIS
 .Nm mg
-.Op Ar
+.Op Ar options files
+.Op Ar ...
 .Sh DESCRIPTION
 .Nm
 is intended to be a small, fast, and portable editor for
@@ -19,6 +20,14 @@ editor.
 It is compatible with emacs because there shouldn't
 be any reason to learn more editor types than emacs or
 .Xr vi 1 .
+.Pp
+At present time only one option is supported:
+.Pp
+.Bl -tag -width xxxxx -compact
+.It Ar +number
+Go to the line specified by number (do not insert
+a space between the "+" sign and the number).
+.El
 .Pp
 Normal editing commands are very similar to Gnu Emacs.
 In the following examples, ^X means control-X, and M-X means Meta-X,
