@@ -316,7 +316,6 @@ addlinef(BUFFER *bp, char *fmt, ...)
 {
 	va_list ap;
 	LINE  *lp;
-	int    i;
 	int    ntext;
 	char   dummy[1];
 
@@ -335,15 +334,6 @@ addlinef(BUFFER *bp, char *fmt, ...)
 	lp->l_fp = bp->b_linep;
 
 	return TRUE;
-}
-
-/*
- * Wrapper for addlinef with just one string. Should go away.
- */
-int
-addline(BUFFER *bp, char *text)
-{
-	return addlinef(bp, "%s", text);
 }
 
 /*
