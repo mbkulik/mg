@@ -54,6 +54,17 @@ filevisit(int f, int n)
 	return TRUE;
 }
 
+int
+filevisitro(int f, int n)
+{
+	int error;
+
+	error = filevisit(f, n);
+	if (error != TRUE)
+		return (error);
+	curbp->b_flag |= BFREADONLY;
+	return (TRUE);
+}
 /*
  * Pop to a file in the other window.  Same as the last function, but uses
  * popbuf instead of showbuffer.

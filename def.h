@@ -330,6 +330,7 @@ int	 d_rename(int, int);
 /* file.c X */
 int	 fileinsert(int, int);
 int	 filevisit(int, int);
+int	 filevisitro(int, int);
 int	 poptofile(int, int);
 BUFFER  *findbuffer(char *);
 int	 readin(char *);

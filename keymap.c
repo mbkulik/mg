@@ -84,7 +84,7 @@ static PF cXcL[] = {
 	filesave,		/* ^S */
 	rescan,			/* ^T */
 	upperregion,		/* ^U */
-	rescan,			/* ^V */
+	filevisitro,		/* ^V */
 	filewrite,		/* ^W */
 	swapmark,		/* ^X */
 };
