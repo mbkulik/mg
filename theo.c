@@ -94,7 +94,8 @@ static const char *talk[] = {
 	"you have to stop peeing on your breakfast",
 	"feature requests come from idiots",
 	"henning and darren / sitting in a tree / t o k i n g / a joint or three",
-	"KICK ASS. TIME FOR A JASON LOVE IN!  WE CAN ALL GET LOST IN HIS HAIR!"
+	"KICK ASS. TIME FOR A JASON LOVE IN!  WE CAN ALL GET LOST IN HIS HAIR!",
+	"shame on you for following my rules."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
