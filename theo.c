@@ -151,7 +151,8 @@ static const char *talk[] = {
 	"tweep tweep tweep",
 	"Quite frankly, SSE's alignment requirement is the most utterly retarded idea since eating your own shit.",
 	"Holy verbose prom startup Batman.",
-	"Do you think you are exempt from COMPILING BEFORE YOU COMMIT"
+	"Do you think you are exempt from COMPILING BEFORE YOU COMMIT",
+	"I want to be REALLY COOL just like all the other developers!"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
