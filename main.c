@@ -92,7 +92,7 @@ main(int argc, char **argv)
 			int lval;
 			const char *errstr;
 
-			lval = strtonum(&argv[i][1], 0, INT_MAX, &errstr);
+			lval = strtonum(&argv[i][1], INT_MIN, INT_MAX, &errstr);
 			if (argv[i][1] == '\0' || *errstr != '\0')
 				goto notnum;
 			startrow = lval;
