@@ -430,7 +430,7 @@ ttresize(void)
  */
 /* ARGSUSED */
 static int
-fakec(char c)
+fakec(int c)
 {
 	cci++;
 	return 0;
