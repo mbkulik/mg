@@ -92,8 +92,6 @@ nextwind(f, n)
 	return TRUE;
 }
 
-#ifdef	GOSMACS
-
 /* not in Gnu Emacs */
 /*
  * This command makes the previous window (previous => up the screen) the
@@ -117,7 +115,6 @@ prevwind(f, n)
 	curbp = wp1->w_bufp;
 	return TRUE;
 }
-#endif /* GOSEMACS */
 
 /*
  * This command makes the current window the only window on the screen.  Try

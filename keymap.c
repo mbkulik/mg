@@ -133,9 +133,9 @@ static PF cXcar[] = {
 	killbuffer,		/* k */
 	rescan,			/* l */
 	rescan,			/* m */
-	rescan,			/* n */
+	nextwind,		/* n */
 	nextwind,		/* o */
-	rescan,			/* p */
+	prevwind,		/* p */
 	rescan,			/* q */
 	rescan,			/* r */
 	savebuffers,		/* s */
