@@ -70,6 +70,7 @@ mail(int f, int n)
 		curbp->b_modes[1] = name_mode("mail-mode");
 	}
 	curbp->b_nmodes = 1;
+	curwp->w_flag |= WFMODE;
 	return (TRUE);
 }
 
