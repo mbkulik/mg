@@ -16,7 +16,7 @@ DPADD+=	${LIBCURSES}
 #	PREFIXREGION	-- enable function "prefix-region"
 #	REGEX		-- create regular expression functions
 #
-CFLAGS+=-DDO_METAKEY -DPREFIXREGION -DXKEYS -DFKEYS -DBACKUP -DREGEX
+CFLAGS+=-Wall -DDO_METAKEY -DPREFIXREGION -DXKEYS -DFKEYS -DBACKUP -DREGEX
 
 SRCS=	cinfo.c fileio.c spawn.c ttyio.c tty.c ttykbd.c \
 	basic.c dir.c dired.c file.c line.c match.c paragraph.c \
