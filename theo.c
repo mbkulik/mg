@@ -96,7 +96,8 @@ static const char *talk[] = {
 	"henning and darren / sitting in a tree / t o k i n g / a joint or three",
 	"KICK ASS. TIME FOR A JASON LOVE IN!  WE CAN ALL GET LOST IN HIS HAIR!",
 	"shame on you for following my rules.",
-	"altq's parser sucks dead whale farts through the finest chemistry pipette's"
+	"altq's parser sucks dead whale farts through the finest chemistry pipette's",
+	"screw this operating system shit, i just want to drive!"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
