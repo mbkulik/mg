@@ -254,6 +254,7 @@ undo_add_insert(LINE *lp, int offset, int size)
 			return TRUE;
 		}
 	}
+	
 	/*
 	 * We couldn't reuse the last undo record, so prepare a new one
 	 */
@@ -407,7 +408,7 @@ undo(int f, int n)
 	 */
 	undoaction++;
 
-	while (n-- > 0) {
+	while (n > 0) {
 		rec = LIST_FIRST(&undo_list);
 		if (rec == NULL) {
 			ewprintf("Nothing to undo!");
@@ -418,7 +419,6 @@ undo(int f, int n)
 		
 		LIST_REMOVE(rec, next);
 		if (rec->type == BOUNDARY) {
-			n++;	/* XXX */
 			continue;
 		}
 
@@ -448,6 +448,8 @@ undo(int f, int n)
 		}
 		
 		free_undo_record(rec);
+
+		n--;
 	}
 	undoaction--;
 	
