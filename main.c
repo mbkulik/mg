@@ -31,7 +31,7 @@ main(int argc, char **argv)
 {
 	char	*cp, *init_fcn_name = NULL;
 	PF init_fcn = NULL;
-	int o, i, nfiles;
+	int o, i, nfiles, status;
 
 	while ((o = getopt(argc, argv, "f:")) != -1)
 		switch (o) {
@@ -105,10 +105,13 @@ notnum:
 				}
 				curbp = findbuffer(cp);
 				(void)showbuffer(curbp, curwp, 0);
-				(void)readin(cp);
-				if (init_fcn_name)
-					init_fcn(0, 1);
-				nfiles++;
+				if ((status = readin(cp)) != TRUE) {
+					killbuffer(curbp);
+				} else {
+					if (init_fcn_name)
+						init_fcn(0, 1);
+					nfiles++;
+				}
 			}
 		}
 	}

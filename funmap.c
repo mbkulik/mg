@@ -137,7 +137,7 @@ static struct funmap functnames[] = {
 	{forwisearch, "isearch-forward",},
 	{justone, "just-one-space",},
 	{ctrlg, "keyboard-quit",},
-	{killbuffer, "kill-buffer",},
+	{killbuffer_cmd, "kill-buffer",},
 	{killline, "kill-line",},
 	{killpara, "kill-paragraph",},
 	{killregion, "kill-region",},

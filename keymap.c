@@ -130,7 +130,7 @@ static PF cXcar[] = {
 	rescan,			/* h */
 	fileinsert,		/* i */
 	rescan,			/* j */
-	killbuffer,		/* k */
+	killbuffer_cmd,		/* k */
 	rescan,			/* l */
 	rescan,			/* m */
 	nextwind,		/* n */
