@@ -466,15 +466,15 @@ gotoline(f, n)
 			return s;
 		n = atoi(buf);
 	}
-	if (n > 0) {
-		clp = lforw(curbp->b_linep);	/* "clp" is first line	 */
+	if (n >= 0) {
+		clp = lforw(curbp->b_linep);	/* "clp" is first line */
 		while (--n > 0) {
 			if (lforw(clp) == curbp->b_linep)
 				break;
 			clp = lforw(clp);
 		}
 	} else {
-		clp = lback(curbp->b_linep);	/* clp is last line */
+		clp = lback(curbp->b_linep);	/* "clp" is last line */
 		while (n < 0) {
 			if (lback(clp) == curbp->b_linep)
 				break;
