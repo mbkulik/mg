@@ -699,7 +699,6 @@ excline(char *line)
 	}
 	if (argp != NULL) {
 		f = FFARG;
-		errno = 0;
 		nl = strtol(argp, &tmp, 10);
 		if (*tmp != '\0')
 			return FALSE;
