@@ -190,6 +190,14 @@ isearch(dir)
 
 		switch (c = getkey(FALSE)) {
 		case CCHR('['):
+			/*
+			 * If new characters come in the next 300 msec,
+			 * we can assume that they belong to a longer
+			 * escaped sequence so we should ungetkey the
+			 * ESC to avoid writing out garbage.
+			 */
+			if (ttwait(300) == FALSE)
+				ungetkey(c);
 			srch_lastdir = dir;
 			curwp->w_markp = clp;
 			curwp->w_marko = cbo;
