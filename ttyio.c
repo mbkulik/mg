@@ -137,17 +137,17 @@ void
 ttflush()
 {
 	ssize_t written;
+	char *buf = obuf;
 	
 	if (nobuf == 0)
 		return;
 
-	while ((written = write(fileno(stdout), obuf, nobuf)) != nobuf) {
+	while ((written = write(fileno(stdout), buf, nobuf)) != nobuf) {
 		if (written == -1)
 			panic("ttflush write failed");
-		else
-			nobuf -= written;
+		buf += written;
+		nobuf -= written;
 	}
-	nobuf = 0;
 }
 
 /*
