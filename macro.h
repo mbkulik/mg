@@ -2,24 +2,18 @@
 
 /* definitions for keyboard macros */
 
-#ifndef EXTERN
-#define EXTERN extern
-#define INIT(i)
-#endif
-
 #define MAXMACRO 256		/* maximum functs in a macro */
 
-EXTERN int inmacro INIT(FALSE);
-EXTERN int macrodef INIT(FALSE);
-EXTERN int macrocount INIT(0);
+extern int inmacro;
+extern int macrodef;
+extern int macrocount;
 
-EXTERN union {
+union macrodef {
 	PF	m_funct;
 	int	m_count;	/* for count-prefix	 */
-} macro[MAXMACRO];
+};
 
-EXTERN LINE	*maclhead INIT(NULL);
-EXTERN LINE	*maclcur;
+extern union macrodef macro[MAXMACRO];
 
-#undef	EXTERN
-#undef	INIT
+extern LINE	*maclhead;
+extern LINE	*maclcur;

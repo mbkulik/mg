@@ -4,8 +4,6 @@
  *	Terminal independent keyboard handling.
  */
 
-#define EXTERN
-
 #include "def.h"
 #include "kbd.h"
 #include "key.h"
@@ -29,6 +27,8 @@ static int	 pushed = FALSE;
 static int	 pushedc;
 
 MAP_ELEMENT	*ele;
+
+struct key key;
 
 /*
  * Toggle the value of use_metakey

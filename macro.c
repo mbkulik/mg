@@ -7,9 +7,16 @@
 #ifndef NO_MACRO
 #include "def.h"
 #include "key.h"
-#define EXTERN
-#define INIT(i) = (i)
 #include "macro.h"
+
+int inmacro = FALSE;
+int macrodef = FALSE;
+int macrocount = 0;
+
+LINE *maclhead = NULL;
+LINE *maclcur;
+
+union macrodef macro[MAXMACRO];
 
 /* ARGSUSED */
 int
