@@ -226,9 +226,9 @@ extern char	*wdir;
 char *
 adjustname(const char *fn)
 {
-	static char fnb[MAXPATHLEN];
+	static char path[MAXPATHLEN];
 	const char *cp;
-	char user[LOGIN_NAME_MAX + 1], path[MAXPATHLEN];
+	char user[LOGIN_NAME_MAX + 1];
 	int len;
 
 	path[0] = '\0';
@@ -265,7 +265,7 @@ adjustname(const char *fn)
 	}
 	strlcat(path, fn, sizeof path);
 
-	return (realpath(path, fnb));
+	return (path);
 }
 
 #ifndef NO_STARTUP
