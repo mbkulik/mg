@@ -24,4 +24,9 @@ SRCS=	cinfo.c fileio.c spawn.c ttyio.c tty.c ttykbd.c \
 	buffer.c display.c echo.c extend.c help.c kbd.c keymap.c \
 	macro.c main.c modes.c re_search.c funmap.c
 
+#
+# More or less standalone extensions.
+#
+SRCS+=	grep.c
+
 .include <bsd.prog.mk>

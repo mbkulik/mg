@@ -43,6 +43,16 @@ main(argc, argv)
 	ttykeymapinit();	/* Symbols, bindings.		*/
 
 	/*
+	 * This is where we initialize standalone extensions that should
+	 * be loaded dynamically sometime in the future.
+	 */
+	{
+		extern void grep_init(void);
+
+		grep_init();
+	}
+
+	/*
 	 * doing update() before reading files causes the error messages from
 	 * the file I/O show up on the screen.	(and also an extra display of
 	 * the mode line if there are files specified on the command line.)
