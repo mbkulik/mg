@@ -851,8 +851,6 @@ FUNCTNAMES functnames[] = {
 
 #define NFUNCT	(sizeof(functnames)/sizeof(FUNCTNAMES))
 
-int	 nfunct = NFUNCT;	/* used by help.c */
-
 /*
  * The general-purpose version of ROUND2 blows osk C (2.0) out of the water.
  * (reboot required)  If you need to build a version of mg with less than 32

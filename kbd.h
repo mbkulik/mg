@@ -55,7 +55,5 @@ PF       name_function		__P((char *));
 char    *function_name		__P((PF));
 char    *map_name		__P((KEYMAP *));
 
-extern int		 nfunct;
-extern FUNCTNAMES	 functnames[];
 extern MAP_ELEMENT	*ele;
 extern MAPS		*defb_modes[];

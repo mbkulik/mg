@@ -591,7 +591,6 @@ extern int	 tttop;
 extern int	 ttbot;
 extern int	 tthue;
 extern int	 nmaps;
-extern int	 nfunct;
 extern int	 defb_nmodes;
 extern int	 defb_flag;
 extern char	 cinfo[];
