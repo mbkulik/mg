@@ -202,7 +202,7 @@ typeahead()
 /*
  * panic - just exit, as quickly as we can.
  */
-VOID
+void
 panic(s)
 	char *s;
 {

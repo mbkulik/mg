@@ -64,7 +64,7 @@ bsmap(f, n)
 }
 #endif /* BSMAP */
 
-VOID
+void
 ungetkey(c)
 	int     c;
 {

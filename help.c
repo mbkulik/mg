@@ -35,7 +35,7 @@ desckey(f, n)
 	if (inmacro)
 		return TRUE;	/* ignore inside keyboard macro */
 #endif /* !NO_MACRO */
-	(VOID)strcpy(prompt, "Describe key briefly: ");
+	strcpy(prompt, "Describe key briefly: ");
 	pep = prompt + strlen(prompt);
 	key.k_count = 0;
 	m = curbp->b_nmodes;

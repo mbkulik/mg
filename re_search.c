@@ -174,7 +174,7 @@ retry:
 			goto stopsearch;
 
 		case CCHR('G'):				/* ^G */
-			(VOID)ctrlg(FFRAND, 0);
+			(void)ctrlg(FFRAND, 0);
 		case CCHR('['):				/* ESC */
 		case '`':
 			goto stopsearch;
@@ -430,7 +430,7 @@ re_readpattern(prompt)
 
 	if (s == TRUE) {
 		/* New pattern given */
-		(VOID)strcpy(re_pat, tpat);
+		(void)strcpy(re_pat, tpat);
 		if (casefoldsearch)
 			flags = REG_EXTENDED | REG_ICASE;
 		else

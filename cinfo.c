@@ -145,6 +145,6 @@ keyname(cp, k)
 		*cp = '\0';
 		return cp;
 	}
-	(VOID) strcpy(cp, np);
+	strcpy(cp, np);
 	return cp + strlen(cp);
 }
