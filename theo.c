@@ -92,7 +92,8 @@ static const char *talk[] = {
 	"I am not concerned with commit count",
 	"No sane people allowed here.  Go home.",
 	"you have to stop peeing on your breakfast",
-	"feature requests come from idiots"
+	"feature requests come from idiots",
+	"henning and darren / sitting in a tree / t o k i n g / a joint or three"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
