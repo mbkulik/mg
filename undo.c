@@ -401,7 +401,7 @@ undo_dump(void)
 			strlcat(buf, tmp, sizeof buf);
 			strlcat(buf, "\"", sizeof buf);
 		}
-		snprintf(tmp, sizeof buf, " [%d]", rec->region.r_size);
+		snprintf(tmp, sizeof tmp, " [%d]", rec->region.r_size);
 		strlcat(buf, tmp, sizeof buf);
 		addlinef(bp, buf);
 	}
