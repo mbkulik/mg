@@ -131,6 +131,7 @@ static const char *talk[] = {
 	"if ya break cvs, we hunt ya and break yer legs",
 	"who cares.  style(9) can bite my ass",
 	"The argument is totally Linux.",
+	"It'd be one fucking happy planet if it wasn't for what's under this fucking sticker.",
 	"noone is gonna add that thing to theo.c?  wow, i'm stunned.  no henning?"
 
 };
