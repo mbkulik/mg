@@ -126,7 +126,7 @@ static PF cXcar[] = {
 	rescan,			/* e */
 #endif /* !NO_MACRO */
 	setfillcol,		/* f */
-	rescan,			/* g */
+	gotoline,		/* g */
 	rescan,			/* h */
 	fileinsert,		/* i */
 	rescan,			/* j */
