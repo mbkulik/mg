@@ -453,7 +453,7 @@ dired_(dirname)
 	bp->b_dotp = lforw(bp->b_linep);	/* go to first line */
 	(void) strncpy(bp->b_fname, dirname, NFILEN);
 	if ((bp->b_modes[0] = name_mode("dired")) == NULL) {
-		bp->b_modes[0] = &map_table[0];
+		bp->b_modes[0] = name_mode("fundamental");
 		ewprintf("Could not find mode dired");
 		return NULL;
 	}
