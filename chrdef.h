@@ -10,9 +10,7 @@
  * and won't have the size problems.  Override in sysdef.h if no
  * unsigned char type.
  */
-#ifndef	CHARMASK
 #define	CHARMASK(c)	((unsigned char) (c))
-#endif
 
 /*
  * These flags, and the macros below them,
