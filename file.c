@@ -105,7 +105,10 @@ findbuffer(fname)
 	/* new buffer name */
 	for (count = 1; bfind(bname, FALSE) != NULL; count++)
 		;
-	snprintf(bname, sizeof bname, "%s<%d>", basename(fname), count);
+	if (count == 1)
+		snprintf(bname, sizeof bname, "%s", basename(fname));
+	else
+		snprintf(bname, sizeof bname, "%s<%d>", basename(fname), count);
 
 	return bfind(bname, TRUE);
 }
