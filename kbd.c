@@ -21,7 +21,7 @@
 
 #ifndef NO_DPROMPT
 #define PROMPTL 80
-char	 prompt[PROMPTL], *promptp;
+char	 prompt[PROMPTL] = "", *promptp = prompt;
 #endif /* !NO_DPROMPT */
 
 static int	 use_metakey = TRUE;
@@ -117,7 +117,8 @@ getkey(flag)
 #endif /* DO_METAKEY */
 #ifndef NO_DPROMPT
 	if (flag && promptp < &prompt[PROMPTL - 5]) {
-		promptp = keyname(promptp, c);
+		promptp = keyname(promptp,
+		    sizeof(prompt) - (promptp - prompt) - 1, c);
 		*promptp++ = '-';
 		*promptp = '\0';
 	}

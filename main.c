@@ -61,7 +61,6 @@ main(argc, argv)
 	thisflag = 0;
 	for (;;) {
 #ifndef NO_DPROMPT
-		*(promptp = prompt) = '\0';
 		if (epresf == KPROMPT)
 			eerase();
 #endif	/* !NO_DPROMPT */

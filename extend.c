@@ -351,12 +351,12 @@ dobind(curmap, p, unbind)
 	} else {
 #endif /* !NO_STARTUP */
 #endif /* !NO_MACRO */
-		(void)strcpy(prompt, p);
-		pep = prompt + strlen(prompt);
+		pep = prompt + strlcpy(prompt, p, sizeof(prompt));
 		for (;;) {
 			ewprintf("%s", prompt);
 			pep[-1] = ' ';
-			pep = keyname(pep, c = getkey(FALSE));
+			pep = keyname(pep, sizeof(prompt) - (pep - prompt),
+			    c = getkey(FALSE));
 			if (doscan(curmap, c, &curmap) != NULL)
 				break;
 			*pep++ = '-';
