@@ -275,7 +275,6 @@ struct undo_rec {
 	} type;
 	REGION		 region;
 	int		 pos;
-	int		 size;
 	char		*content;
 };
 
