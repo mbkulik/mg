@@ -27,8 +27,6 @@ typedef struct {
 }
 typedef struct keymap_s KEYMAPE(1) KEYMAP;
 
-#define none	ctrlg
-
 /* Number of map_elements to grow an overflowed keymap by */
 #define IMAPEXT 0
 #define MAPGROW 3
