@@ -391,6 +391,7 @@ VOID     ewprintf		__P((const char *fmt, ...));
 int	 ereply			__P((const char *, char *, int, ...));
 int	 eread			__P((const char *, char *, int, int, ...));
 int	 getxtra		__P((LIST *, LIST *, int, int));
+VOID	 free_file_list	__P((LIST *));
 
 /* fileio.c */
 int	 ffropen		__P((char *, BUFFER *));
