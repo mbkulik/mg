@@ -162,7 +162,8 @@ static const char *talk[] = {
 	"If you want it, go do the stinking work yourself.",
 	"A burp means less gas later",
 	"optimism in man kind does not belong here",
-	"First user who tries to push this button, he pounds into the ground with a rant of death."
+	"First user who tries to push this button, he pounds into the ground with a rant of death.",
+	"we did farts.  now we do sperm.  we are cutting edge."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
