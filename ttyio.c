@@ -161,34 +161,6 @@ ttgetc()
 }
 
 /*
- * Set the tty size.
- * XXX - belongs in tty.c since it uses terminfo vars.
- */
-void
-setttysize()
-{
-#ifdef	TIOCGWINSZ
-	struct	winsize winsize;
-
-	if (ioctl(0, TIOCGWINSZ, (char *) &winsize) == 0) {
-		nrow = winsize.ws_row;
-		ncol = winsize.ws_col;
-	} else nrow = 0;
-#endif
-	if ((nrow <= 0 || ncol <= 0) &&
-	    ((nrow = lines) <= 0 || (ncol = columns) <= 0)) {
-		nrow = 24;
-		ncol = 80;
-	}
-
-	/* Enforce maximum screen size. */
-	if (nrow > NROW)
-		nrow = NROW;
-	if (ncol > NCOL)
-		ncol = NCOL;
-}
-
-/*
  * Returns TRUE if there are characters waiting to be read.
  */
 int

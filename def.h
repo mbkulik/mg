@@ -283,7 +283,6 @@ int	 ttputc			__P((int));
 void	 ttflush		__P((void));
 int	 ttgetc			__P((void));
 int	 ttwait			__P((int));
-void	 setttysize		__P((void));
 int	 typeahead		__P((void));
 
 /* dir.c */
