@@ -13,8 +13,7 @@
  */
 /* ARGSUSED */
 int
-fileinsert(f, n)
-	int f, n;
+fileinsert(int f, int n)
 {
 	int	 s;
 	char	 fname[NFILEN];
@@ -34,8 +33,7 @@ fileinsert(f, n)
  */
 /* ARGSUSED */
 int
-filevisit(f, n)
-	int f, n;
+filevisit(int f, int n)
 {
 	BUFFER	*bp;
 	int	 s;
@@ -62,8 +60,7 @@ filevisit(f, n)
  */
 /* ARGSUSED */
 int
-poptofile(f, n)
-	int f, n;
+poptofile(int f, int n)
 {
 	BUFFER	*bp;
 	MGWIN	*wp;

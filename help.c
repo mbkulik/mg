@@ -83,7 +83,7 @@ nextmode:
 found:
 	if (funct == rescan || funct == selfinsert)
 		ewprintf("%k is not bound to any function");
-	else if ((pep = function_name(funct)) != NULL)
+	else if ((pep = (char *)function_name(funct)) != NULL)
 		ewprintf("%k runs the command %s", pep);
 	else
 		ewprintf("%k is bound to an unnamed function");
