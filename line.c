@@ -474,14 +474,14 @@ lreplace(plen, st, f)
 	 */
 	/* NOSTRICT */
 	(void)backchar(FFARG | FFRAND, (int)plen);
-	rtype = _L;
+	rtype = _MG_L;
 	c = lgetc(curwp->w_dotp, curwp->w_doto);
 	if (ISUPPER(c) != FALSE && f == FALSE) {
-		rtype = _U | _L;
+		rtype = _MG_U | _MG_L;
 		if (curwp->w_doto + 1 < llength(curwp->w_dotp)) {
 			c = lgetc(curwp->w_dotp, curwp->w_doto + 1);
 			if (ISUPPER(c) != FALSE) {
-				rtype = _U;
+				rtype = _MG_U;
 			}
 		}
 	}
@@ -506,10 +506,10 @@ lreplace(plen, st, f)
 	 * If inserting upper, check replacement for case.
 	 */
 	while ((c = CHARMASK(*st++)) != '\0') {
-		if ((rtype & _U) != 0 && ISLOWER(c) != 0)
+		if ((rtype & _MG_U) != 0 && ISLOWER(c) != 0)
 			c = TOUPPER(c);
-		if (rtype == (_U | _L))
-			rtype = _L;
+		if (rtype == (_MG_U | _MG_L))
+			rtype = _MG_L;
 		if (c == CCHR('J')) {
 			if (curwp->w_doto == llength(curwp->w_dotp))
 				(void)forwchar(FFRAND, 1);
