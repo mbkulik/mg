@@ -208,7 +208,7 @@ backline(int f, int n)
 void
 setgoal(void)
 {
-	curgoal = getcolpos();		/* Get the position.     */
+	curgoal = getcolpos();		/* Get the position. */
 	/* we can now display past end of display, don't chop! */
 }
 

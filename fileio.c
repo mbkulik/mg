@@ -109,7 +109,7 @@ ffputbuf(BUFFER *bp)
 		}
 		if (lforw(lp) != lpend)		/* no implied \n on last line */
 			putc('\n', ffp);
-	}	
+	}
 	/*
 	 * XXX should be variable controlled (once we have variables)
 	 */

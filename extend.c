@@ -85,11 +85,9 @@ insert(int f, int n)
  */
 static int
 remap(KEYMAP *curmap,		/* pointer to the map being changed */
-      int c,			/* character being changed */
-      PF funct,			/* function being changed to */
-      KEYMAP *pref_map		/* if funct==NULL, map to bind to or
-				   NULL for new */
-      )
+    int c,			/* character being changed */
+    PF funct,			/* function being changed to */
+    KEYMAP *pref_map)		/* if funct==NULL, map to bind to or NULL for new */
 {
 	int		 i, n1, n2, nold;
 	KEYMAP		*mp, *newmap;

@@ -383,8 +383,8 @@ int
 anycb(int f)
 {
 	BUFFER *bp;
-	int     s = FALSE, save = FALSE;
-	char    prompt[NFILEN + 11];
+	int s = FALSE, save = FALSE;
+	char prompt[NFILEN + 11];
 
 	for (bp = bheadp; bp != NULL; bp = bp->b_bufp) {
 		if (bp->b_fname != NULL && *(bp->b_fname) != '\0' &&
@@ -575,9 +575,8 @@ bufferinsert(int f, int n)
 {
 	BUFFER *bp;
 	LINE   *clp;
-	int     clo;
-	int     nline;
-	char    bufn[NBUFN], *bufp;
+	int	clo, nline;
+	char	bufn[NBUFN], *bufp;
 
 	/* Get buffer to use from user */
 	if (curbp->b_altb != NULL)
