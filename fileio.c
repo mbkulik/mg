@@ -371,32 +371,32 @@ startupfile(char *suffix)
 
 	if (suffix == NULL) {
 		if (snprintf(file, sizeof(file), "%s/.mg", home)
-			    >= sizeof(file))
-			return NULL;
+		    >= sizeof(file))
+			return (NULL);
 	} else {
 		if (snprintf(file, sizeof(file), "%s/.mg-%s", home, suffix)
-			    >= sizeof(file))
-			return NULL;
+		    >= sizeof(file))
+			return (NULL);
 	}
 
 	if (access(file, R_OK) == 0)
-		return file;
+		return (file);
 nohome:
 #ifdef STARTUPFILE
 	if (suffix == NULL) {
 		if (snprintf(file, sizeof(file), "%s", STARTUPFILE)
-			    >= sizeof(file))
-			return NULL;
+		    >= sizeof(file))
+			return (NULL);
 	} else {
 		if (snprintf(file, sizeof(file), "%s%s", STARTUPFILE, suffix)
-			    >= sizeof(file))
-			return NULL;
+		    >= sizeof(file))
+			return (NULL);
 	}
 
 	if (access(file, R_OK) == 0)
-		return file;
+		return (file);
 #endif
-	return NULL;
+	return (NULL);
 }
 #endif
 
@@ -440,7 +440,7 @@ copy(char *frname, char *toname)
 		return (FALSE);
 	}
 	/*
-	 * It is "normal" for this to fail since we can't garantee that
+	 * It is "normal" for this to fail since we can't guarantee that
 	 * we will be running as root
 	 */
 	if (fchown(ofd, orig.st_uid, orig.st_gid) && errno != EPERM)
