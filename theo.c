@@ -129,7 +129,8 @@ static const char *talk[] = {
 	"Buttons are for idiots.",
 	"We are not hackers. We are turd polishing craftsmen.",
 	"if ya break cvs, we hunt ya and break yer legs",
-	"who cares.  style(9) can bite my ass"
+	"who cares.  style(9) can bite my ass",
+	"The argument is totally Linux."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
