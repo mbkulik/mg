@@ -459,24 +459,23 @@ gotoline(f, n)
 {
 	LINE  *clp;
 	int    s;
-	char   buf[32];
+	char   buf[32], *tmp;
+	long   nl;
 
 	if (!(f & FFARG)) {
-		char *tmp;
-		
 		if ((s = ereply("Goto line: ", buf, sizeof(buf))) != TRUE)
 			return s;
 		errno = 0;
-		n = strtol(buf, &tmp, 10);
+		nl = strtol(buf, &tmp, 10);
 		if (buf[0] == '\0' || *tmp != '\0') {
 			ewprintf("Invalid number");
 			return FALSE;
 		}
-		if ((errno == ERANGE && (n == LONG_MAX || n == LONG_MIN)) ||
-		    (n > INT_MAX || n < INT_MIN)) {
+		if (nl >= INT_MAX || nl <= INT_MIN) {
 			ewprintf("Out of range");
 			return FALSE;
 		}
+		n = (int)nl;
 	}
 	if (n >= 0) {
 		clp = lforw(curbp->b_linep);	/* "clp" is first line */
