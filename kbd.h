@@ -43,17 +43,10 @@ typedef struct MAPS_S {
 extern MAPS	map_table[];
 extern KEYMAP	*fundamental_map;
 
-typedef struct {
-	PF	n_funct;
-	char	*n_name;
-} FUNCTNAMES;
-
 int	dobindkey		__P((KEYMAP *, char *, char *));
 KEYMAP	*name_map		__P((char *));
 MAPS	*name_mode		__P((char *));
 PF	doscan			__P((KEYMAP *, int, KEYMAP **));
-PF	name_function		__P((char *));
-char	*function_name		__P((PF));
 char	*map_name		__P((KEYMAP *));
 
 extern MAP_ELEMENT	*ele;

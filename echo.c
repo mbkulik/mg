@@ -13,6 +13,8 @@
 #include "macro.h"
 #endif /* !NO_MACRO */
 
+#include "funmap.h"
+
 #include <stdarg.h>
 
 static int	veread		__P((const char *, char *buf, int, int, va_list));
@@ -175,6 +177,10 @@ veread(const char *fp, char *buf, int nbuf, int flag, va_list ap)
 	} else
 		eputc(' ');
 	eformat(fp, ap);
+	if ((flag & EFDEF) != 0) {
+		eputs(buf);
+		cpos += strlen(buf);
+	}
 	tteeol();
 	ttflush();
 	for (;;) {

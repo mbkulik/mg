@@ -6,6 +6,7 @@
 
 #include "def.h"
 #include "kbd.h"
+#include "funmap.h"
 
 #ifndef NO_MACRO
 #include "macro.h"

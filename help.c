@@ -5,6 +5,7 @@
  */
 
 #include "def.h"
+#include "funmap.h"
 
 #ifndef NO_HELP
 #include "kbd.h"

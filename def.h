@@ -388,9 +388,6 @@ BUFFER  *dired_			__P((char *));
 int	 d_makename		__P((LINE  *, char *));
 LIST	*make_file_list		__P((char *));
 
-/* keymap.c X */
-LIST	*complete_function_list	__P((char *, int));
-
 /* kbd.c X */
 int	 do_meta		__P((int, int));
 int	 bsmap			__P((int, int));
