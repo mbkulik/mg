@@ -615,6 +615,8 @@ MAPS map_table[] = {
 #define NMAPS	(sizeof map_table/sizeof(MAPS))
 int	 nmaps = NMAPS;		/* for use by rebind in extend.c */
 
+KEYMAP *fundamental_map = (KEYMAP *)&fundmap;
+
 char *
 map_name(map)
 	KEYMAP *map;

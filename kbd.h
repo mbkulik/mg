@@ -41,6 +41,7 @@ typedef struct MAPS_S {
 } MAPS;
 
 extern MAPS     map_table[];
+extern KEYMAP	*fundamental_map;
 
 typedef struct {
 	PF              n_funct;
