@@ -29,7 +29,7 @@ char	*keystrings[] = {NULL};
  * file is, depending on what startupfile() does on your system.
  */
 void
-ttykeymapinit()
+ttykeymapinit(void)
 {
 	char	*cp;
 
@@ -70,7 +70,7 @@ ttykeymapinit()
  * Clean up the keyboard -- called by tttidy()
  */
 void
-ttykeymaptidy()
+ttykeymaptidy(void)
 {
 	if (keypad_local)
 		/* turn off keypad */

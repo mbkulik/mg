@@ -18,8 +18,7 @@
  */
 /* ARGSUSED */
 int
-spawncli(f, n)
-	int f, n;
+spawncli(int f, int n)
 {
 	sigset_t	oset;
 

@@ -169,7 +169,7 @@ drop_oldest_undo_record(void)
 }
 
 static __inline__ int
-last_was_boundary()
+last_was_boundary(void)
 {
 	struct undo_rec *rec;
 

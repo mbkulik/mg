@@ -49,8 +49,7 @@ static struct balance {
  * character, if any.  Bound to "blink-matching-paren-command".
  */
 int
-showmatch(f, n)
-	int f, n;
+showmatch(int f, int n)
 {
 	int	i, s;
 
@@ -75,7 +74,7 @@ showmatch(f, n)
  */
 
 static int
-balance()
+balance(void)
 {
 	LINE	*clp;
 	int	 cbo;
@@ -146,9 +145,7 @@ balance()
  */
 
 static void
-displaymatch(clp, cbo)
-	LINE *clp;
-	int cbo;
+displaymatch(LINE *clp, int cbo)
 {
 	LINE	*tlp;
 	int	 tbo;

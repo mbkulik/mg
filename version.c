@@ -15,8 +15,7 @@ const char	version[] = "Mg 2a";
  */
 /* ARGSUSED */
 int
-showversion(f, n)
-	int f, n;
+showversion(int f, int n)
 {
 	ewprintf(version);
 	return TRUE;
