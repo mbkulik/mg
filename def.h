@@ -81,7 +81,7 @@ typedef int	(*PF)();	/* generally useful type */
  * Flags for keyboard invoked functions.
  */
 #define FFUNIV		1	/* universal argument		 */
-#define FFNEGARG	2	/* negitive only argument	 */
+#define FFNEGARG	2	/* negative only argument	 */
 #define FFOTHARG	4	/* other argument		 */
 #define FFARG		7	/* any argument			 */
 #define FFRAND		8	/* Called by other function	 */
