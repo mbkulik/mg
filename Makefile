@@ -27,6 +27,6 @@ SRCS=	cinfo.c fileio.c spawn.c ttyio.c tty.c ttykbd.c \
 #
 # More or less standalone extensions.
 #
-SRCS+=	grep.c theo.c
+SRCS+=	grep.c theo.c mail.c
 
 .include <bsd.prog.mk>

@@ -593,6 +593,9 @@ int	 auto_execute(int, int);
 PF	*find_autoexec(const char *);
 int	 add_autoexec(const char *, const char *);
 
+/* mail.c X */
+void	 mail_init(void);
+
 /*
  * Externals.
  */
