@@ -486,11 +486,19 @@ update(void)
 #ifdef	NOTAB
 		    && !(curbp->b_flag & BFNOTAB)
 #endif
-			)
+			) {
 			curcol |= 0x07;
-		else if (ISCTRL(c) != FALSE)
-			++curcol;
-		++curcol;
+			curcol++;
+		} else if (ISCTRL(c) != FALSE)
+			curcol += 2;
+		else if (isprint(c))
+			curcol++;
+		else {
+			char bf[5];
+
+			snprintf(bf, sizeof bf, "\\%o", c);
+			curcol += strlen(bf);
+		}
 	}
 	if (curcol >= ncol - 1) {	/* extended line. */
 		/* flag we are extended and changed */
