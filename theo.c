@@ -82,7 +82,8 @@ static const char *talk[] = {
 	"if they cut you out, muddy their back yards",
 	"Make them want to start over, and play nice the next time.",
 	"It is clear that this has not been thought through.",
-	"if you do not test that, you are banned from editing theo.c"
+	"if you do not test that, you are banned from editing theo.c",
+	"That's the most ridiculous thing I've heard in the last two or three minutes!"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
