@@ -196,6 +196,8 @@ insertfile(char *fname, char *newname, int needinfo)
 	lp1 = NULL;
 	if (line == NULL) {
 		line = malloc(NLINE);
+		if (line == NULL)
+			panic("out of memory");
 		linesize = NLINE;
 	}
 

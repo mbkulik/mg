@@ -111,6 +111,8 @@ edinit(void)
 	bheadp = NULL;
 	bp = bfind("*scratch*", TRUE);		/* Text buffer.		 */
 	wp = (MGWIN *)malloc(sizeof(MGWIN));	/* Initial window.	 */
+	if (wp == NULL)
+		panic("Out of memory");
 	if (bp == NULL || wp == NULL)
 		panic("edinit");
 	curbp = bp;				/* Current ones.	 */
