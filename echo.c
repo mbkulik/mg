@@ -335,7 +335,8 @@ veread(fp, buf, nbuf, flag, ap)
 			}
 		}
 	}
-done:	return buf[0] != '\0';
+done:
+	return buf[0] != '\0';
 }
 
 /*
