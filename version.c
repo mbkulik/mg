@@ -17,6 +17,6 @@ const char	version[] = "Mg 2a";
 int
 showversion(int f, int n)
 {
-	ewprintf(version);
+	ewprintf("%s", version);
 	return TRUE;
 }
