@@ -15,8 +15,6 @@
 #define STANDOUT_GLITCH			/* possible standout glitch	 */
 #define TERMCAP				/* for possible use in ttyio.c	 */
 
-#define getkbd()	(ttgetc())
-
 #ifndef XKEYS
 #define ttykeymapinit() {}
 #endif

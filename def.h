@@ -292,6 +292,8 @@ void	 ttnowindow(void);
 void	 ttcolor(int);
 void	 ttresize(void);
 
+volatile sig_atomic_t winch_flag;
+
 /* ttyio.c */
 void	 ttopen(void);
 int	 ttraw(void);

@@ -81,6 +81,10 @@ main(argc, argv)
 		if (epresf == KPROMPT)
 			eerase();
 #endif	/* !NO_DPROMPT */
+		if (winch_flag) {
+			refresh(0, 0);
+			winch_flag = 0;
+		}
 		update();
 		lastflag = thisflag;
 		thisflag = 0;

@@ -100,7 +100,7 @@ getkey(flag)
 		c = pushedc;
 		pushed = FALSE;
 	} else
-		c = getkbd();
+		c = ttgetc();
 #ifdef BSMAP
 	if (bs_map)
 		if (c == CCHR('H'))
