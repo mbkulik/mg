@@ -246,8 +246,8 @@ delwhite(f, n)
 
 	col = curwp->w_doto;
 
-	while (((c = lgetc(curwp->w_dotp, col)) == ' ' || c == '\t') &&
-	    col < llength(curwp->w_dotp))
+	while (col < llength(curwp->w_dotp) &&
+	    ((c = lgetc(curwp->w_dotp, col)) == ' ' || c == '\t'))
 		++col;
 	do {
 		if (curwp->w_doto == 0) {
