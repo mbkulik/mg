@@ -770,7 +770,10 @@ modeline(MGWIN *wp)
 	vtputc('-');
  	if ((bp->b_flag & BFREADONLY) != 0) {
 		vtputc('%');
-		vtputc('%');
+		if ((bp->b_flag & BFCHG) != 0)
+			vtputc('*');
+		else
+			vtputc('%');
 	} else if ((bp->b_flag & BFCHG) != 0) {	/* "*" if changed.	 */
 		vtputc('*');
 		vtputc('*');
