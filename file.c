@@ -134,6 +134,14 @@ readin(fname)
 			wp->w_marko = 0;
 		}
 	}
+
+	/* We need to set the READONLY flag after we insert the file */
+	if (access(fname, W_OK) && errno != ENOENT)
+		curbp->b_flag |= BFREADONLY;
+	else
+		curbp->b_flag &=~ BFREADONLY;
+
+
 	return status;
 }
 

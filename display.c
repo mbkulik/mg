@@ -755,7 +755,7 @@ modeline(MGWIN *wp)
 {
 	int	n;
 	BUFFER *bp;
-	int	mode;
+	int mode;
 
 	n = wp->w_toprow + wp->w_ntrows;	/* Location.		 */
 	vscreen[n]->v_color = CMODE;		/* Mode line color.	 */
@@ -764,10 +764,13 @@ modeline(MGWIN *wp)
 	bp = wp->w_bufp;
 	vtputc('-');
 	vtputc('-');
-	if ((bp->b_flag & BFCHG) != 0) {	/* "*" if changed.	 */
+ 	if ((bp->b_flag & BFREADONLY) != 0) {
+		vtputc('%');
+		vtputc('%');
+	} else if ((bp->b_flag & BFCHG) != 0) {	/* "*" if changed.	 */
 		vtputc('*');
 		vtputc('*');
-	} else {
+ 	} else {
 		vtputc('-');
 		vtputc('-');
 	}

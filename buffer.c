@@ -10,6 +10,22 @@
 
 static BUFFER  *makelist(void);
 
+int
+togglereadonly(void)
+{
+	if (!(curbp->b_flag & BFREADONLY)) {
+		curbp->b_flag |= BFREADONLY;
+		ewprintf("Now readonly");
+	} else {
+		curbp->b_flag &=~ BFREADONLY;
+		if (curbp->b_flag & BFCHG)
+			ewprintf("Warning: Buffer was modified");
+	}
+	curwp->w_flag |= WFMODE;
+
+	return(1);
+}
+
 /*
  * Attach a buffer to a window. The values of dot and mark come
  * from the buffer if the use count is 0. Otherwise, they come
@@ -161,7 +177,6 @@ killbuffer(int f, int n)
 		free_undo_record(rec);
 		rec = next;
 	}
-
 	free((char *)bp->b_bname);		/* Release name block	 */
 	free(bp);				/* Release buffer block */
 	return TRUE;
@@ -273,7 +288,7 @@ makelist(void)
 		if (addlinef(blp, "%c%c%c %-*.*s%c%-6d %-*s",
 		    (bp == curbp) ? '.' : ' ',	/* current buffer ? */
 		    ((bp->b_flag & BFCHG) != 0) ? '*' : ' ',	/* changed ? */
-		    ' ',			/* no readonly buffers yet */
+		    ((bp->b_flag & BFREADONLY) != 0) ? ' ' : '*',
 		    w - 5,		/* four chars already written */
 		    w - 5,		/* four chars already written */
 		    bp->b_bname,	/* buffer name */
