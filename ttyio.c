@@ -148,6 +148,7 @@ ttflush()
 		buf += written;
 		nobuf -= written;
 	}
+	nobuf = 0;
 }
 
 /*
