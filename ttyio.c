@@ -162,7 +162,7 @@ ttgetc(void)
 	int	ret;
 
 	do {
-		ret = read(0, &c, 1);
+		ret = read(STDIN_FILENO, &c, 1);
 		if (ret == -1 && errno == EINTR) {
 			if (winch_flag) {
 				refresh(0, 0);
