@@ -110,7 +110,10 @@ notnum:
 				if (nfiles == 1)
 					splitwind(0, 1);
 
-				curbp = findbuffer(cp);
+				if ((curbp = findbuffer(cp)) == NULL) {
+					vttidy();
+					errx(1, "Can't find current buffer!");
+				}
 				(void)showbuffer(curbp, curwp, 0);
 				if ((status = readin(cp)) != TRUE)
 					killbuffer(curbp);

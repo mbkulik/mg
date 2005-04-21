@@ -128,6 +128,8 @@ findbuffer(char *fname)
 			return (bp);
 	}
 	i = strlcpy(bname, basename(fname), sizeof(bname));
+	if (i >= sizeof(bname))
+		return NULL;  
 	remain = sizeof(bname) - i;
 	for (count = 2; bfind(bname, FALSE) != NULL; count++)
 		snprintf(&bname[i], remain, "<%d>", count);
