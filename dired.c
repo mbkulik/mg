@@ -311,7 +311,7 @@ d_copy(int f, int n)
 	    EFNEW | EFCR, basename(frname))) == NULL)
 		return (ABORT);
 	else if (bufp[0] == '\0')
-		return (0);
+		return (FALSE);
 	stat = (copy(frname, toname) >= 0) ? TRUE : FALSE;
 	if (stat != TRUE)
 		return (stat);
