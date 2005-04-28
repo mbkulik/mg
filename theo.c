@@ -170,7 +170,8 @@ static const char *talk[] = {
 	"Linux is fucking POO, not just bad, bad REALLY REALLY BAD",
 	"openbsd development is slow because lots of developers have shrunken balls",
 	"penguins are not much more than chickens that swim.",
-	"i am a packet sniffing fool, let me wipe my face with my own poo"
+	"i am a packet sniffing fool, let me wipe my face with my own poo",
+	"they are manual pages, not tea time chit-chats"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
