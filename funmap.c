@@ -289,7 +289,7 @@ function_name(PF fun)
  * List possible function name completions.
  */
 LIST *
-complete_function_list(const char *fname, int c)
+complete_function_list(const char *fname)
 {
 	struct funmap	*fn;
 	LIST		*head, *el;

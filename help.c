@@ -186,7 +186,7 @@ apropos_command(int f, int n)
 	if (bclear(bp) == FALSE)
 		return (FALSE);
 
-	fnames = complete_function_list("", NULL);
+	fnames = complete_function_list("");
 	for (el = fnames; el != NULL; el = el->l_next) {
 		char buf[32];
 
