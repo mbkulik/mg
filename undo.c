@@ -27,8 +27,6 @@
 #include "def.h"
 #include "kbd.h"
 
-#include <sys/queue.h>
-
 #define MAX_FREE_RECORDS	32
 
 /*

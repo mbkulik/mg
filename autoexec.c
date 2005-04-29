@@ -5,8 +5,6 @@
 #include "def.h"
 #include "funmap.h"
 
-#include <sys/queue.h>
-
 #include <fnmatch.h>
 
 struct autoexec {
