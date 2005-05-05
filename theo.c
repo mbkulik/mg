@@ -172,7 +172,8 @@ static const char *talk[] = {
 	"penguins are not much more than chickens that swim.",
 	"i am a packet sniffing fool, let me wipe my face with my own poo",
 	"they are manual pages, not tea time chit-chats",
-	"Whiners.  They scale really well."
+	"Whiners.  They scale really well.",
+	"in your world, you would have a checklist of 50 fucking workarounds just to make a coffee."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
