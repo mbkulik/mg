@@ -581,9 +581,9 @@ bufferinsert(int f, int n)
 	/* Get buffer to use from user */
 	if (curbp->b_altb != NULL)
 		bufp = eread("Insert buffer: (default %s) ", bufn, NBUFN,
-		    EFNEW | EFBUF, &(curbp->b_altb->b_bname), NULL);
+		    EFNEW | EFBUF, curbp->b_altb->b_bname);
 	else
-		bufp = eread("Insert buffer: ", bufn, NBUFN, EFNEW | EFBUF, NULL);
+		bufp = eread("Insert buffer: ", bufn, NBUFN, EFNEW | EFBUF);
 	if (bufp == NULL)
 		return (ABORT);
 	if (bufp[0] == '\0' && curbp->b_altb != NULL)
