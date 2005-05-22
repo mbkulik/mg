@@ -173,7 +173,8 @@ static const char *talk[] = {
 	"i am a packet sniffing fool, let me wipe my face with my own poo",
 	"they are manual pages, not tea time chit-chats",
 	"Whiners.  They scale really well.",
-	"in your world, you would have a checklist of 50 fucking workarounds just to make a coffee."
+	"in your world, you would have a checklist of 50 fucking workarounds just to make a coffee.",
+	"for once, I have nothing to say."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
