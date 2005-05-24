@@ -174,7 +174,8 @@ static const char *talk[] = {
 	"they are manual pages, not tea time chit-chats",
 	"Whiners.  They scale really well.",
 	"in your world, you would have a checklist of 50 fucking workarounds just to make a coffee.",
-	"for once, I have nothing to say."
+	"for once, I have nothing to say.",
+	"You have no idea how fucked we are"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
