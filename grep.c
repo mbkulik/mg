@@ -108,6 +108,8 @@ compile(int f, int n)
 	(void)strlcpy(prompt, compile_last_command, sizeof(prompt));
 	if ((bufp = eread("Compile command: ", prompt, NFILEN, EFDEF|EFNEW|EFCR)) == NULL)
 		return (ABORT);
+	if (savebuffers(f, n) == ABORT)
+		return (ABORT);
 	(void)strlcpy(compile_last_command, bufp, sizeof(compile_last_command));
 
 	(void)snprintf(command, sizeof(command), "%s 2>&1", bufp);
