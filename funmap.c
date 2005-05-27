@@ -175,6 +175,7 @@ static struct funmap functnames[] = {
 	{showcwdir, "pwd",},
 #endif /* !NO_DIR */
 	{queryrepl, "query-replace",},
+	{replstr, "replace-string",},
 #ifdef REGEX
 	{re_queryrepl, "query-replace-regexp",},
 #endif /* REGEX */

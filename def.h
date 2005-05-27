@@ -577,6 +577,7 @@ int	 re_forwsearch(int, int);
 int	 re_backsearch(int, int);
 int	 re_searchagain(int, int);
 int	 re_queryrepl(int, int);
+int	 replstr(int, int);
 int	 setcasefold(int, int);
 int	 delmatchlines(int, int);
 int	 delnonmatchlines(int, int);

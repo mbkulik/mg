@@ -553,6 +553,44 @@ stopsearch:
 }
 
 /*
+ * Replace string globally without individual prompting.
+ */
+/* ARGSUSED */
+int
+replstr(int f, int n)
+{
+	char	news[NPAT];
+	int	s, plen, rcnt = 0;
+	char	*r;
+
+	if ((s = readpattern("Replace string")) != TRUE)
+		return s;
+
+	r = ereply("Replace string %s with: ", news, NPAT, pat);
+	if (r == NULL)
+		 return (ABORT);
+
+	plen = strlen(pat);
+	while (forwsrch() == TRUE) {
+		update();
+		if (lreplace((RSIZE)plen, news, f) == FALSE)
+			return (FALSE);
+
+		rcnt++;
+	}
+
+	curwp->w_flag |= WFHARD;
+	update();
+
+	if (rcnt == 1)
+		ewprintf("(1 replacement done)");
+	else
+		ewprintf("(%d replacements done)", rcnt);
+
+	return (TRUE);
+}
+
+/*
  * This routine does the real work of a forward search.  The pattern is sitting
  * in the external variable "pat".  If found, dot is updated, the window system
  * is notified of the change, and TRUE is returned.  If the string isn't found,
