@@ -695,7 +695,7 @@ readpattern(char *prompt)
 	char	tpat[NPAT], *rep;
 	int	retval;
 
-	if (tpat[0] == '\0')
+	if (pat[0] == '\0')
 		rep = ereply("%s: ", tpat, NPAT, prompt);
 	else
 		rep = ereply("%s: (default %s) ", tpat, NPAT, prompt, pat);
