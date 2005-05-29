@@ -235,8 +235,7 @@ undo_add_insert(LINE *lp, int offset, int size)
 	memmove(&rec->region, &reg, sizeof(REGION));
 	rec->content = NULL;
 
-	if (lastrectype() != INSERT)
-		undo_add_boundary();
+	undo_add_boundary();
 
 	LIST_INSERT_HEAD(&curwp->w_undo, rec, next);
 
