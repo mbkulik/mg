@@ -74,6 +74,14 @@ filevisit(int f, int n)
 }
 
 int
+filevisitalt(int f, int n)
+{
+	if (killbuffer(curbp) == ABORT)
+		return (ABORT);
+	return (filevisit(f, n));
+}
+
+int
 filevisitro(int f, int n)
 {
 	int error;

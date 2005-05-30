@@ -331,6 +331,7 @@ int	 d_create_directory(int, int);
 /* file.c X */
 int	 fileinsert(int, int);
 int	 filevisit(int, int);
+int	 filevisitalt(int, int);
 int	 filevisitro(int, int);
 int	 poptofile(int, int);
 BUFFER  *findbuffer(char *);

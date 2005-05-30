@@ -118,6 +118,7 @@ static struct funmap functnames[] = {
 	{fillpara, "fill-paragraph",},
 	{filevisit, "find-file",},
 	{filevisitro, "find-file-read-only",},
+	{filevisitalt, "find-alternate-file",},
 	{poptofile, "find-file-other-window",},
 	{forwchar, "forward-char",},
 	{gotoeop, "forward-paragraph",},
