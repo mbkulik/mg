@@ -97,6 +97,7 @@ typedef int	(*PF)(int, int);	/* generally useful type */
 #define EFNEW	0x0008		/* New prompt.			 */
 #define EFCR	0x0010		/* Echo CR at end; last read.	 */
 #define EFDEF	0x0020		/* buffer contains default args	 */
+#define EFNUL	0x0040		/* Null Minibuffer OK		 */
 
 /*
  * Flags for "ldelete"/"kinsert"
