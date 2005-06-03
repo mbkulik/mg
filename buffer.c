@@ -123,6 +123,7 @@ killbuffer(BUFFER *bp)
 	BUFFER *bp1;
 	BUFFER *bp2;
 	MGWIN  *wp;
+	int s;
 
 	/*
 	 * Find some other buffer to display. Try the alternate buffer,
@@ -141,8 +142,8 @@ killbuffer(BUFFER *bp)
 				return (FALSE);
 		}
 	}
-	if (bclear(bp) != TRUE)
-		return (TRUE);
+	if ((s = bclear(bp)) != TRUE)
+		return (s);
 	for (wp = wheadp; bp->b_nwnd > 0; wp = wp->w_wndp) {
 		if (wp->w_bufp == bp) {
 			bp2 = bp1->b_altb;	/* save alternate buffer */
