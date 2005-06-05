@@ -305,8 +305,8 @@ setprefix(int f, int n)
 	if (prefix_string[0] == '\0')
 		rep = ereply("Prefix string: ", buf, sizeof(buf));
 	else
-		rep = ereply("Prefix string (default %s): ",
-		    buf, sizeof(buf), prefix_string);
+		rep = eread("Prefix string (default %s): ",
+		    buf, sizeof(buf), EFNUL | EFNEW | EFCR, prefix_string);
 	if (rep != NULL && *rep != '\0') {
 		(void)strlcpy(prefix_string, rep, sizeof(prefix_string));
 		retval = TRUE;
