@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  *		Search commands.
  * The functions in this file implement the search commands (both plain and

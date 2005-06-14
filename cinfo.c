@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  *		Character class tables.
  * Do it yourself character classification

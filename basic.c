@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain */
+
 /*
  *		Basic cursor motion commands.
  *

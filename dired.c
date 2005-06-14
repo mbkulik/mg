@@ -1,7 +1,10 @@
 /*	$OpenBSD$	*/
 
-/* dired module for mg 2a	 */
-/* by Robert A. Larson		 */
+/* This file is in the public domain. */
+
+/* dired module for mg 2a
+ * by Robert A. Larson
+ */
 
 #include "def.h"
 #include "kbd.h"

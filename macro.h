@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /* definitions for keyboard macros */
 
 #define MAXMACRO 256		/* maximum functs in a macro */

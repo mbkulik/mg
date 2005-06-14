@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  *		Region based commands.
  * The routines in this file deal with the region, that magic space between

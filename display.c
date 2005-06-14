@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  * The functions in this file handle redisplay. The
  * redisplay system knows almost nothing about the editing

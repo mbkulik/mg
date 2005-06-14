@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  * Code for dealing with paragraphs and filling. Adapted from MicroEMACS 3.6
  * and GNU-ified by mwm@ucbvax.	 Several bug fixes by blarson@usc-oberon.

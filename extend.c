@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  *	Extended (M-X) commands, rebinding, and	startup file processing.
  */

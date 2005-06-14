@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  * kbd.h: type definitions for symbol.c and kbd.c for mg experimental
  */

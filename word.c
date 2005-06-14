@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  *		Word mode commands.
  * The routines in this file implement commands that work word at a time.

@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  * Spawn.  Actually just suspends Mg.
  * Assumes POSIX job control.

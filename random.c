@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  *		Assorted commands.
  * This file contains the command processors for a large assortment of

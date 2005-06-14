@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  * Name:	MG 2a
  *		Terminfo keyboard driver using key files

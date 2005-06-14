@@ -1,4 +1,7 @@
 /*	$OpenBSD$	*/
+
+/* This file is in the public domain. */
+
 /*
  *	Echo line reading and writing.
  *

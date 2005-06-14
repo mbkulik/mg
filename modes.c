@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  * Commands to toggle modes.   Without an argument, these functions will
  * toggle the given mode.  A negative or zero argument will turn the mode

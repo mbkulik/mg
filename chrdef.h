@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 /*
  * sys/default/chardef.h: character set specific #defines for Mg 2a
  * Warning: System specific ones exist

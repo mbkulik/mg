@@ -1,5 +1,7 @@
 /*	$OpenBSD$	*/
 
+/* This file is in the public domain. */
+
 #ifndef TTYDEF_H
 #define TTYDEF_H
 
