@@ -532,7 +532,8 @@ queryrepl(int f, int n)
 
 	if ((s = readpattern("Query replace")) != TRUE)
 		return (s);
-	if ((rep = ereply("Query replace %s with: ", news, NPAT, pat)) == NULL)
+	if ((rep = eread("Query replace %s with: ", news, NPAT,
+	    EFNUL | EFNEW | EFCR, pat)) == NULL)
 		return (ABORT);
 	else if (rep[0] == '\0')
 		news[0] = '\0';
@@ -605,7 +606,8 @@ replstr(int f, int n)
 	if ((s = readpattern("Replace string")) != TRUE)
 		return s;
 
-	r = ereply("Replace string %s with: ", news, NPAT, pat);
+	r = eread("Replace string %s with: ", news, NPAT,
+	    EFNUL | EFNEW | EFCR,  pat);
 	if (r == NULL)
 		 return (ABORT);
 
