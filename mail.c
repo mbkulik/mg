@@ -60,9 +60,10 @@ mail_set_limit(int f, int n)
 	if ((f & FFARG) != 0) {
 		limit = n;
 	} else {
-		if ((rep = ereply("Margin: ", buf, sizeof(buf))) == NULL)
+		if ((rep = eread("Margin: ", buf, sizeof(buf),
+		    EFNEW | EFCR)) == NULL)
 			return (ABORT);
-		else if (*rep == '\0')
+		else if (rep[0] == '\0')
 			return (FALSE);
 		limit = atoi(rep);
 	}

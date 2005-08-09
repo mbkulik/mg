@@ -86,11 +86,13 @@ auto_execute(int f, int n)
 	char	patbuf[128], funcbuf[128], *patp, *funcp;
 	int	s;
 
-	if ((patp = ereply("Filename pattern: ", patbuf, sizeof(patbuf))) == NULL)
+	if ((patp = eread("Filename pattern: ", patbuf, sizeof(patbuf),
+	    EFNEW | EFCR)) == NULL)
 		return (ABORT);
 	else if (patp[0] == '\0')
 		return (FALSE);
-	if ((funcp = ereply("Execute: ", funcbuf, sizeof(funcbuf))) == NULL)
+	if ((funcp = eread("Execute: ", funcbuf, sizeof(funcbuf),
+	    EFNEW | EFCR)) == NULL)
 		return (ABORT);
 	else if (funcp[0] == '\0')
 		return (FALSE);

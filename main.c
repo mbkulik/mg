@@ -203,7 +203,7 @@ quit(int f, int n)
 	if ((s = anycb(FALSE)) == ABORT)
 		return (ABORT);
 	if (s == FALSE
-	    || eyesno("Some modified buffers exist, really exit") == TRUE) {
+	    || eyesno("Modified buffers exist; really exit") == TRUE) {
 		vttidy();
 #ifdef SYSCLEANUP
 		SYSCLEANUP;

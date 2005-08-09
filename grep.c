@@ -82,10 +82,11 @@ grep(int f, int n)
 	MGWIN	*wp;
 
 	(void)strlcpy(prompt, "grep -n ", sizeof(prompt));
-	if ((bufp = eread("Run grep: ", prompt, NFILEN, EFDEF|EFNEW|EFCR))
-	    == NULL)
+	if ((bufp = eread("Run grep: ", prompt, NFILEN,
+	    EFDEF | EFNEW | EFCR)) == NULL)
 		return (ABORT);
-
+	else if (bufp[0] == '\0')
+		return (FALSE);
 	(void)snprintf(command, sizeof(command), "%s /dev/null", bufp);
 
 	if ((bp = compile_mode("*grep*", command)) == NULL)
@@ -106,8 +107,11 @@ compile(int f, int n)
 	MGWIN	*wp;
 
 	(void)strlcpy(prompt, compile_last_command, sizeof(prompt));
-	if ((bufp = eread("Compile command: ", prompt, NFILEN, EFDEF|EFNEW|EFCR)) == NULL)
+	if ((bufp = eread("Compile command: ", prompt, NFILEN,
+	    EFDEF | EFNEW | EFCR)) == NULL)
 		return (ABORT);
+	else if (bufp[0] == '\0')
+		return (FALSE);
 	if (savebuffers(f, n) == ABORT)
 		return (ABORT);
 	(void)strlcpy(compile_last_command, bufp, sizeof(compile_last_command));
@@ -162,8 +166,10 @@ gid(int f, int n)
 	prompt[j] = '\0';
 
 	if ((bufp = eread("Run gid (with args): ", prompt, NFILEN,
-	    (j ? EFDEF : 0)|EFNEW|EFCR)) == NULL)
+	    (j ? EFDEF : 0) | EFNEW | EFCR)) == NULL)
 		return (ABORT);
+	else if (bufp[0] == '\0')
+		return (FALSE);
 	(void)snprintf(command, sizeof(command), "gid %s", prompt);
 
 	if ((bp = compile_mode("*gid*", command)) == NULL)

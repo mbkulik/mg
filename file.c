@@ -52,7 +52,8 @@ filevisit(int f, int n)
 	else
 		fname[0] = '\0';
 
-	bufp = eread("Find file: ", fname, NFILEN, EFNEW | EFCR | EFFILE | EFDEF);
+	bufp = eread("Find file: ", fname, NFILEN,
+	    EFNEW | EFCR | EFFILE | EFDEF);
 	if (bufp == NULL)
 		return (ABORT);
 	else if (bufp[0] == '\0')

@@ -439,11 +439,9 @@ gotoline(int f, int n)
 	long   nl;
 
 	if (!(f & FFARG)) {
-		if ((bufp = ereply("Goto line: ", buf, sizeof(buf))) == NULL)
+		if ((bufp = eread("Goto line: ", buf, sizeof(buf),
+		    EFNUL | EFNEW | EFCR)) == NULL)
 			return (ABORT);
-		else if (bufp[0] == '\0')
-			return (FALSE);
-
 		nl = strtol(bufp, &tmp, 10);
 		if (bufp[0] == '\0' || *tmp != '\0') {
 			ewprintf("Invalid number");

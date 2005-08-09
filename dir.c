@@ -37,10 +37,12 @@ changedir(int f, int n)
 {
 	char	bufc[NPAT], *bufp;
 
-	if ((bufp = ereply("Change default directory: ", bufc, NPAT)) == NULL)
+	(void)strlcpy(bufc, wdir, sizeof(bufc));
+	if ((bufp = eread("Change default directory: ", bufc, NPAT,
+	    EFDEF | EFNEW | EFCR)) == NULL)
 		return (ABORT);
-	if (bufc[0] == '\0')
-		(void)strlcpy(bufc, wdir, sizeof(bufc));
+	else if (bufp[0] == '\0')
+		return (FALSE);
 	if (chdir(bufc) == -1) {
 		ewprintf("Can't change dir to %s", bufc);
 		return (FALSE);
