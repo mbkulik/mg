@@ -176,7 +176,8 @@ static const char *talk[] = {
 	"in your world, you would have a checklist of 50 fucking workarounds just to make a coffee.",
 	"for once, I have nothing to say.",
 	"You have no idea how fucked we are",
-	"You can call it fart if you want to."
+	"You can call it fart if you want to.",
+	"wavelan is a battle field"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
