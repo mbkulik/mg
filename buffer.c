@@ -216,10 +216,10 @@ static struct KEYMAPE (2 + IMAPEXT) listbufmap = {
 	rescan,
 	{
 		{
-			'1', '1', listbuf_one, NULL
+			CCHR('M'), CCHR('M'), listbuf_pf, NULL
 		},
 		{
-			CCHR('M'), CCHR('M'), listbuf_pf, NULL
+			'1', '1', listbuf_one, NULL
 		}
 	}
 };
