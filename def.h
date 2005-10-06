@@ -596,6 +596,7 @@ int	 undo_enable(int);
 int	 undo_add_boundary(void);
 int	 undo_add_insert(LINE *, int, int);
 int	 undo_add_delete(LINE *, int, int);
+void	 undo_no_boundary(int);
 int	 undo_add_change(LINE *, int, int);
 int	 undo(int, int);
 
