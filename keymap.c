@@ -82,7 +82,7 @@ static PF cXcL[] = {
 	deblank,		/* ^O */
 	rescan,			/* ^P */
 	rescan,			/* ^Q */
-	rescan,			/* ^R */
+	filevisitro,		/* ^R */
 	filesave,		/* ^S */
 	rescan,			/* ^T */
 	upperregion,		/* ^U */
