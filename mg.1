@@ -62,13 +62,15 @@ delete current character
 interactive search forward
 .It ^R
 interactive search backwards
+.It M-%
+interactive search-and-replace.
 .It ^O
 Open a new line at cursor position
 .It ^T
 transpose characters
 .It ^U
 Repeat next command 4 times
-(can be cascaded i.e. ^u^u^f will move 16 characters forward)
+(can be cascaded i.e. ^U^U^F will move 16 characters forward)
 .Pp
 .It ^K
 kill to end of line (placing into kill buffer)
