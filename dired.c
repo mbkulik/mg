@@ -370,11 +370,12 @@ d_rename(int f, int n)
 void
 reaper(int signo __attribute__((unused)))
 {
+	int	save_errno = errno, status;
 	pid_t	ret;
-	int	status;
 
 	while ((ret = waitpid(-1, &status, WNOHANG)) >= 0)
 		;
+	errno = save_errno;
 }
 
 /*
