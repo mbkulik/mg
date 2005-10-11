@@ -30,7 +30,7 @@
 #include <ctype.h>
 
 static int	 compile_goto_error(int, int);
-static int	 next_error(int, int);
+int		 next_error(int, int);
 static int	 grep(int, int);
 static int	 compile(int, int);
 static int	 gid(int, int);
@@ -281,7 +281,7 @@ fail:
 	return (FALSE);
 }
 
-static int
+int
 next_error(int f, int n)
 {
 	if (compile_win == NULL || compile_buffer == NULL) {

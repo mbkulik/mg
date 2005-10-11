@@ -113,7 +113,7 @@ static PF cXeq[] = {
 static PF cXcar[] = {
 	enlargewind,		/* ^ */
 	rescan,			/* _ */
-	rescan,			/* ` */
+	next_error,		/* ` */
 	rescan,			/* a */
 	usebuffer,		/* b */
 	rescan,			/* c */
