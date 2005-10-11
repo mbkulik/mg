@@ -368,7 +368,7 @@ complt(int flags, int c, char *buf, size_t nbuf, int cpos)
 	if (nhits == 0)
 		msg = " [No match]";
 	else if (nhits > 1 && nxtra == 0)
-		msg = " [Ambiguous]";
+		msg = " [Ambiguous. Ctrl-G to cancel]";
 	else {
 		/*
 		 * Being lazy - ought to check length, but all things
