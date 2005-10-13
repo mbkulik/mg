@@ -103,7 +103,7 @@ main(int argc, char **argv)
 
 	for (nfiles = 0, i = 0; i < argc; i++) {
 		if (argv[i][0] == '+' && strlen(argv[i]) >= 2) {
-			int lval;
+			long long lval;
 			const char *errstr;
 
 			lval = strtonum(&argv[i][1], INT_MIN, INT_MAX, &errstr);
