@@ -63,7 +63,12 @@ main(int argc, char **argv)
 	{
 		extern void grep_init(void);
 		extern void theo_init(void);
+		extern void mail_init(void);
+#ifndef NO_DIRED
+		extern void dired_init(void);
 
+		dired_init();
+#endif /* !NO_DIRED */
 		grep_init();
 		theo_init();
 		mail_init();

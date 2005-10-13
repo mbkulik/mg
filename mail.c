@@ -10,6 +10,7 @@
 #include "kbd.h"
 #include "funmap.h"
 
+void		 mail_init(void);
 static int	 fake_self_insert(int, int);
 static int	 mail(int, int);
 

@@ -456,6 +456,7 @@ d_makename(LINE *lp, char *fn, int len)
 	strlcpy(fn, curbp->b_fname, len);
 	p = lp->l_text;
 	ep = lp->l_text + llength(lp);
+	p++; /* skip action letter, if any */
 	for (i = 0; i < NAME_FIELD; i++) {
 		while (p < ep && isspace(*p))
 			p++;
