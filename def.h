@@ -37,6 +37,7 @@ typedef int	(*PF)(int, int);	/* generally useful type */
 #define NSRCH	128		/* Undoable search commands.	 */
 #define NXNAME	64		/* Length, extended command.	 */
 #define NKNAME	20		/* Length, key names.		 */
+#define NTIME	50		/* Length, timestamp string.	 */
 /*
  * Universal.
  */
