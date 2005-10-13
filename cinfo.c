@@ -106,9 +106,6 @@ keyname(char *cp, size_t len, int k)
 	case CCHR('I'):
 		np = "TAB";
 		break;
-	case CCHR('J'):
-		np = "LFD";
-		break;		/* yuck, but that's what GNU calls it */
 	case CCHR('M'):
 		np = "RET";
 		break;

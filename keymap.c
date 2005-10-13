@@ -81,7 +81,7 @@ static PF cXcL[] = {
 	rescan,			/* ^N */
 	deblank,		/* ^O */
 	rescan,			/* ^P */
-	rescan,			/* ^Q */
+	togglereadonly,		/* ^Q */
 	filevisitro,		/* ^R */
 	filesave,		/* ^S */
 	rescan,			/* ^T */
