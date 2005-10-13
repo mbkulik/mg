@@ -15,17 +15,16 @@ static BUFFER  *makelist(void);
 int
 togglereadonly(int f, int n)
 {
-	if (!(curbp->b_flag & BFREADONLY)) {
+	if (!(curbp->b_flag & BFREADONLY))
 		curbp->b_flag |= BFREADONLY;
-		ewprintf("Now readonly");
-	} else {
+	else {
 		curbp->b_flag &=~ BFREADONLY;
 		if (curbp->b_flag & BFCHG)
 			ewprintf("Warning: Buffer was modified");
 	}
 	curwp->w_flag |= WFMODE;
 
-	return (1);
+	return (TRUE);
 }
 
 /*
@@ -386,7 +385,7 @@ cleanup:
 }
 
 /*
- * The argument "text" points to a format string.  Append this line to the
+ * The argument "fmt" points to a format string.  Append this line to the
  * buffer. Handcraft the EOL on the end.  Return TRUE if it worked and
  * FALSE if you ran out of room.
  */
