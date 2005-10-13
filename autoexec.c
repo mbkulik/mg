@@ -56,7 +56,7 @@ find_autoexec(const char *fname)
 int
 add_autoexec(const char *pattern, const char *func)
 {
-	PF 		 fp;
+	PF		 fp;
 	struct autoexec *ae;
 
 	if (!ready) {

@@ -446,7 +446,7 @@ static struct KEYMAPE (1 + IMAPEXT) overwmap = {
 
 /*
  * The basic (root) keyboard map
- */  
+ */
 MAPS	fundamental_mode = { (KEYMAP *)&fundmap, "fundamental" };
 
 /*

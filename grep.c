@@ -218,7 +218,7 @@ compile_mode(char *name, char *command, char *path)
 	char	*buf;
 	size_t	 len;
 	int	 ret;
-	char 	*wdir, cwd[NFILEN];
+	char	*wdir, cwd[NFILEN];
 	char	 timestr[NTIME];
 	time_t	 t;
 
@@ -235,7 +235,7 @@ compile_mode(char *name, char *command, char *path)
 	if (chdir(path) == -1) {
 		ewprintf("Can't change dir to %s", path);
 		return (NULL);
-	}	
+	}
 	if ((pipe = popen(command, "r")) == NULL) {
 		ewprintf("Problem opening pipe");
 		return (NULL);
@@ -269,7 +269,7 @@ compile_mode(char *name, char *command, char *path)
 	if (chdir(cwd) == -1) {
 		ewprintf("Can't change dir back to %s", cwd);
 		return (NULL);
-	}	
+	}
 	return (bp);
 }
 

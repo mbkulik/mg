@@ -215,7 +215,7 @@ undo_add_boundary(void)
 
 	if (lastrectype() == BOUNDARY)
 		return (TRUE);
-	
+
 	rec = new_undo_record();
 	rec->type = BOUNDARY;
 
@@ -429,7 +429,7 @@ int
 undo(int f, int n)
 {
 	struct undo_rec	*ptr, *nptr;
-	int 		 done, rval;
+	int		 done, rval;
 	LINE		*lp;
 	int		 offset, save, dot;
 	static int	 nulled = FALSE;

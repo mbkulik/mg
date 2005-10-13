@@ -588,7 +588,7 @@ lreplace(RSIZE plen, char *st, int f)
 	}
 	undo_add_boundary();
 	undo_no_boundary(TRUE);
-	
+
 	(void)backchar(FFARG | FFRAND, (int)plen);
 	(void)ldelete(plen, KNONE);
 
