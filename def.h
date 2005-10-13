@@ -429,6 +429,7 @@ int	 copy(char *, char *);
 BUFFER  *dired_(char *);
 int	 d_makename(LINE  *, char *, int);
 LIST	*make_file_list(char *);
+int	 fisdir(const char *);
 
 /* kbd.c X */
 int	 do_meta(int, int);

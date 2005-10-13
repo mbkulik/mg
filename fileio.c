@@ -38,7 +38,7 @@ ffropen(const char *fn, BUFFER *bp)
 	}
 
 	/* If 'fn' is a directory open it with dired. */
-	if ((stat(fn, &statbuf) == 0) && S_ISDIR(statbuf.st_mode))
+	if (fisdir(fn) == TRUE)
 #ifdef NO_DIRED
 		return (FIOERR);
 #else
@@ -620,4 +620,22 @@ make_file_list(char *buf)
 	closedir(dirp);
 
 	return (last);
+}
+
+/*
+ * Test if a supplied filename refers to a directory
+ * Returns ABORT on error, TRUE if directory. FALSE otherwise
+ */
+int
+fisdir(const char *fname)
+{
+	struct stat	statbuf;
+
+	if (stat(fname, &statbuf) != 0)
+		return (ABORT);
+
+	if (S_ISDIR(statbuf.st_mode))
+		return (TRUE);
+
+	return (FALSE);
 }

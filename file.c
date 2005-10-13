@@ -6,8 +6,9 @@
  *	File commands.
  */
 
-#include <libgen.h>
 #include "def.h"
+
+#include <libgen.h>
 
 /*
  * Insert a file into the current buffer.  Real easy - just call the
@@ -205,7 +206,7 @@ int
 readin(char *fname)
 {
 	MGWIN	*wp;
-	int	 status, i;
+	int	 status, i, ro = FALSE;
 	PF	*ael;
 
 	/* might be old */
@@ -236,8 +237,17 @@ readin(char *fname)
 		}
 	}
 
-	/* We need to set the READONLY flag after we insert the file. */
+	/*
+	 * We need to set the READONLY flag after we insert the file,
+	 * unless the file is a directory.
+	 */
 	if (access(fname, W_OK) && errno != ENOENT)
+		ro = TRUE;
+#ifndef NO_DIRED
+	if (fisdir(fname) == TRUE)
+		ro = TRUE;
+#endif
+	if (ro == TRUE)
 		curbp->b_flag |= BFREADONLY;
 	else
 		curbp->b_flag &=~ BFREADONLY;
