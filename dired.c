@@ -404,6 +404,7 @@ reaper(int signo __attribute__((unused)))
 /*
  * Pipe the currently selected file through a shell command.
  */
+/* ARGSUSED */
 int
 d_shell_command(int f, int n)
 {
@@ -491,6 +492,7 @@ d_shell_command(int f, int n)
 	return (TRUE);
 }
 
+/* ARGSUSED */
 int
 d_create_directory(int f, int n)
 {

@@ -79,6 +79,7 @@ mail_init(void)
 	maps_add((KEYMAP *)&mailmap, "mail-mode");
 }
 
+/* ARGSUSED */
 static int
 mail(int f, int n)
 {

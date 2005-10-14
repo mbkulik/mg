@@ -12,6 +12,7 @@
 
 static BUFFER  *makelist(void);
 
+/* ARGSUSED */
 int
 togglereadonly(int f, int n)
 {

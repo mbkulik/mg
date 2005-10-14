@@ -508,12 +508,14 @@ define_key(int f, int n)
 	return (dobind(mp, buf, FALSE));
 }
 
+/* ARGSUSED */
 int
 unbindtokey(int f, int n)
 {
 	return (dobind(fundamental_map, "Global unset key: ", TRUE));
 }
 
+/* ARGSUSED */
 int
 localunbind(int f, int n)
 {

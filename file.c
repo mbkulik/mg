@@ -82,6 +82,7 @@ filevisit(int f, int n)
  * buffer is killed before the switch. If the kill fails, or is aborted,
  * revert to the original file.
  */
+/* ARGSUSED */
 int
 filevisitalt(int f, int n)
 {

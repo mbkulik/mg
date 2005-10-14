@@ -80,6 +80,7 @@ add_autoexec(const char *pattern, const char *func)
 	return (TRUE);
 }
 
+/* ARGSUSED */
 int
 auto_execute(int f, int n)
 {

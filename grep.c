@@ -78,6 +78,7 @@ grep_init(void)
 	maps_add((KEYMAP *)&compilemap, "compile");
 }
 
+/* ARGSUSED */
 static int
 grep(int f, int n)
 {
@@ -111,6 +112,7 @@ grep(int f, int n)
 	return (TRUE);
 }
 
+/* ARGSUSED */
 static int
 compile(int f, int n)
 {
@@ -149,6 +151,7 @@ compile(int f, int n)
 }
 
 /* id-utils foo. */
+/* ARGSUSED */
 static int
 gid(int f, int n)
 {
@@ -273,6 +276,7 @@ compile_mode(char *name, char *command, char *path)
 	return (bp);
 }
 
+/* ARGSUSED */
 static int
 compile_goto_error(int f, int n)
 {
@@ -330,6 +334,7 @@ fail:
 	return (FALSE);
 }
 
+/* ARGSUSED */
 int
 next_error(int f, int n)
 {
