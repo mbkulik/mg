@@ -10,6 +10,8 @@
 #include "kbd.h"
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/resource.h>
 #include <sys/wait.h>
 
 #include <ctype.h>
@@ -393,9 +395,8 @@ void
 reaper(int signo __attribute__((unused)))
 {
 	int	save_errno = errno, status;
-	pid_t	ret;
 
-	while ((ret = waitpid(-1, &status, WNOHANG)) >= 0)
+	while (waitpid(-1, &status, WNOHANG) >= 0)
 		;
 	errno = save_errno;
 }

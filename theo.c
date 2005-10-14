@@ -45,8 +45,6 @@ static struct KEYMAPE (1 + IMAPEXT) theomap = {
 	}
 };
 
-static BUFFER *tbuf;
-
 void
 theo_init(void)
 {
@@ -71,7 +69,7 @@ theo(int f, int n)
 	if ((wp = popbuf(bp)) == NULL)
 		return (FALSE);
 
-	tbuf = curbp = bp;
+	curbp = bp;
 	curwp = wp;
 	return (TRUE);
 }
