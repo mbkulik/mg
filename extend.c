@@ -29,7 +29,9 @@ static void	 fixmap(KEYMAP *, KEYMAP *, KEYMAP *);
 static int	 dobind(KEYMAP *, const char *, int);
 static char	*skipwhite(char *);
 static char	*parsetoken(char *);
+#ifdef	BINDKEY
 static int	 bindkey(KEYMAP **, const char *, KCHAR *, int);
+#endif /* BINDKEY */
 
 /*
  * Insert a string, mainly for use from macros (created by selfinsert).
