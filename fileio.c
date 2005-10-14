@@ -7,12 +7,14 @@
  */
 #include "def.h"
 
+
+#include <sys/types.h>
 #ifndef NO_DIRED
+#include <sys/time.h>
+#include <sys/resource.h>
 #include <sys/wait.h>
 #include "kbd.h"
 #endif /* !NO_DIRED */
-
-#include <sys/types.h>
 #include <limits.h>
 #include <sys/stat.h>
 #include <sys/dir.h>
