@@ -138,7 +138,7 @@ killbuffer(BUFFER *bp)
 		if (bp1 == NULL) {
 			/* only one buffer. see if it's *scratch* */
 			if (bp == bfind("*scratch*", FALSE))
-				return (FALSE);
+				return (TRUE);
 			/* create *scratch* for alternate buffer */
 			if ((bp1 = bfind("*scratch*", TRUE)) == NULL)
 				return (FALSE);
