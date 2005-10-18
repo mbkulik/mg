@@ -260,11 +260,24 @@ char *
 adjustname(const char *fn)
 {
 	static char	 fnb[MAXPATHLEN];
-	const char	*cp;
+	const char	*cp, *ep = NULL;
 	char		 user[LOGIN_NAME_MAX], path[MAXPATHLEN];
 	size_t		 ulen, plen;
 
 	path[0] = '\0';
+
+	cp = fn + strlen(fn) - 1;
+	for (; cp >= fn; cp--) {
+		if (ep && (*cp == '/')) {
+			fn = ep;
+			break;
+		}
+		if (*cp == '/' || *cp == '~')
+			ep = cp;
+		else
+			ep = NULL;
+	}
+
 	/* first handle tilde expansion */
 	if (fn[0] == '~') {
 		struct passwd *pw;
