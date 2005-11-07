@@ -10,6 +10,8 @@
 #include "kbd.h"
 #include "funmap.h"
 
+#include <ctype.h>
+
 #ifndef NO_MACRO
 #include "macro.h"
 #endif /* !NO_MACRO */
