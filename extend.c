@@ -23,6 +23,8 @@
 #endif /* !NO_STARTUP */
 #endif /* FKEYS */
 
+#include <ctype.h>
+
 static int	 remap(KEYMAP *, int, PF, KEYMAP *);
 static KEYMAP	*reallocmap(KEYMAP *);
 static void	 fixmap(KEYMAP *, KEYMAP *, KEYMAP *);
@@ -431,10 +433,13 @@ dobindkey(KEYMAP *map, const char *func, const char *str)
 
 	for (i = 0; *str && i < MAXKEY; i++) {
 		/* XXX - convert numbers w/ strol()? */
-		if (*str != '\\')
-			key.k_chars[i] = *str;
-		else {
+		if (*str == '^' && *(str + 1) !=  '\0') {
+			key.k_chars[i] = CCHR(toupper(*++str));
+		} else if (*str == '\\' && *(str + 1) != '\0') {
 			switch (*++str) {
+			case '^':
+				key.k_chars[i] = '^';
+				break;
 			case 't':
 			case 'T':
 				key.k_chars[i] = '\t';
@@ -451,8 +456,12 @@ dobindkey(KEYMAP *map, const char *func, const char *str)
 			case 'E':
 				key.k_chars[i] = CCHR('[');
 				break;
+			case '\\':
+				key.k_chars[i] = '\\';
+				break;
 			}
-		}
+		} else
+			key.k_chars[i] = *str;
 		str++;
 	}
 	key.k_count = i;
