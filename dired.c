@@ -7,8 +7,8 @@
  */
 
 #include "def.h"
-#include "kbd.h"
 #include "funmap.h"
+#include "kbd.h"
 
 #include <sys/types.h>
 #include <sys/stat.h>
