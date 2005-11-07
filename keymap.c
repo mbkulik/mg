@@ -117,11 +117,7 @@ static PF cXcar[] = {
 	rescan,			/* a */
 	usebuffer,		/* b */
 	rescan,			/* c */
-#ifndef NO_DIRED
-	dired,			/* d */
-#else /* !NO_DIRED */
 	rescan,			/* d */
-#endif /* !NO_DIRED */
 #ifndef NO_MACRO
 	executemacro,		/* e */
 #else /* !NO_MACRO */

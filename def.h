@@ -323,18 +323,6 @@ int	 showcwdir(int, int);
 
 #ifndef NO_DIRED
 /* dired.c */
-int	 dired(int, int);
-int	 d_otherwindow(int, int);
-int	 d_undel(int, int);
-int	 d_undelbak(int, int);
-int	 d_findfile(int, int);
-int	 d_ffotherwindow(int, int);
-int	 d_expunge(int, int);
-int	 d_copy(int, int);
-int	 d_del(int, int);
-int	 d_rename(int, int);
-int	 d_shell_command(int, int);
-int	 d_create_directory(int, int);
 BUFFER	*dired_(char *);
 #endif /* !NO_DIRED */
 
