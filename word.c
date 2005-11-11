@@ -85,7 +85,7 @@ upperword(int f, int n)
 		}
 		size = countfword();
 		undo_add_change(curwp->w_dotp, curwp->w_doto, size);
-		
+
 		while (inword() != FALSE) {
 			c = lgetc(curwp->w_dotp, curwp->w_doto);
 			if (ISLOWER(c) != FALSE) {

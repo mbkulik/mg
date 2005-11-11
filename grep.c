@@ -291,7 +291,7 @@ compile_goto_error(int f, int n)
 	compile_win = curwp;
 	compile_buffer = curbp;
 	last = lback(compile_buffer->b_linep);
- 
+
  retry:
 	/* last line is compilation result */
 	if (curwp->w_dotp == last)

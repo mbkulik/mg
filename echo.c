@@ -229,7 +229,7 @@ veread(const char *fp, char *buf, size_t nbuf, int flag, va_list ap)
 				continue;
 			}
 		}
-	 	switch (c) {
+		switch (c) {
 		case CCHR('A'): /* start of line */
 			while (cpos > 0) {
 				if (ISCTRL(buf[--cpos]) != FALSE) {

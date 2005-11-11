@@ -292,7 +292,7 @@ adjustname(const char *fn)
 		}
 		if (ulen == 0) /* ~/ or ~ */
 			(void)strlcpy(user, getlogin(), sizeof(user));
-		else { /* ~user/ or ~user */ 
+		else { /* ~user/ or ~user */
 			memcpy(user, &fn[1], ulen);
 			user[ulen] = '\0';
 		}
