@@ -496,6 +496,7 @@ d_shell_command(int f, int n)
 		dup2(fds[1], STDERR_FILENO);
 		execl("/bin/sh", "sh", "-c", bufp, (char *)NULL);
 		exit(1);
+		break;
 	default:
 		close(infd);
 		close(fds[1]);
