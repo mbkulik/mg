@@ -385,7 +385,10 @@ undo_dump(int f, int n)
 			strlcat(buf, "\"", sizeof(buf));
 		}
 		snprintf(tmp, sizeof(tmp), " [%d]", rec->region.r_size);
-		strlcat(buf, tmp, sizeof(buf));
+		if (strlcat(buf, tmp, sizeof(buf)) >= sizeof(buf)) {
+			ewprintf("Undo record too large. Aborted.");
+			return (FALSE);
+		}
 		addlinef(bp, "%s", buf);
 	}
 	return (TRUE);
