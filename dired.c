@@ -590,7 +590,7 @@ dired_(char *dirname)
 	BUFFER	*bp;
 	FILE	*dirpipe;
 	char	 line[256];
-	int	 len;
+	int	 len, ret;
 
 	if ((dirname = adjustname(dirname)) == NULL) {
 		ewprintf("Bad directory name");
@@ -609,8 +609,8 @@ dired_(char *dirname)
 	if (bclear(bp) != TRUE)
 		return (NULL);
 	bp->b_flag |= BFREADONLY;
-	if (snprintf(line, sizeof(line), "ls -al %s", dirname)
-	    >= sizeof(line)) {
+	ret = snprintf(line, sizeof(line), "ls -al %s", dirname);
+	if (ret < 0 || ret  >= sizeof(line)) {
 		ewprintf("Path too long");
 		return (NULL);
 	}
