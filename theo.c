@@ -133,6 +133,7 @@ static const char *talk[] = {
 	"germans are not allowed to get involved there",
 	"gprs sucks camel dick dryer than the gobi desert",
 	"don't they recognize their moral responsibility to entertain me?",
+	"#ifdef is for emacs developers.",
 	"Many well known people become net-kooks in their later life, because they lose touch with reality.",
 	"You're not allowed to have an opinion.",
 	"tweep tweep tweep",
