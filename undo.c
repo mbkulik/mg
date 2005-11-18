@@ -506,7 +506,7 @@ undo(int f, int n)
 			 */
 			switch (ptr->type) {
 			case INSERT:
-				ldelete(ptr->region.r_size, KFORW);
+				ldelete(ptr->region.r_size, KNONE);
 				break;
 			case DELETE:
 				region_put_data(ptr->content,
