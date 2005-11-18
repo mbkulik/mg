@@ -356,6 +356,7 @@ int		 lreplace(RSIZE, char *);
 void		 kdelete(void);
 int		 kinsert(int, int);
 int		 kremove(int);
+int		 kchunk(char *, RSIZE, int);
 
 /* window.c X */
 struct mgwin	*new_window(struct buffer *);
