@@ -56,8 +56,8 @@ theo_init(void)
 static int
 theo(int f, int n)
 {
-	BUFFER	*bp;
-	MGWIN	*wp;
+	struct buffer	*bp;
+	struct mgwin	*wp;
 
 	bp = bfind("theo", TRUE);
 	if (bclear(bp) != TRUE)

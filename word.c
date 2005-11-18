@@ -197,9 +197,9 @@ capword(int f, int n)
 RSIZE
 countfword()
 {
-	RSIZE	 size;
-	LINE	*dotp;
-	int	 doto;
+	RSIZE		 size;
+	struct line	*dotp;
+	int		 doto;
 
 	dotp = curwp->w_dotp;
 	doto = curwp->w_doto;
@@ -225,9 +225,9 @@ out:
 int
 delfword(int f, int n)
 {
-	RSIZE	 size;
-	LINE	*dotp;
-	int	 doto;
+	RSIZE		 size;
+	struct line	*dotp;
+	int		 doto;
 
 	if (curbp->b_flag & BFREADONLY) {
 		ewprintf("Buffer is read-only");

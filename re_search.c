@@ -211,7 +211,7 @@ static int
 re_doreplace(RSIZE plen, char *st)
 {
 	int	 j, k, s, more, num, state;
-	LINE	*clp;
+	struct line	*clp;
 	char	 repstr[REPLEN];
 
 	clp = curwp->w_dotp;
@@ -299,7 +299,7 @@ static int
 re_forwsrch(void)
 {
 	int	 tbo, error;
-	LINE	*clp;
+	struct line	*clp;
 
 	clp = curwp->w_dotp;
 	tbo = curwp->w_doto;
@@ -344,7 +344,7 @@ re_forwsrch(void)
 static int
 re_backsrch(void)
 {
-	LINE		*clp;
+	struct line		*clp;
 	int		 tbo;
 	regmatch_t	 lastmatch;
 
@@ -505,7 +505,7 @@ killmatches(int cond)
 {
 	int	 s, error;
 	int	 count = 0;
-	LINE	*clp;
+	struct line	*clp;
 
 	clp = curwp->w_dotp;
 	if (curwp->w_doto == llength(clp))
@@ -578,7 +578,7 @@ countmatches(int cond)
 {
 	int	 error;
 	int	 count = 0;
-	LINE	*clp;
+	struct line	*clp;
 
 	clp = curwp->w_dotp;
 	if (curwp->w_doto == llength(clp))

@@ -28,7 +28,7 @@ static int	 use_metakey = TRUE;
 static int	 pushed = FALSE;
 static int	 pushedc;
 
-MAP_ELEMENT	*ele;
+struct map_element	*ele;
 
 struct key key;
 
@@ -132,8 +132,8 @@ getkey(int flag)
 PF
 doscan(KEYMAP *map, int c, KEYMAP **newmap)
 {
-	MAP_ELEMENT	*elec = &map->map_element[0];
-	MAP_ELEMENT	*last = &map->map_element[map->map_num];
+	struct map_element	*elec = &map->map_element[0];
+	struct map_element	*last = &map->map_element[map->map_num];
 	PF		 ret;
 
 	while (elec < last && c > elec->k_num)
@@ -346,7 +346,7 @@ int
 selfinsert(int f, int n)
 {
 #ifndef NO_MACRO
-	LINE	*lp;
+	struct line	*lp;
 #endif /* !NO_MACRO */
 	int	 c;
 	int	 count;

@@ -15,8 +15,8 @@ int inmacro = FALSE;
 int macrodef = FALSE;
 int macrocount = 0;
 
-LINE *maclhead = NULL;
-LINE *maclcur;
+struct line *maclhead = NULL;
+struct line *maclcur;
 
 union macrodef macro[MAXMACRO];
 
@@ -24,7 +24,7 @@ union macrodef macro[MAXMACRO];
 int
 definemacro(int f, int n)
 {
-	LINE	*lp1, *lp2;
+	struct line	*lp1, *lp2;
 
 	macrocount = 0;
 

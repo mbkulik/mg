@@ -94,8 +94,8 @@ const char cinfo[256] = {
 char *
 keyname(char *cp, size_t len, int k)
 {
-	const char  *np;
-	size_t	     copied;
+	const char	*np;
+	size_t		 copied;
 
 	if (k < 0)
 		k = CHARMASK(k);	/* sign extended char */

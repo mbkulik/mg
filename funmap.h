@@ -26,5 +26,5 @@
 void		 funmap_init(void);
 PF		 name_function(const char *);
 const char	*function_name(PF);
-LIST		*complete_function_list(const char *);
+struct list	*complete_function_list(const char *);
 int		 funmap_add(PF, const char *);

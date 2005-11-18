@@ -17,5 +17,5 @@ union macrodef {
 
 extern union macrodef macro[MAXMACRO];
 
-extern LINE	*maclhead;
-extern LINE	*maclcur;
+extern struct line	*maclhead;
+extern struct line	*maclcur;

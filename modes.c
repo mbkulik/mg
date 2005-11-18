@@ -14,14 +14,14 @@
 static int	changemode(int, int, char *);
 
 int	 defb_nmodes = 0;
-MAPS	*defb_modes[PBMODES] = { &fundamental_mode };
+struct maps_s	*defb_modes[PBMODES] = { &fundamental_mode };
 int	 defb_flag = 0;
 
 static int
 changemode(int f, int n, char *mode)
 {
 	int	 i;
-	MAPS	*m;
+	struct maps_s	*m;
 
 	if ((m = name_mode(mode)) == NULL) {
 		ewprintf("Can't find mode %s", mode);
@@ -116,7 +116,7 @@ int
 set_default_mode(int f, int n)
 {
 	int	 i;
-	MAPS	*m;
+	struct maps_s	*m;
 	char	 mode[32], *bufp;
 
 	if ((bufp = eread("Set Default Mode: ", mode, sizeof(mode),

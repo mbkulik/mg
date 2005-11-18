@@ -127,7 +127,7 @@ fake_self_insert(int f, int n)
 			 */
 			const char *trail;
 			int save_doto = curwp->w_doto;
-			LINE *save_dotp = curwp->w_dotp;
+			struct line *save_dotp = curwp->w_dotp;
 			int tlen = len - col;
 
 			trail = curwp->w_dotp->l_text + col;
