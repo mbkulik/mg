@@ -578,7 +578,7 @@ ldelnewline(void)
  * was there).
  */
 int
-lreplace(RSIZE plen, char *st, int f)
+lreplace(RSIZE plen, char *st)
 {
 	RSIZE	rlen;	/* replacement length		 */
 

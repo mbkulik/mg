@@ -353,7 +353,7 @@ int	 lnewline_at(LINE *, int);
 int	 lnewline(void);
 int	 ldelete(RSIZE, int);
 int	 ldelnewline(void);
-int	 lreplace(RSIZE, char *, int);
+int	 lreplace(RSIZE, char *);
 void	 kdelete(void);
 int	 kinsert(int, int);
 int	 kremove(int);

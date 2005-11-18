@@ -553,12 +553,12 @@ retry:
 		switch (getkey(FALSE)) {
 		case 'y':
 		case ' ':
-			if (lreplace((RSIZE)plen, news, f) == FALSE)
+			if (lreplace((RSIZE)plen, news) == FALSE)
 				return (FALSE);
 			rcnt++;
 			break;
 		case '.':
-			if (lreplace((RSIZE)plen, news, f) == FALSE)
+			if (lreplace((RSIZE)plen, news) == FALSE)
 				return (FALSE);
 			rcnt++;
 			goto stopsearch;
@@ -570,7 +570,7 @@ retry:
 			goto stopsearch;
 		case '!':
 			do {
-				if (lreplace((RSIZE)plen, news, f) == FALSE)
+				if (lreplace((RSIZE)plen, news) == FALSE)
 					return (FALSE);
 				rcnt++;
 			} while (forwsrch() == TRUE);
@@ -617,7 +617,7 @@ replstr(int f, int n)
 	plen = strlen(pat);
 	while (forwsrch() == TRUE) {
 		update();
-		if (lreplace((RSIZE)plen, news, f) == FALSE)
+		if (lreplace((RSIZE)plen, news) == FALSE)
 			return (FALSE);
 
 		rcnt++;
