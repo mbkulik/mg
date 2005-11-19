@@ -140,9 +140,7 @@ static struct funmap functnames[] = {
 #ifndef NO_BACKUP
 	{makebkfile, "make-backup-files",},
 #endif /* !NO_BACKUP */
-#ifdef DO_METAKEY
 	{do_meta, "meta-key-mode",},	/* better name, anyone? */
-#endif /* DO_METAKEY */
 	{negative_argument, "negative-argument",},
 	{newline, "newline",},
 	{indent, "newline-and-indent",},
