@@ -170,14 +170,12 @@ openline(int f, int n)
 int
 newline(int f, int n)
 {
-	struct line	*lp;
 	int	 s;
 
 	if (n < 0)
 		return (FALSE);
 
 	while (n--) {
-		lp = curwp->w_dotp;
 		if ((s = lnewline()) != TRUE)
 			return (s);
 	}

@@ -43,6 +43,7 @@ static char	*scroll_fwd;	/* How to scroll forward. */
 
 static void	 winchhandler(int);
 
+/* ARGSUSED */
 static void
 winchhandler(int sig)
 {
