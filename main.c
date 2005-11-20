@@ -77,9 +77,7 @@ main(int argc, char **argv)
 		errx(1, "Unknown function `%s'", init_fcn_name);
 
 	vtinit();		/* Virtual terminal.		*/
-#ifndef NO_DIR
 	dirinit();		/* Get current directory.	*/
-#endif	/* !NO_DIR */
 	edinit(init_fcn);	/* Buffers, windows.		*/
 	ttykeymapinit();	/* Symbols, bindings.		*/
 

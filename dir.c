@@ -11,7 +11,6 @@
 
 #include "def.h"
 
-#ifndef NO_DIR
 char		*wdir;
 static char	 cwd[NFILEN];
 
@@ -64,4 +63,3 @@ showcwdir(int f, int n)
 	ewprintf("Current directory: %s", wdir);
 	return (TRUE);
 }
-#endif

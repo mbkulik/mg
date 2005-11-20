@@ -231,9 +231,8 @@ fbackupfile(const char *fn)
 }
 
 /*
- * The string "fn" is a file name.
- * Perform any required appending of directory name or case adjustments.
- * If NO_DIR is not defined, the same file should be referred to even if the
+ * The string "fn" is a file name.  Perform any required appending of directory
+ * name or case adjustments.  The same file should be referred to even if the
  * working directory changes.
  */
 #ifdef SYMBLINK
@@ -244,9 +243,7 @@ fbackupfile(const char *fn)
 #endif
 #endif
 #include <pwd.h>
-#ifndef NO_DIR
 extern char	*wdir;
-#endif
 
 char *
 adjustname(const char *fn)

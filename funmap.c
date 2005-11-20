@@ -63,9 +63,7 @@ static struct funmap functnames[] = {
 	{executemacro, "call-last-kbd-macro",},
 #endif /* !NO_MACRO */
 	{capword, "capitalize-word",},
-#ifndef NO_DIR
 	{changedir, "cd",},
-#endif /* !NO_DIR */
 	{copyregion, "copy-region-as-kill",},
 #ifdef	REGEX
 	{cntmatchlines, "count-matches",},
@@ -155,9 +153,7 @@ static struct funmap functnames[] = {
 	{backline, "previous-line",},
 	{prevwind, "previous-window",},
 	{spawncli, "push-shell",},
-#ifndef NO_DIR
 	{showcwdir, "pwd",},
-#endif /* !NO_DIR */
 	{queryrepl, "query-replace",},
 #ifdef REGEX
 	{replstr, "replace-string",},
