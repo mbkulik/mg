@@ -115,7 +115,6 @@ static struct funmap functnames[] = {
 	{unbindtokey, "global-unset-key",},
 	{gotoline, "goto-line",},
 #ifndef NO_HELP
-	{NULL, "help",},
 	{help_help, "help-help",},
 #endif /* !NO_HELP */
 	{insert, "insert",},
