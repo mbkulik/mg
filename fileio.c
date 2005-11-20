@@ -156,7 +156,6 @@ ffgetline(char *buf, int nbuf, int *nbytes)
 	return (c == EOF ? FIOEOF : FIOSUC);
 }
 
-#ifndef NO_BACKUP
 /*
  * Make a backup copy of "fname".  On Unix the backup has the same
  * name as the original file, with a "~" on the end; this seems to
@@ -230,7 +229,6 @@ fbackupfile(const char *fn)
 
 	return (nread == -1 ? FALSE : TRUE);
 }
-#endif
 
 /*
  * The string "fn" is a file name.
