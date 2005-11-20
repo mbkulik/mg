@@ -22,8 +22,6 @@
 #include <errno.h>
 #include <libgen.h>
 
-#ifndef NO_DIRED
-
 void		 dired_init(void);
 static int	 dired(int, int);
 static int	 d_otherwindow(int, int);
@@ -639,5 +637,3 @@ dired_(char *dirname)
 	bp->b_nmodes = 1;
 	return (bp);
 }
-
-#endif /* !NO_DIRED */

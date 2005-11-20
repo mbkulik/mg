@@ -454,7 +454,7 @@ ldelete(RSIZE n, int kflag)
 		/* Scrunch text */
 		cp1 = &dotp->l_text[doto];
 		if (kchunk(cp1, chunk, kflag) == FALSE)
-			return(FALSE); 
+			return(FALSE);
 		for (cp2 = cp1 + chunk; cp2 < &dotp->l_text[dotp->l_used];
 		    cp2++)
 			*cp1++ = *cp2;
