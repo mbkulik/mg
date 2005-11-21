@@ -25,14 +25,6 @@
  * computed at compile time.
  */
 
-#ifndef OFFSET
-#define OFFSET(type,member) ((char *)&(((type *)0)->member)-(char *)((type *)0))
-#endif
-
-#ifndef NBLOCK
-#define NBLOCK	16		/* Line block chunk size.	 */
-#endif
-
 #ifndef KBLOCK
 #define KBLOCK	256		/* Kill buffer block size.	 */
 #endif
