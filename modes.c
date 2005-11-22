@@ -163,11 +163,12 @@ set_default_mode(int f, int n)
 			defb_flag |= BFOVERWRITE;
 	}
 #ifdef NOTAB
-	if (strcmp(mode, "notab") == 0)
+	if (strcmp(mode, "notab") == 0) {
 		if (n <= 0)
 			defb_flag &= ~BFNOTAB;
 		else
 			defb_flag |= BFNOTAB;
+	}
 #endif	/* NOTAB */
 	return (TRUE);
 }
