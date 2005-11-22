@@ -20,7 +20,8 @@ SRCS=	cinfo.c fileio.c spawn.c ttyio.c tty.c ttykbd.c \
 	basic.c dir.c dired.c file.c line.c match.c paragraph.c \
 	random.c region.c search.c version.c window.c word.c \
 	buffer.c display.c echo.c extend.c help.c kbd.c keymap.c \
-	macro.c main.c modes.c re_search.c funmap.c undo.c autoexec.c
+	macro.c main.c modes.c re_search.c funmap.c undo.c autoexec.c \
+	yank.c
 
 #
 # More or less standalone extensions.

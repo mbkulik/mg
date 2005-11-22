@@ -348,10 +348,15 @@ int		 lnewline(void);
 int		 ldelete(RSIZE, int);
 int		 ldelnewline(void);
 int		 lreplace(RSIZE, char *);
+
+/* yank.c X */
+
 void		 kdelete(void);
 int		 kinsert(int, int);
 int		 kremove(int);
 int		 kchunk(char *, RSIZE, int);
+int		 killline(int, int);
+int		 yank(int, int);
 
 /* window.c X */
 struct mgwin	*new_window(struct buffer *);
@@ -471,8 +476,6 @@ int		 delwhite(int, int);
 int		 indent(int, int);
 int		 forwdel(int, int);
 int		 backdel(int, int);
-int		 killline(int, int);
-int		 yank(int, int);
 int		 space_to_tabstop(int, int);
 
 /* extend.c X */
