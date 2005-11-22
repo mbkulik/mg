@@ -20,6 +20,9 @@
 
 #include "def.h"
 
+#include <stdlib.h>
+#include <string.h>
+
 /*
  * The number of bytes member from the start of the structure type should be
  * computed at compile time.
@@ -411,11 +414,18 @@ ldelete(RSIZE n, int kflag)
 	struct mgwin	*wp;
 	int	 doto;
 	char	*cp1, *cp2;
+	size_t	 len;
+	char	*sv;
+	int	 end;
 
 	if (curbp->b_flag & BFREADONLY) {
 		ewprintf("Buffer is read only");
 		return (FALSE);
 	}
+	len = n;
+	if ((sv = calloc(1, len + 1)) == NULL)
+		return (FALSE);
+	end = 0;
 
 	undo_add_delete(curwp->w_dotp, curwp->w_doto, n);
 
@@ -436,17 +446,18 @@ ldelete(RSIZE n, int kflag)
 				/* End of buffer */
 				return (FALSE);
 			lchange(WFHARD);
-			if (ldelnewline() == FALSE ||
-			    (kflag != KNONE && kinsert('\n', kflag) == FALSE))
+			if (ldelnewline() == FALSE)
 				return (FALSE);
+			end = strlcat(sv, "\n", len + 1);
 			--n;
 			continue;
 		}
 		lchange(WFEDIT);
 		/* Scrunch text */
 		cp1 = &dotp->l_text[doto];
-		if (kchunk(cp1, chunk, kflag) == FALSE)
-			return(FALSE);
+		memcpy(&sv[end], cp1, chunk);
+		end += chunk;
+		sv[end] = '\0';
 		for (cp2 = cp1 + chunk; cp2 < &dotp->l_text[dotp->l_used];
 		    cp2++)
 			*cp1++ = *cp2;
@@ -467,6 +478,9 @@ ldelete(RSIZE n, int kflag)
 		}
 		n -= chunk;
 	}
+	if (kchunk(sv, len, kflag) != TRUE)
+		return (FALSE);
+	free(sv);
 	return (TRUE);
 }
 
@@ -595,10 +609,13 @@ kdelete(void)
  * that if you put something in the kill buffer you are going to put more
  * stuff there too later. Return TRUE if all is well, and FALSE on errors.
  * Print a message on errors.  Dir says whether to put it at back or front.
+ * This call is ignored if  KNONE is set. 
  */
 int
 kinsert(int c, int dir)
 {
+	if (dir == KNONE)
+		return (TRUE);
 	if (kused == ksize && dir == KFORW && kgrow(dir) == FALSE)
 		return (FALSE);
 	if (kstart == 0 && dir == KBACK && kgrow(dir) == FALSE)
