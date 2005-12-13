@@ -435,7 +435,7 @@ undo(int f, int n)
 {
 	struct undo_rec	*ptr, *nptr;
 	int		 done, rval;
-	struct line		*lp;
+	struct line	*lp;
 	int		 offset, save, dot;
 	static int	 nulled = FALSE;
 

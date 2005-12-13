@@ -462,7 +462,7 @@ ldelete(RSIZE n, int kflag)
 		}
 		n -= chunk;
 	}
-	if (kchunk(sv, len, kflag) != TRUE)
+	if (kchunk(sv, (RSIZE)len, kflag) != TRUE)
 		return (FALSE);
 	free(sv);
 	return (TRUE);

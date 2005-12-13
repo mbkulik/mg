@@ -338,7 +338,7 @@ isearch(int dir)
 				ewprintf("Mark set");
 				curwp->w_flag |= WFMOVE;
 				return (TRUE);
-			}	/* and continue */
+			}	/* FALLTHRU */
 		case CCHR('I'):
 		case CCHR('J'):
 	addchar:
