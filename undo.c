@@ -205,23 +205,23 @@ undo_no_boundary(int flag)
  * Record an undo boundary, unless 'nobound' is set via undo_no_boundary.
  * Does nothing if previous undo entry is already a boundary.
  */
-int
+void
 undo_add_boundary(void)
 {
 	struct undo_rec *rec;
 
 	if (nobound)
-		return (TRUE);
+		return;
 
 	if (lastrectype() == BOUNDARY)
-		return (TRUE);
+		return;
 
 	rec = new_undo_record();
 	rec->type = BOUNDARY;
 
 	LIST_INSERT_HEAD(&curbp->b_undo, rec, next);
 
-	return (TRUE);
+	return;
 }
 
 int

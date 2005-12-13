@@ -253,7 +253,7 @@ struct buffer *
 compile_mode(const char *name, const char *command, const char *path)
 {
 	struct buffer	*bp;
-	FILE	*pipe;
+	FILE	*fpipe;
 	char	*buf;
 	size_t	 len;
 	int	 ret;
@@ -275,7 +275,7 @@ compile_mode(const char *name, const char *command, const char *path)
 		ewprintf("Can't change dir to %s", path);
 		return (NULL);
 	}
-	if ((pipe = popen(command, "r")) == NULL) {
+	if ((fpipe = popen(command, "r")) == NULL) {
 		ewprintf("Problem opening pipe");
 		return (NULL);
 	}
@@ -284,11 +284,11 @@ compile_mode(const char *name, const char *command, const char *path)
 	 * a \n, so we don't need to try to deal with the last line problem
 	 * in fgetln.
 	 */
-	while ((buf = fgetln(pipe, &len)) != NULL) {
+	while ((buf = fgetln(fpipe, &len)) != NULL) {
 		buf[len - 1] = '\0';
 		addline(bp, buf);
 	}
-	ret = pclose(pipe);
+	ret = pclose(fpipe);
 	t = time(NULL);
 	strftime(timestr, sizeof(timestr), "%a %b %e %T %Y", localtime(&t));
 	addline(bp, "");
