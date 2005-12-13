@@ -440,7 +440,7 @@ fakec(int c)
 static int
 charcost(char *s)
 {
-	int	cci = 0;
+	cci = 0;
 
 	tputs(s, nrow, fakec);
 	return (cci);
