@@ -371,7 +371,7 @@ update(void)
 	int	 currow, curcol;
 	int	 offs, size;
 
-	if (typeahead())
+	if (charswaiting())
 		return;
 	if (sgarbf) {		/* must update everything */
 		wp = wheadp;

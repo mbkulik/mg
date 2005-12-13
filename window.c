@@ -65,7 +65,7 @@ reposition(int f, int n)
  */
 /* ARGSUSED */
 int
-refresh(int f, int n)
+redraw(int f, int n)
 {
 	struct mgwin	*wp;
 	int		 oldnrow, oldncol;

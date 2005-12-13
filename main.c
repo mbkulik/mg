@@ -140,7 +140,7 @@ notnum:
 			eerase();
 #endif	/* !NO_DPROMPT */
 		if (winch_flag) {
-			refresh(0, 0);
+			redraw(0, 0);
 			winch_flag = 0;
 		}
 		update();
@@ -152,7 +152,7 @@ notnum:
 			break;
 		case ABORT:
 			ewprintf("Quit");
-			/* and fall through */
+			/* FALLTHRU */
 		case FALSE:
 		default:
 			ttbeep();

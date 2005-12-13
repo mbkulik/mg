@@ -109,7 +109,7 @@ getkey(int flag)
 	}
 #ifndef NO_DPROMPT
 	if (flag && promptp < &prompt[PROMPTL - 5]) {
-		promptp = keyname(promptp,
+		promptp = getkeyname(promptp,
 		    sizeof(prompt) - (promptp - prompt) - 1, c);
 		*promptp++ = '-';
 		*promptp = '\0';

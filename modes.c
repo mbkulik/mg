@@ -98,7 +98,7 @@ notabmode(int f, int n)
 #endif	/* NOTAB */
 
 int
-overwrite(int f, int n)
+overwrite_mode(int f, int n)
 {
 	if (changemode(f, n, "overwrite") == FALSE)
 		return (FALSE);

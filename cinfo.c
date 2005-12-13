@@ -92,7 +92,7 @@ const char cinfo[256] = {
  * '\0'.  Returns NULL on failure.
  */
 char *
-keyname(char *cp, size_t len, int k)
+getkeyname(char *cp, size_t len, int k)
 {
 	const char	*np;
 	size_t		 copied;

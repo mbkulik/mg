@@ -355,7 +355,7 @@ doneread:
 		switch (s) {
 		case FIOSUC:
 			++nline;
-			/* and continue */
+			/* FALLTHRU */
 		case FIOEOF:
 			/* the last line of the file */
 			if ((lp1 = lalloc(nbytes)) == NULL) {
