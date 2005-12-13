@@ -524,7 +524,7 @@ int		 upperregion(int, int);
 int		 prefixregion(int, int);
 int		 setprefix(int, int);
 int		 region_get_data(struct region *, char *, int);
-int		 region_put_data(const char *, int);
+void		 region_put_data(const char *, int);
 
 /* search.c X */
 int		 forwsearch(int, int);
