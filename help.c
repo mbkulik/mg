@@ -146,7 +146,7 @@ showall(struct buffer *bp, KEYMAP *map, char *prefix)
 			if (showall(bp, newmap, keybuf) == FALSE)
 				return (FALSE);
 		} else {
-			if (addlinef(bp, "%-16s%s", key,
+			if (addlinef(bp, "%-16s%s", keybuf,
 				    function_name(fun)) == FALSE)
 				return (FALSE);
 		}
