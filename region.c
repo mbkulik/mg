@@ -353,7 +353,7 @@ region_put_data(const char *buf, int len)
 {
 	int i;
 
-	for (i = 0; buf[i] != NULL && i < len; i++) {
+	for (i = 0; buf[i] != '\0' && i < len; i++) {
 		if (buf[i] == '\n')
 			lnewline();
 		else
