@@ -454,12 +454,13 @@ make_file_list(char *buf)
 			return (NULL);
 	}
 	/* Now we get the prefix of the name the user typed. */
-	strlcpy(prefixx, buf, sizeof(prefixx));
+	if (strlcpy(prefixx, buf, sizeof(prefixx)) >= sizeof(prefixx))
+		return (NULL);
 	cp = strrchr(prefixx, '/');
 	if (cp == NULL)
-		prefixx[0] = 0;
+		prefixx[0] = '\0';
 	else
-		cp[1] = 0;
+		cp[1] = '\0';
 
 	preflen = strlen(prefixx);
 	/* cp is the tail of buf that really needs to be compared. */

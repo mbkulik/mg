@@ -23,7 +23,7 @@ dirinit(void)
 	if ((wdir = getcwd(cwd, sizeof(cwd))) == NULL) {
 		ewprintf("Can't get current directory!");
 		chdir("/");
-		strlcpy(cwd, "/", sizeof(cwd));
+		(void)strlcpy(cwd, "/", sizeof(cwd));
 	}
 }
 
