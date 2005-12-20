@@ -30,7 +30,7 @@ void
 kdelete(void)
 {
 	if (kbufp != NULL) {
-		free((char *)kbufp);
+		free(kbufp);
 		kbufp = NULL;
 		kstart = kused = ksize = 0;
 	}
@@ -84,7 +84,7 @@ kgrow(int dir)
 	nstart = (dir == KBACK) ? (kstart + KBLOCK) : (KBLOCK / 4);
 	bcopy(&(kbufp[kstart]), &(nbufp[nstart]), (int)(kused - kstart));
 	if (kbufp != NULL)
-		free((char *)kbufp);
+		free(kbufp);
 	kbufp = nbufp;
 	ksize += KBLOCK;
 	kused = kused - kstart + nstart;

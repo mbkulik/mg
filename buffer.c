@@ -184,7 +184,7 @@ killbuffer(struct buffer *bp)
 		rec = next;
 	}
 
-	free((char *)bp->b_bname);		/* Release name block	 */
+	free(bp->b_bname);			/* Release name block	 */
 	free(bp);				/* Release buffer block */
 	return (TRUE);
 }
@@ -486,7 +486,7 @@ bfind(const char *bname, int cflag)
 		return (NULL);
 	}
 	if ((lp = lalloc(0)) == NULL) {
-		free((char *) bp->b_bname);
+		free(bp->b_bname);
 		free(bp);
 		return (NULL);
 	}

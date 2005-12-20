@@ -173,7 +173,7 @@ struct list {
 		struct buffer	*x_bp;	/* l_bp is used by struct line */
 		struct list	*l_nxt;
 	} l_p;
-	const char *l_name;
+	char *l_name;
 };
 
 /*

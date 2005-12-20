@@ -508,7 +508,7 @@ ldelnewline(void)
 		lp1->l_used += lp2->l_used;
 		lp1->l_fp = lp2->l_fp;
 		lp2->l_fp->l_bp = lp1;
-		free((char *)lp2);
+		free(lp2);
 		return (TRUE);
 	}
 	if ((lp3 = lalloc(lp1->l_used + lp2->l_used)) == NULL)
@@ -535,8 +535,8 @@ ldelnewline(void)
 			wp->w_marko += lp1->l_used;
 		}
 	}
-	free((char *)lp1);
-	free((char *)lp2);
+	free(lp1);
+	free(lp2);
 	return (TRUE);
 }
 

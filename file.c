@@ -495,8 +495,7 @@ filewrite(int f, int n)
 			p++;
 		else
 			p = curbp->b_fname;
-		if (curbp->b_bname)
-			free((char *)curbp->b_bname);
+		free(curbp->b_bname);
 		curbp->b_bname = strdup(p);
 		curbp->b_flag &= ~(BFBAK | BFCHG);
 		upmodes(curbp);
