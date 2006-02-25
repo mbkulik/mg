@@ -69,6 +69,7 @@ ttinit(void)
 	}
 
 	signal(SIGWINCH, winchhandler);
+	signal(SIGCONT, winchhandler);
 	siginterrupt(SIGWINCH, 1);
 
 	scroll_fwd = scroll_forward;

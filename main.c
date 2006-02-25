@@ -140,7 +140,7 @@ notnum:
 			eerase();
 #endif	/* !NO_DPROMPT */
 		if (winch_flag) {
-			redraw(0, 0);
+			do_redraw(0, 0, TRUE);
 			winch_flag = 0;
 		}
 		update();

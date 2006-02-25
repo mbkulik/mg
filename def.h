@@ -363,6 +363,7 @@ struct mgwin	*new_window(struct buffer *);
 void		 free_window(struct mgwin *);
 int		 reposition(int, int);
 int		 redraw(int, int);
+int		 do_redraw(int, int, int);
 int		 nextwind(int, int);
 int		 prevwind(int, int);
 int		 onlywind(int, int);
