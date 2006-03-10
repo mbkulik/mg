@@ -146,7 +146,8 @@ static const char *talk[] = {
 	"You have no idea how fucked we are",
 	"You can call it fart if you want to.",
 	"wavelan is a battle field",
-	"You are in a maze of gpio pins, all alike, all undocumented, and a few are wired to bombs."
+	"You are in a maze of gpio pins, all alike, all undocumented, and a few are wired to bombs.",
+	"And that is why humppa sucks... cause it has no cause."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
