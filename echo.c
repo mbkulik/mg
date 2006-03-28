@@ -63,9 +63,9 @@ eyorn(const char *sp)
 	ewprintf("%s? (y or n) ", sp);
 	for (;;) {
 		s = getkey(FALSE);
-		if (s == 'y' || s == 'Y')
+		if (s == 'y' || s == 'Y' || s == ' ')
 			return (TRUE);
-		if (s == 'n' || s == 'N')
+		if (s == 'n' || s == 'N' || s == CCHR('M'))
 			return (FALSE);
 		if (s == CCHR('G'))
 			return (ctrlg(FFRAND, 1));
