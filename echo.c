@@ -937,7 +937,7 @@ copy_list(struct list *lp)
 
 	last = NULL;
 	while (lp) {
-		current = (struct list *)malloc(sizeof(struct list));
+		current = malloc(sizeof(struct list));
 		if (current == NULL) {
 			/* Free what we have allocated so far */
 			for (current = last; current; current = nxt) {
