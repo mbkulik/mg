@@ -442,8 +442,8 @@ make_file_list(char *buf)
 	if (buf[0] && buf[strlen(buf) - 1] != '/') {
 		file = strrchr(dir, '/');
 		if (file) {
-			*file = 0;
-			if (*dir == 0)
+			*file = '\0';
+			if (*dir == '\0')
 				dir = "/";
 		} else
 			return (NULL);
