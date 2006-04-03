@@ -26,7 +26,7 @@
 
 int	ttstarted;
 char	obuf[NOBUF];			/* Output buffer. */
-int	nobuf;				/* Buffer count. */
+size_t	nobuf;				/* Buffer count. */
 struct	termios	oldtty;			/* POSIX tty settings. */
 struct	termios	newtty;
 int	nrow;				/* Terminal size, rows. */

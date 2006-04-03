@@ -181,9 +181,10 @@ poptofile(int f, int n)
 struct buffer *
 findbuffer(char *fn)
 {
-	struct buffer		*bp;
-	char		 bname[NBUFN], fname[NBUFN];
-	unsigned int	 count, remain, i;
+	struct buffer	*bp;
+	char		bname[NBUFN], fname[NBUFN];
+	unsigned int	count;
+	size_t		i, remain;
 
 	if (strlcpy(fname, fn, sizeof(fname)) >= sizeof(fname)) {
 		ewprintf("filename too long");
