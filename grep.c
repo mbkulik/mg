@@ -183,6 +183,7 @@ compile(int f, int n)
 		return (FALSE);
 	curbp = bp;
 	compile_win = curwp = wp;
+	gotoline(FFARG, 0);
 	return (TRUE);
 }
 
@@ -362,7 +363,7 @@ compile_goto_error(int f, int n)
 		return (FALSE);
 	curbp = bp;
 	curwp = wp;
-	if (bp->b_fname[0] == 0)
+	if (bp->b_fname[0] == '\0')
 		readin(adjf);
 	gotoline(FFARG, lineno);
 	return (TRUE);
