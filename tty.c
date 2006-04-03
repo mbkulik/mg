@@ -412,7 +412,7 @@ ttresize(void)
 #ifdef	TIOCGWINSZ
 	struct	winsize winsize;
 
-	if (ioctl(0, TIOCGWINSZ, (char *) &winsize) == 0) {
+	if (ioctl(0, TIOCGWINSZ, &winsize) == 0) {
 		newrow = winsize.ws_row;
 		newcol = winsize.ws_col;
 	}

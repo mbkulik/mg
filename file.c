@@ -381,7 +381,7 @@ doneread:
 
 				newsize = linesize * 2;
 				if (newsize < 0 ||
-				    (cp = malloc((unsigned)newsize)) == NULL) {
+				    (cp = malloc(newsize)) == NULL) {
 					ewprintf("Could not allocate %d bytes",
 					    newsize);
 						s = FIOERR;

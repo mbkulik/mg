@@ -161,7 +161,7 @@ int
 ttgetc(void)
 {
 	char	c;
-	int	ret;
+	ssize_t	ret;
 
 	do {
 		ret = read(STDIN_FILENO, &c, 1);
@@ -184,7 +184,7 @@ charswaiting(void)
 {
 	int	x;
 
-	return ((ioctl(0, FIONREAD, (char *) &x) < 0) ? 0 : x);
+	return ((ioctl(0, FIONREAD, &x) < 0) ? 0 : x);
 }
 
 /*
