@@ -84,7 +84,7 @@ getkey(int flag)
 			ewprintf("%s", prompt);
 			/* put the cursor back */
 			update();
-			epresf = KPROMPT;
+			epresf = KCLEAR;
 		}
 		if (promptp > prompt)
 			*(promptp - 1) = ' ';
