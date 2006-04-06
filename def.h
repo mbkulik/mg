@@ -386,6 +386,7 @@ int		 addlinef(struct buffer *, char *, ...);
 int		 anycb(int);
 int		 bclear(struct buffer *);
 int		 showbuffer(struct buffer *, struct mgwin *, int);
+int		 baugname(char *, const char *, size_t);
 struct mgwin   *popbuf(struct buffer *);
 int		 bufferinsert(int, int);
 int		 usebuffer(int, int);
