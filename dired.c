@@ -630,7 +630,8 @@ dired_(char *dname)
 		return (NULL);
 	}
 	bp->b_dotp = lforw(bp->b_linep);	/* go to first line */
-	(void) strlcpy(bp->b_fname, dname, sizeof(bp->b_fname));
+	(void)strlcpy(bp->b_fname, dname, sizeof(bp->b_fname));
+	(void)strlcpy(bp->b_cwd, dname, sizeof(bp->b_cwd));
 	if ((bp->b_modes[1] = name_mode("dired")) == NULL) {
 		bp->b_modes[0] = name_mode("fundamental");
 		ewprintf("Could not find mode dired");
