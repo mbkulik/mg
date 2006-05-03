@@ -14,7 +14,6 @@
 
 #define	KBLOCK		8192	/* Kill grow.			 */
 #define	GOOD		0	/* Good exit status.		 */
-#define	SYMBLINK	1	/* Handle symbolic links.	 */
 
 typedef int	RSIZE;		/* Type for file/region sizes	 */
 typedef short	KCHAR;		/* Type for internal keystrokes	 */
