@@ -328,7 +328,7 @@ int		 filevisit(int, int);
 int		 filevisitalt(int, int);
 int		 filevisitro(int, int);
 int		 poptofile(int, int);
-struct buffer  *findbuffer(char *);
+struct buffer	*findbuffer(char *);
 int		 readin(char *);
 int		 insertfile(char *, char *, int);
 int		 filewrite(int, int);
