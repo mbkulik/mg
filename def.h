@@ -350,6 +350,7 @@ int		 lnewline(void);
 int		 ldelete(RSIZE, int);
 int		 ldelnewline(void);
 int		 lreplace(RSIZE, char *);
+char *		 linetostr(const struct line *);
 
 /* yank.c X */
 

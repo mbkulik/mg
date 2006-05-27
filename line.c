@@ -569,3 +569,25 @@ lreplace(RSIZE plen, char *st)
 	undo_add_boundary();
 	return (TRUE);
 }
+
+/*
+ * Allocate and return the supplied line as a C string
+ */
+char *
+linetostr(const struct line *ln)
+{
+	size_t	 len;
+	char	*line;
+
+	len = llength(ln);
+	if (len == SIZE_MAX)  /* (len + 1) overflow */
+		return (NULL);
+
+	if ((line = malloc(len + 1)) == NULL)
+		return (NULL);
+
+	(void)memcpy(line, ltext(ln), len);
+	line[len] = '\0';
+
+	return (line);
+}
