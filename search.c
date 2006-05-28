@@ -591,7 +591,7 @@ retry:
 		}
 	}
 stopsearch:
-	curwp->w_flag |= WFHARD;
+	curwp->w_flag |= WFFULL;
 	update();
 	if (rcnt == 1)
 		ewprintf("Replaced 1 occurrence");
@@ -628,7 +628,7 @@ replstr(int f, int n)
 		rcnt++;
 	}
 
-	curwp->w_flag |= WFHARD;
+	curwp->w_flag |= WFFULL;
 	update();
 
 	if (rcnt == 1)

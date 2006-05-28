@@ -189,7 +189,7 @@ retry:
 	}
 
 stopsearch:
-	curwp->w_flag |= WFHARD;
+	curwp->w_flag |= WFFULL;
 	update();
 	if (!inmacro) {
 		if (rcnt == 0)

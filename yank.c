@@ -249,7 +249,7 @@ yank(int f, int n)
 			lp = lback(lp);
 		/* adjust framing */
 		curwp->w_linep = lp;
-		curwp->w_flag |= WFHARD;
+		curwp->w_flag |= WFFULL;
 	}
 	undo_no_boundary(FALSE);
 	undo_add_boundary();
