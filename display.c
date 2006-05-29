@@ -401,7 +401,7 @@ update(void)
 		/*
 		 * Put the middle-line in place.
 		 */
-		i = wp->w_force;
+		i = wp->w_frame;
 		if (i > 0) {
 			--i;
 			if (i >= wp->w_ntrows)
@@ -455,7 +455,7 @@ update(void)
 		if ((wp->w_flag & WFMODE) != 0)
 			modeline(wp);
 		wp->w_flag = 0;
-		wp->w_force = 0;
+		wp->w_frame = 0;
 	}
 	lp = curwp->w_linep;	/* Cursor location. */
 	currow = curwp->w_toprow;

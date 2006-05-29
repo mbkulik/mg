@@ -23,7 +23,7 @@ new_window(struct buffer *bp)
 	wp->w_markp = NULL;
 	wp->w_marko = 0;
 	wp->w_flag = 0;
-	wp->w_force = 0;
+	wp->w_frame = 0;
 	wp->w_wrapline = NULL;
 	if (bp)
 		bp->b_nwnd++;
@@ -43,9 +43,9 @@ int
 reposition(int f, int n)
 {
 #ifndef GOSREC
-	curwp->w_force = (f & FFARG) ? (n >= 0 ? n + 1 : n) : 0;
+	curwp->w_frame = (f & FFARG) ? (n >= 0 ? n + 1 : n) : 0;
 #else /* !GOSREC */
-	curwp->w_force = n;
+	curwp->w_frame = n;
 #endif /* !GOSREC */
 	curwp->w_flag |= WFFRAME;
 	sgarbf = TRUE;
