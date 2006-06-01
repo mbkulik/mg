@@ -248,7 +248,7 @@ adjustname(const char *fn, int slashslash)
 
 	path[0] = '\0';
 
-	if (slashslash) {
+	if (slashslash == TRUE) {
 		cp = fn + strlen(fn) - 1;
 		for (; cp >= fn; cp--) {
 			if (ep && (*cp == '/')) {
