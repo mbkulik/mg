@@ -593,7 +593,7 @@ dired_(char *dname)
 	char	 line[256];
 	int	 len, ret;
 
-	if ((dname = adjustname(dname)) == NULL) {
+	if ((dname = adjustname(dname, FALSE)) == NULL) {
 		ewprintf("Bad directory name");
 		return (NULL);
 	}

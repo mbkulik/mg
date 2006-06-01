@@ -662,7 +662,7 @@ load(const char *fname)
 	int	 nbytes = 0;
 	char	 excbuf[128];
 
-	if ((fname = adjustname(fname)) == NULL)
+	if ((fname = adjustname(fname, TRUE)) == NULL)
 		/* just to be careful */
 		return (FALSE);
 

@@ -321,7 +321,7 @@ compile_goto_error(int f, int n)
 			goto fail;
 		adjf = path;
 	} else {
-		adjf = adjustname(fname);
+		adjf = adjustname(fname, TRUE);
 	}
 	free(line);
 

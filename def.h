@@ -420,7 +420,7 @@ int		 ffclose(struct buffer *);
 int		 ffputbuf(struct buffer *);
 int		 ffgetline(char *, int, int *);
 int		 fbackupfile(const char *);
-char		*adjustname(const char *);
+char		*adjustname(const char *, int);
 char		*startupfile(char *);
 int		 copy(char *, char *);
 struct list	*make_file_list(char *);
