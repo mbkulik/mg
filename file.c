@@ -152,6 +152,8 @@ poptofile(int f, int n)
 		return (FALSE);
 	if ((bp = findbuffer(adjf)) == NULL)
 		return (FALSE);
+	if (bp == curbp)
+		return (splitwind(f, n));
 	if ((wp = popbuf(bp)) == NULL)
 		return (FALSE);
 	curbp = bp;

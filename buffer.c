@@ -89,7 +89,8 @@ poptobuffer(int f, int n)
 		bp = curbp->b_altb;
 	else if ((bp = bfind(bufn, TRUE)) == NULL)
 		return (FALSE);
-
+	if (bp == curbp)
+		return (splitwind(f, n));
 	/* and put it in a new window */
 	if ((wp = popbuf(bp)) == NULL)
 		return (FALSE);
