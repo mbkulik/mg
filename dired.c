@@ -359,6 +359,7 @@ d_expunge(int f, int n)
 				break;
 			}
 			lfree(lp);
+			curwp->w_bufp->b_lines--;
 			curwp->w_flag |= WFFULL;
 		}
 	}

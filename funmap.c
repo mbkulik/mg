@@ -128,6 +128,7 @@ static struct funmap functnames[] = {
 	{killpara, "kill-paragraph",},
 	{killregion, "kill-region",},
 	{delfword, "kill-word",},
+	{linenotoggle, "line-number-mode",},
 	{listbuffers, "list-buffers",},
 #ifndef NO_STARTUP
 	{evalfile, "load",},
