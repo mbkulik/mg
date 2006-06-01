@@ -125,18 +125,18 @@ twiddle(int f, int n)
 	if (doto == llength(dotp)) {
 		if (--doto <= 0)
 			return (FALSE);
-		backchar(f, 1);
+		(void)backchar(FFRAND, 1);
 		fudge = TRUE;
 	} else {
 		if (doto == 0)
 			return (FALSE);
 	}
 	cr = lgetc(dotp, doto - 1);
-	backdel(f, 1);
-	forwchar(f, 1);
+	(void)backdel(FFRAND, 1);
+	(void)forwchar(FFRAND, 1);
 	linsert(1, cr);
 	if (fudge != TRUE)
-		backchar(f, 1);
+		(void)backchar(FFRAND, 1);
 	undo_no_boundary(FALSE);
 	undo_add_boundary();
 	lchange(WFEDIT);
