@@ -532,7 +532,7 @@ bnew()
 	bp->b_bufp = bheadp;
 	bheadp = bp;
 	bp->b_dotline = bp->b_markline = 1;
-	bp->b_lines = 0;
+	bp->b_lines = 1;
 
 	return (bp);
 }
@@ -564,7 +564,7 @@ bclear(struct buffer *bp)
 	bp->b_markp = NULL;	/* Invalidate "mark"	 */
 	bp->b_marko = 0;
 	bp->b_dotline = bp->b_markline = 1;
-	bp->b_lines = 0;
+	bp->b_lines = 1;
 
 	return (TRUE);
 }

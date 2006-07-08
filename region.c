@@ -33,7 +33,10 @@ killregion(int f, int n)
 	thisflag |= CFKILL;
 	curwp->w_dotp = region.r_linep;
 	curwp->w_doto = region.r_offset;
-	return (ldelete(region.r_size, KFORW));
+	s = ldelete(region.r_size, KFORW);
+	if (s == TRUE && curwp->w_dotline > curwp->w_markline)
+		curwp->w_dotline = curwp->w_markline;
+	return (s);
 }
 
 /*
