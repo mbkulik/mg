@@ -279,7 +279,8 @@ struct undo_rec {
 	enum {
 		INSERT = 1,
 		DELETE,
-		BOUNDARY
+		BOUNDARY,
+		MODIFIED
 	} type;
 	struct region	 region;
 	int		 pos;
@@ -598,6 +599,7 @@ void		 free_undo_record(struct undo_rec *);
 int		 undo_dump(int, int);
 int		 undo_enable(int);
 void		 undo_add_boundary(void);
+void		 undo_add_modified(void);
 int		 undo_add_insert(struct line *, int, int);
 int		 undo_add_delete(struct line *, int, int);
 void		 undo_no_boundary(int);

@@ -251,6 +251,7 @@ readin(char *fname)
 	if (startrow)
 		gotoline(FFARG, startrow);
 
+	undo_add_modified();
 	return (status);
 }
 
