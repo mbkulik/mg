@@ -105,7 +105,7 @@ balance(void)
 	for (;;) {
 		if (cbo == 0) {
 			clp = lback(clp);	/* beginning of line	*/
-			if (clp == curbp->b_linep)
+			if (clp == curbp->b_headp)
 				return (FALSE);
 			cbo = llength(clp) + 1;
 		}

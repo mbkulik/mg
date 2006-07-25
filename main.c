@@ -196,7 +196,7 @@ edinit(PF init_fcn)
 	wheadp = wp;
 	curwp = wp;
 	wp->w_wndp = NULL;			/* Initialize window.	 */
-	wp->w_linep = wp->w_dotp = bp->b_linep;
+	wp->w_linep = wp->w_dotp = bp->b_headp;
 	wp->w_ntrows = nrow - 2;		/* 2 = mode, echo.	 */
 	wp->w_flag = WFMODE | WFFULL;		/* Full.		 */
 

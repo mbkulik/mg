@@ -113,7 +113,7 @@ ffputbuf(struct buffer *bp)
 {
 	struct line   *lp, *lpend;
 
-	lpend = bp->b_linep;
+	lpend = bp->b_headp;
 	for (lp = lforw(lpend); lp != lpend; lp = lforw(lp)) {
 		if (fwrite(ltext(lp), 1, llength(lp), ffp) != llength(lp)) {
 			ewprintf("Write I/O error");
