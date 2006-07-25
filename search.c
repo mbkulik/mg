@@ -230,7 +230,7 @@ isearch(int dir)
 			}
 			if (success == FALSE && dir == SRCH_FORW) {
 				/* wrap the search to beginning */
-				clp = lforw(curbp->b_headp);
+				clp = bfirstlp(curbp);
 				curwp->w_dotp = clp;
 				curwp->w_doto = 0;
 				curwp->w_dotline = 1;
@@ -262,7 +262,7 @@ isearch(int dir)
 			}
 			if (success == FALSE && dir == SRCH_BACK) {
 				/* wrap the search to end */
-				clp = lback(curbp->b_headp);
+				clp = blastlp(curbp);
 				curwp->w_dotp = clp;
 				curwp->w_doto =
 				    llength(curwp->w_dotp);

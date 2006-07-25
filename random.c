@@ -31,7 +31,7 @@ showcpos(int f, int n)
 	int	 ratio;
 
 	/* collect the data */
-	clp = lforw(curbp->b_headp);
+	clp = bfirstlp(curbp);
 	cchar = 0;
 	cline = 0;
 	cbyte = 0;

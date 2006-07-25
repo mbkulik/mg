@@ -426,8 +426,7 @@ ldelete(RSIZE n, int kflag)
 			chunk = n;
 		/* End of line, merge */
 		if (chunk == 0) {
-			if (dotp == lback(curbp->b_headp))
-				/* End of buffer */
+			if (dotp == blastlp(curbp))
 				return (FALSE);
 			lchange(WFFULL);
 			if (ldelnewline() == FALSE)
