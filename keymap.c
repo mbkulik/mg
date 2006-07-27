@@ -506,17 +506,6 @@ maps_add(KEYMAP *map, const char *name)
 	return (TRUE);
 }
 
-const char *
-map_name(KEYMAP *map)
-{
-	struct maps_s	*mp;
-
-	for (mp = maps; mp != NULL; mp = mp->p_next)
-		if (mp->p_map == map)
-			return (mp->p_name);
-	return (NULL);
-}
-
 struct maps_s *
 name_mode(const char *name)
 {
