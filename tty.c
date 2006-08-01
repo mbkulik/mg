@@ -34,7 +34,6 @@
 #include <sys/ioctl.h>
 
 #include <term.h>
-#include <signal.h>
 
 static int	 charcost(char *);
 

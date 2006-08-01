@@ -2,8 +2,6 @@
 
 /* This file is in the public domain. */
 
-#include <sys/queue.h>
-
 /*
  * This file is the general header file for all parts
  * of the Mg display editor. It contains all of the

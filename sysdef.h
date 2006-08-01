@@ -6,11 +6,13 @@
  *		POSIX system header file
  */
 #include <sys/param.h>
+#include <sys/queue.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <signal.h>
 
 #define	KBLOCK		8192	/* Kill grow.			 */
 #define	GOOD		0	/* Good exit status.		 */

@@ -9,7 +9,6 @@
 
 #include "def.h"
 
-#include <signal.h>
 #include <termios.h>
 #include <term.h>
 
