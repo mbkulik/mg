@@ -518,7 +518,7 @@ make_file_list(char *buf)
 				continue;
 			if (stat(statname, &statbuf) < 0)
 				continue;
-			if (statbuf.st_mode & S_IFDIR)
+			if (S_ISDIR(statbuf.st_mode))
 				isdir = 1;
 		}
 
