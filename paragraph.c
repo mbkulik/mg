@@ -131,7 +131,7 @@ fillpara(int f, int n)
 	char	 wbuf[MAXWORD];	/* buffer for current word		*/
 
 	undo_add_boundary();
-	undo_no_boundary(TRUE);
+	undo_boundary_enable(FALSE);
 
 	/* record the pointer to the line just past the EOP */
 	(void)gotoeop(FFRAND, 1);
@@ -237,7 +237,7 @@ fillpara(int f, int n)
 	(void)backchar(FFRAND, 1);
 	retval = TRUE;
 cleanup:
-	undo_no_boundary(FALSE);
+	undo_boundary_enable(TRUE);
 	undo_add_boundary();
 	return (retval);
 }

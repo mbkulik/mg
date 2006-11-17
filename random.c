@@ -120,7 +120,7 @@ twiddle(int f, int n)
 	dotp = curwp->w_dotp;
 	doto = curwp->w_doto;
 	undo_add_boundary();
-	undo_no_boundary(TRUE);
+	undo_boundary_enable(FALSE);
 	if (doto == llength(dotp)) {
 		if (--doto <= 0)
 			return (FALSE);
@@ -136,7 +136,7 @@ twiddle(int f, int n)
 	linsert(1, cr);
 	if (fudge != TRUE)
 		(void)backchar(FFRAND, 1);
-	undo_no_boundary(FALSE);
+	undo_boundary_enable(TRUE);
 	undo_add_boundary();
 	lchange(WFEDIT);
 	return (TRUE);

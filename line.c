@@ -559,7 +559,7 @@ lreplace(RSIZE plen, char *st)
 		return (FALSE);
 	}
 	undo_add_boundary();
-	undo_no_boundary(TRUE);
+	undo_boundary_enable(FALSE);
 
 	(void)backchar(FFARG | FFRAND, (int)plen);
 	(void)ldelete(plen, KNONE);
@@ -568,7 +568,7 @@ lreplace(RSIZE plen, char *st)
 	region_put_data(st, rlen);
 	lchange(WFFULL);
 
-	undo_no_boundary(FALSE);
+	undo_boundary_enable(TRUE);
 	undo_add_boundary();
 	return (TRUE);
 }
