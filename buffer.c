@@ -615,6 +615,7 @@ showbuffer(struct buffer *bp, struct mgwin *wp, int flags)
 				wp->w_markp = owp->w_markp;
 				wp->w_marko = owp->w_marko;
 				wp->w_dotline = owp->w_dotline;
+				wp->w_markline = owp->w_markline;
 				break;
 			}
 	wp->w_flag |= WFMODE | flags;
