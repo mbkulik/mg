@@ -20,7 +20,7 @@ int		 thisflag;			/* flags, this command	*/
 int		 lastflag;			/* flags, last command	*/
 int		 curgoal;			/* goal column		*/
 int		 startrow;			/* row to start		*/
-struct buffer 	*curbp;				/* current buffer	*/
+struct buffer	*curbp;				/* current buffer	*/
 struct buffer	*bheadp;			/* BUFFER list head	*/
 struct mgwin	*curwp;				/* current window	*/
 struct mgwin	*wheadp;			/* MGWIN listhead	*/

@@ -484,12 +484,12 @@ bfind(const char *bname, int cflag)
 
 /*
  * Create a new buffer and put it in the list of
- * all buffers. 
+ * all buffers.
  */
 static struct buffer *
 bnew(const char *bname)
 {
-	struct buffer 	*bp;
+	struct buffer	*bp;
 	struct line	*lp;
 	int		 i;
 
@@ -631,7 +631,7 @@ showbuffer(struct buffer *bp, struct mgwin *wp, int flags)
 int
 augbname(char *bn, const char *fn, size_t bs)
 {
-	int 	 count;
+	int	 count;
 	size_t	 remain, len;
 
 	len = strlcpy(bn, basename(fn), bs);

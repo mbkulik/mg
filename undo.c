@@ -36,7 +36,7 @@
 static LIST_HEAD(, undo_rec)	 undo_free;
 static int			 undo_free_num;
 static int			 boundary_flag = TRUE;
-static int 			 undo_enable_flag = TRUE;
+static int			 undo_enable_flag = TRUE;
 
 /*
  * Local functions

@@ -43,7 +43,7 @@ typedef int	(*PF)(int, int);	/* generally useful type */
 #define TRUE	1		/* True, yes, good, etc.	 */
 #define ABORT	2		/* Death, ^G, abort, etc.	 */
 
-#define KCLEAR	2		/* clear echo area 		 */
+#define KCLEAR	2		/* clear echo area		 */
 
 /*
  * These flag bits keep track of

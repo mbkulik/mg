@@ -42,7 +42,7 @@ kdelete(void)
  * that if you put something in the kill buffer you are going to put more
  * stuff there too later. Return TRUE if all is well, and FALSE on errors.
  * Print a message on errors.  Dir says whether to put it at back or front.
- * This call is ignored if  KNONE is set. 
+ * This call is ignored if  KNONE is set.
  */
 int
 kinsert(int c, int dir)

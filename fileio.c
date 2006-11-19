@@ -421,7 +421,7 @@ make_file_list(char *buf)
 	char		 prefixx[NFILEN + 1];
 
 	/*
-	 * We need three different strings: 
+	 * We need three different strings:
 
 	 * dir - the name of the directory containing what the user typed.
 	 *  Must be a real unix file name, e.g. no ~user, etc..
