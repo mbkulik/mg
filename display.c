@@ -103,7 +103,7 @@ struct score *score;			/* [NROW * NROW] */
 
 #ifndef LINENOMODE
 #define LINENOMODE TRUE
-#endif /* !LINENOMODE */ 
+#endif /* !LINENOMODE */
 static int	 linenos = LINENOMODE;
 
 /*

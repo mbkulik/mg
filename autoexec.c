@@ -49,7 +49,7 @@ find_autoexec(const char *fname)
 			pfl[used++] = ae->fp;
 		}
 	}
-	if (used) 
+	if (used)
 		pfl[used] = NULL;
 
 	return (pfl);
