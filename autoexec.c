@@ -95,7 +95,7 @@ auto_execute(int f, int n)
 	else if (patp[0] == '\0')
 		return (FALSE);
 	if ((funcp = eread("Execute: ", funcbuf, sizeof(funcbuf),
-	    EFNEW | EFCR)) == NULL)
+	    EFNEW | EFCR | EFFUNC)) == NULL)
 		return (ABORT);
 	else if (funcp[0] == '\0')
 		return (FALSE);
