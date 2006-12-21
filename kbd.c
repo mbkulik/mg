@@ -45,8 +45,8 @@ do_meta(int f, int n)
 	return (TRUE);
 }
 
-#ifdef BSMAP
-static int	 bs_map = BSMAP;
+static int	 bs_map = 0;
+
 /*
  * Toggle backspace mapping
  */
@@ -60,7 +60,6 @@ bsmap(int f, int n)
 	ewprintf("Backspace mapping %sabled", bs_map ? "en" : "dis");
 	return (TRUE);
 }
-#endif /* BSMAP */
 
 void
 ungetkey(int c)
@@ -95,13 +94,13 @@ getkey(int flag)
 		pushed = FALSE;
 	} else
 		c = ttgetc();
-#ifdef BSMAP
-	if (bs_map)
+
+	if (bs_map) {
 		if (c == CCHR('H'))
 			c = CCHR('?');
 		else if (c == CCHR('?'))
 			c = CCHR('H');
-#endif /* BSMAP */
+	}
 	if (use_metakey && (c & METABIT)) {
 		pushedc = c & ~METABIT;
 		pushed = TRUE;

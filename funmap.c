@@ -54,9 +54,7 @@ static struct funmap functnames[] = {
 	{gotobol, "beginning-of-line",},
 	{blinkparen, "blink-matching-paren",},
 	{showmatch, "blink-matching-paren-hack",},
-#ifdef BSMAP
 	{bsmap, "bsmap-mode",},
-#endif /* BSMAP */
 	{NULL, "c-x 4 prefix",},
 	{NULL, "c-x prefix",},
 #ifndef NO_MACRO
