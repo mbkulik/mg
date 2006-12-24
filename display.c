@@ -827,7 +827,8 @@ modeline(struct mgwin *wp)
 	++n;
 
 	if (linenos) {
-		len = snprintf(sl, sizeof(sl), "--L%d", wp->w_dotline);
+		len = snprintf(sl, sizeof(sl), "--L%d--C%d", wp->w_dotline,
+		    wp->w_doto);
 		if (len < sizeof(sl) && len != -1)
 			n += vtputs(sl);
 	}
