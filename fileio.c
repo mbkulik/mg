@@ -139,6 +139,7 @@ ffputbuf(struct buffer *bp)
  * in the supplied buffer. Stop on end of file or end of
  * line.  When FIOEOF is returned, there is a valid line
  * of data without the normally implied \n.
+ * If the line length exceeds nbuf, FIOLONG is returned.
  */
 int
 ffgetline(char *buf, int nbuf, int *nbytes)
