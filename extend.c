@@ -87,7 +87,7 @@ insert(int f, int n)
  * but the keymap doesn't have enough room for another map_element, so
  * the keymap is reallocated).	No attempt is made to reclaim space no
  * longer used, if this is a problem flags must be added to indicate
- * malloced verses static storage in both keymaps and map_elements.
+ * malloced versus static storage in both keymaps and map_elements.
  * Structure assignments would come in real handy, but K&R based compilers
  * don't have them.  Care is taken so running out of memory will leave
  * the keymap in a usable state.
