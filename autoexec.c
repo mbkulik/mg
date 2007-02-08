@@ -82,6 +82,12 @@ add_autoexec(const char *pattern, const char *func)
 	return (TRUE);
 }
 
+/*
+ * Register an auto-execute hook; that is, specify a filename pattern
+ * (conforming to the shell's filename globbing rules) and an associated
+ * function to execute when a file matching the specified pattern
+ * is read into a buffer. 
+*/
 /* ARGSUSED */
 int
 auto_execute(int f, int n)
