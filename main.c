@@ -34,7 +34,7 @@ extern char	*__progname;
 static __dead void
 usage()
 {
-	fprintf(stderr, "usage: %s [+line] [-hn] [-f mode] [file ...]\n",
+	fprintf(stderr, "usage: %s [+line] [-n] [-f mode] [file ...]\n",
 	    __progname);
 	exit(1);
 }
@@ -47,7 +47,7 @@ main(int argc, char **argv)
 	int	 o, i, nfiles;
 	int	 nobackups = 0;
 
-	while ((o = getopt(argc, argv, "hnf:")) != -1)
+	while ((o = getopt(argc, argv, "nf:")) != -1)
 		switch (o) {
 		case 'n':
 			nobackups = 1;
@@ -58,8 +58,6 @@ main(int argc, char **argv)
 				    "initial function");
 			init_fcn_name = optarg;
 			break;
-		case 'h':
-			/* FALLTHRU */
 		default:
 			usage();
 		}
