@@ -106,6 +106,9 @@ struct score *score;			/* [NROW * NROW] */
 #endif /* !LINENOMODE */
 static int	 linenos = LINENOMODE;
 
+/* Is macro recording enabled? */
+extern int macrodef;
+
 /*
  * Since we don't have variables (we probably should) this is a command
  * processor for changing the value of the line number mode flag.
@@ -823,6 +826,9 @@ modeline(struct mgwin *wp)
 		vtputc('-');
 		++n;
 	}
+	/* XXX This should eventually move to a real mode */
+	if (macrodef == TRUE)
+		n += vtputs("-def");
 	vtputc(')');
 	++n;
 

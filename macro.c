@@ -54,9 +54,12 @@ definemacro(int f, int n)
 int
 finishmacro(int f, int n)
 {
-	macrodef = FALSE;
-	ewprintf("End Keyboard Macro Definition");
-	return (TRUE);
+	if (macrodef == TRUE) {
+		macrodef = FALSE;
+		ewprintf("End Keyboard Macro Definition");
+		return (TRUE);
+	}
+	return (FALSE);
 }
 
 /* ARGSUSED */
