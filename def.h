@@ -619,6 +619,7 @@ void		 mail_init(void);
 
 /* grep.c X */
 int		 next_error(int, int);
+int		 globalwdtoggle(int, int);
 
 /*
  * Externals.

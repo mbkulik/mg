@@ -38,19 +38,21 @@ changedir(int f, int n)
 
 	(void)strlcpy(bufc, mgcwd, sizeof(bufc));
 	if ((bufp = eread("Change default directory: ", bufc, NFILEN,
-	    EFDEF | EFNEW | EFCR)) == NULL)
+	    EFDEF | EFNEW | EFCR | EFFILE)) == NULL)
 		return (ABORT);
 	else if (bufp[0] == '\0')
 		return (FALSE);
+	/* Append trailing slash */
 	if (chdir(bufc) == -1) {
 		ewprintf("Can't change dir to %s", bufc);
 		return (FALSE);
-	} else {
-		if ((bufp = getcwd(mgcwd, sizeof(mgcwd))) == NULL)
-			panic("Can't get current directory!");
-		ewprintf("Current directory is now %s", bufp);
-		return (TRUE);
 	}
+	if ((bufp = getcwd(mgcwd, sizeof(mgcwd))) == NULL)
+		panic("Can't get current directory!");
+	if (mgcwd[strlen(mgcwd) - 1] != '/')
+		(void)strlcat(mgcwd, "/", sizeof(mgcwd));
+	ewprintf("Current directory is now %s", bufp);
+	return (TRUE);
 }
 
 /*

@@ -89,6 +89,7 @@ static struct funmap functnames[] = {
 #ifndef NO_MACRO
 	{finishmacro, "end-kbd-macro",},
 #endif /* !NO_MACRO */
+	{globalwdtoggle, "global-wd-mode",},
 	{gotoeob, "end-of-buffer",},
 	{gotoeol, "end-of-line",},
 	{enlargewind, "enlarge-window",},
