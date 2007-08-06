@@ -144,7 +144,8 @@ static const char *talk[] = {
 	"wavelan is a battle field",
 	"You are in a maze of gpio pins, all alike, all undocumented, and a few are wired to bombs.",
 	"And that is why humppa sucks... cause it has no cause.",
-	"cache aliasing is a problem that would have stopped in 1992 if someone had killed about 5 people who worked at Sun."
+	"cache aliasing is a problem that would have stopped in 1992 if someone had killed about 5 people who worked at Sun.",
+	"Don't spread rumours about me being gentle.",
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
