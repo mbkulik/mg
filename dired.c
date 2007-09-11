@@ -622,10 +622,7 @@ dired_(char *dname)
 	}
 	line[0] = line[1] = ' ';
 	while (fgets(&line[2], sizeof(line) - 2, dirpipe) != NULL) {
-		char *p;
-
-		if ((p = strchr(line, '\n')) != NULL)
-			*p = '\0';	/* remove ^J	 */
+		line[strcspn(line, "\n")] = '\0'; /* remove ^J	 */
 		(void) addline(bp, line);
 	}
 	if (pclose(dirpipe) == -1) {
