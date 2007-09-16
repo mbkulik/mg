@@ -161,7 +161,7 @@ drop_oldest_undo_record(void)
 	return (0);
 }
 
-static __inline__ int
+static int
 lastrectype(void)
 {
 	struct undo_rec *rec;
