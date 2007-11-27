@@ -237,7 +237,7 @@ fbackupfile(const char *fn)
 /*
  * Convert "fn" to a canonicalized absolute filename, replacing
  * a leading ~/ with the user's home dir, following symlinks, and
- * and remove all occurences of /./ and /../
+ * and remove all occurrences of /./ and /../
  */
 char *
 adjustname(const char *fn, int slashslash)
