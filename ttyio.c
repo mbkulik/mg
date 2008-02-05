@@ -145,8 +145,11 @@ ttflush(void)
 		return;
 
 	while ((written = write(fileno(stdout), buf, nobuf)) != nobuf) {
-		if (written == -1)
+		if (written == -1) {
+			if (errno == EINTR)
+				continue;
 			panic("ttflush write failed");
+		}
 		buf += written;
 		nobuf -= written;
 	}
