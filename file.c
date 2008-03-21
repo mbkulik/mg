@@ -248,8 +248,10 @@ readin(char *fname)
 	if (ro == TRUE)
 		curbp->b_flag |= BFREADONLY;
 
-	if (startrow)
+	if (startrow) {
 		gotoline(FFARG, startrow);
+		startrow = 0;
+	}
 
 	undo_add_modified();
 	return (status);
