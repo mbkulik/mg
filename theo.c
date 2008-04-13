@@ -158,7 +158,7 @@ theo_analyze(int f, int n)
 	const char	*str;
 	int		 len;
 
-	str = talk[arc4random() % ntalk];
+	str = talk[arc4random_uniform(ntalk)];
 	len = strlen(str);
 
 	newline(FFRAND, 2);
