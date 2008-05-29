@@ -34,7 +34,7 @@ extern char	*__progname;
 static __dead void
 usage()
 {
-	fprintf(stderr, "usage: %s [+line] [-n] [-f mode] [file ...]\n",
+	fprintf(stderr, "usage: %s [-n] [-f mode] [+number] [file ...]\n",
 	    __progname);
 	exit(1);
 }
