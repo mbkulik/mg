@@ -148,6 +148,7 @@ static const char *talk[] = {
 	"Don't spread rumours about me being gentle.",
 	"If municipal water filtering equipment was built by the gcc developers, the western world would be dead by now.",
 	"kettenis supported a new machine in my basement and all I got to do was fix a 1 character typo in his html page commit.",
+	"industry told us a lesson: when you're an asshole, they mail you hardware",
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
