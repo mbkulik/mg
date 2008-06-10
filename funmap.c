@@ -42,6 +42,7 @@ static struct funmap functnames[] = {
 #endif /* !NO_MACRO */
 	{capword, "capitalize-word",},
 	{changedir, "cd",},
+	{clearmark, "clear-mark",},
 	{copyregion, "copy-region-as-kill",},
 #ifdef	REGEX
 	{cntmatchlines, "count-matches",},

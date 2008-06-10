@@ -396,6 +396,21 @@ setmark(int f, int n)
 	return (TRUE);
 }
 
+/* Clear the mark, if set. */
+/* ARGSUSED */
+int
+clearmark(int f, int n)
+{
+	if (!curwp->w_markp)
+		return (FALSE);
+
+	curwp->w_markp = NULL;
+	curwp->w_marko = 0;
+	curwp->w_markline = 0;
+
+	return (TRUE);
+}
+
 /*
  * Swap the values of "dot" and "mark" in
  * the current window. This is pretty easy, because

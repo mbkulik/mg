@@ -476,6 +476,7 @@ int		 back1page(int, int);
 int		 pagenext(int, int);
 void		 isetmark(void);
 int		 setmark(int, int);
+int		 clearmark(int, int);
 int		 swapmark(int, int);
 int		 gotoline(int, int);
 
