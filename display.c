@@ -836,7 +836,7 @@ modeline(struct mgwin *wp)
 
 	if (linenos) {
 		len = snprintf(sl, sizeof(sl), "--L%d--C%d", wp->w_dotline,
-		    wp->w_doto);
+		    getcolpos());
 		if (len < sizeof(sl) && len != -1)
 			n += vtputs(sl);
 	}
