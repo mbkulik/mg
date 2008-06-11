@@ -302,7 +302,7 @@ static PF fund_at[] = {
 
 /* ^I is selfinsert */
 static PF fund_CJ[] = {
-	indent,			/* ^J */
+	lfindent,		/* ^J */
 	killline,		/* ^K */
 	reposition,		/* ^L */
 	newline,		/* ^M */
@@ -385,7 +385,7 @@ static PF indent_lf[] = {
 	newline,		/* ^J */
 	rescan,			/* ^K */
 	rescan,			/* ^L */
-	indent			/* ^M */
+	lfindent		/* ^M */
 };
 
 static struct KEYMAPE (1 + IMAPEXT) indntmap = {
