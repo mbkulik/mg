@@ -11,13 +11,13 @@
 #include "def.h"
 #include "kbd.h"
 
-static int	changemode(int, int, char *);
+int	changemode(int, int, char *);
 
 int	 defb_nmodes = 0;
 struct maps_s	*defb_modes[PBMODES] = { &fundamental_mode };
 int	 defb_flag = 0;
 
-static int
+int
 changemode(int f, int n, char *mode)
 {
 	int	 i;
