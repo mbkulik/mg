@@ -620,6 +620,12 @@ int		 add_autoexec(const char *, const char *);
 
 /* mail.c X */
 void		 mail_init(void);
+/* cmode.c X */
+int		 cmode(int, int);
+int		 cc_char(int, int);
+int		 cc_tab(int, int);
+int		 cc_indent(int, int);
+int		 cc_lfindent(int, int);
 
 /* grep.c X */
 int		 next_error(int, int);

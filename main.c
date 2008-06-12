@@ -75,12 +75,14 @@ main(int argc, char **argv)
 		extern void grep_init(void);
 		extern void theo_init(void);
 		extern void mail_init(void);
+		extern void cmode_init(void);
 		extern void dired_init(void);
 
 		dired_init();
 		grep_init();
 		theo_init();
 		mail_init();
+		cmode_init();
 	}
 
 	if (init_fcn_name &&
