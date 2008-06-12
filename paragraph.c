@@ -336,7 +336,21 @@ fillword(int f, int n)
 int
 setfillcol(int f, int n)
 {
-	fillcol = ((f & FFARG) ? n : getcolpos());
-	ewprintf("Fill column set to %d", fillcol);
+	char buf[32], *rep;
+	const char *es;
+
+	if ((f & FFARG) != 0) {
+		fillcol = n;
+	} else {
+		if ((rep = eread("Set fill-column: ", buf, sizeof(buf),
+		    EFNEW | EFCR)) == NULL)
+			return (ABORT);
+		else if (rep[0] == '\0')
+			return (FALSE);
+		fillcol = strtonum(rep, 0, INT_MAX, &es);
+		if (es != NULL)
+			return (FALSE);
+		ewprintf("Fill column set to %d", fillcol);
+	}
 	return (TRUE);
 }
