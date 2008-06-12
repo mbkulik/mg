@@ -375,9 +375,7 @@ static struct KEYMAPE (1 + IMAPEXT) fillmap = {
 	1 + IMAPEXT,
 	rescan,
 	{
-		{
-			' ', ' ', fill_sp, NULL
-		}
+		{ ' ', ' ', fill_sp, NULL }
 	}
 };
 
