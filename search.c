@@ -127,7 +127,11 @@ searchagain(int f, int n)
 int
 forwisearch(int f, int n)
 {
-	return (isearch(SRCH_FORW));
+	if (macrodef || inmacro)
+		/* We can't isearch in macro. Use search instead */
+		return (forwsearch(f,n));
+	else 
+		return (isearch(SRCH_FORW));
 }
 
 /*
@@ -138,7 +142,11 @@ forwisearch(int f, int n)
 int
 backisearch(int f, int n)
 {
-	return (isearch(SRCH_BACK));
+	if (macrodef || inmacro)
+		/* We can't isearch in macro. Use search instead */
+		return (backsearch(f,n));
+	else 
+		return (isearch(SRCH_BACK));
 }
 
 /*
