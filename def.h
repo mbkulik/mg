@@ -622,6 +622,7 @@ int		 add_autoexec(const char *, const char *);
 void		 mail_init(void);
 /* cmode.c X */
 int		 cmode(int, int);
+int		 cc_brace(int, int);
 int		 cc_char(int, int);
 int		 cc_tab(int, int);
 int		 cc_indent(int, int);
