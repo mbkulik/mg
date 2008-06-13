@@ -24,7 +24,8 @@ dirinit(void)
 		ewprintf("Can't get current directory!");
 		chdir("/");
 	}
-	(void)strlcat(mgcwd, "/", sizeof(mgcwd));
+	if (!(mgcwd[0] == '/' && mgcwd [1] == '\0'))
+		(void)strlcat(mgcwd, "/", sizeof(mgcwd));
 }
 
 /*
