@@ -71,15 +71,6 @@ fillmode(int f, int n)
 	return (changemode(f, n, "fill"));
 }
 
-/*
- * Fake the GNU "blink-matching-paren" variable.
- */
-int
-blinkparen(int f, int n)
-{
-	return (changemode(f, n, "blink"));
-}
-
 #ifdef NOTAB
 int
 notabmode(int f, int n)
