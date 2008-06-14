@@ -668,3 +668,4 @@ extern char		 prompt[];
 int		 tceeol;
 int		 tcinsl;
 int		 tcdell;
+int		 rptcount;	/* successive invocation count */
