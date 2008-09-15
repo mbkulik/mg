@@ -127,6 +127,11 @@ ttinit(void)
 void
 ttreinit(void)
 {
+	/* check if file was modified while we were gone */
+	if (fchecktime(curbp) != TRUE) {
+		curbp->b_flag |= BFDIRTY;
+	}
+
 	if (enter_ca_mode)
 		/* enter application mode */
 		putpad(enter_ca_mode, 1);

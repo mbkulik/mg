@@ -26,4 +26,5 @@ struct fileinfo {
 	uid_t		fi_uid;
 	gid_t		fi_gid;
 	mode_t		fi_mode;
+	struct timespec	fi_mtime;	/* Last modified time */
 };

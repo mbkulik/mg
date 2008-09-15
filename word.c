@@ -68,9 +68,11 @@ forwword(int f, int n)
 int
 upperword(int f, int n)
 {
-	int	c;
+	int	c, s;
 	RSIZE	size;
 
+	if ((s = checkdirty(curbp)) != TRUE)
+		return (s);
 	if (curbp->b_flag & BFREADONLY) {
 		ewprintf("Buffer is read-only");
 		return (FALSE);
@@ -108,9 +110,11 @@ upperword(int f, int n)
 int
 lowerword(int f, int n)
 {
-	int	c;
+	int	c, s;
 	RSIZE	size;
 
+	if ((s = checkdirty(curbp)) != TRUE)
+		return (s);
 	if (curbp->b_flag & BFREADONLY) {
 		ewprintf("Buffer is read-only");
 		return (FALSE);
@@ -149,9 +153,11 @@ lowerword(int f, int n)
 int
 capword(int f, int n)
 {
-	int	c;
+	int	c, s;
 	RSIZE	size;
 
+	if ((s = checkdirty(curbp)) != TRUE)
+		return (s);
 	if (curbp->b_flag & BFREADONLY) {
 		ewprintf("Buffer is read-only");
 		return (FALSE);
@@ -228,7 +234,10 @@ delfword(int f, int n)
 	RSIZE		 size;
 	struct line	*dotp;
 	int		 doto;
+	int s;
 
+	if ((s = checkdirty(curbp)) != TRUE)
+		return (s);
 	if (curbp->b_flag & BFREADONLY) {
 		ewprintf("Buffer is read-only");
 		return (FALSE);
@@ -279,7 +288,10 @@ int
 delbword(int f, int n)
 {
 	RSIZE	size;
+	int s;
 
+	if ((s = checkdirty(curbp)) != TRUE)
+		return (s);
 	if (curbp->b_flag & BFREADONLY) {
 		ewprintf("Buffer is read-only");
 		return (FALSE);
