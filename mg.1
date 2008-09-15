@@ -736,6 +736,15 @@ make this work.
 Undo the most recent action.
 If invoked again without an intervening command,
 move the undo pointer to the previous action and undo it.
+.It undo-boundary
+Add an undo boundary.
+This is not usually done interactively.
+.It undo-boundary-toggle
+Toggle whether undo boundaries are generated.
+Undo boundaries are often disabled before operations that should
+be considered atomically undoable.
+.It undo-enable
+Toggle whether undo information is kept.
 .It undo-list
 Show the undo records for the current buffer in a new buffer.
 .It universal-argument
