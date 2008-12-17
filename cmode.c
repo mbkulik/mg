@@ -92,7 +92,7 @@ cmode_init(void)
 	funmap_add(cc_tab, "c-tab-or-indent");
 	funmap_add(cc_indent, "c-indent");
 	funmap_add(cc_lfindent, "c-indent-and-newline");
-	maps_add((KEYMAP *)&cmodemap, "c-mode");
+	maps_add((KEYMAP *)&cmodemap, "c");
 }
 
 /*
@@ -101,7 +101,7 @@ cmode_init(void)
 int
 cmode(int f, int n)
 {
-	return(changemode(f, n, "c-mode"));
+	return(changemode(f, n, "c"));
 }
 
 /*
