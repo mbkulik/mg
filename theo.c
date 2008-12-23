@@ -150,6 +150,7 @@ static const char *talk[] = {
 	"kettenis supported a new machine in my basement and all I got to do was fix a 1 character typo in his html page commit.",
 	"industry told us a lesson: when you're an asshole, they mail you hardware",
 	"I was joking, really.  I think I am funny :-)",
+	"the kernel is a harsh mistress"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
