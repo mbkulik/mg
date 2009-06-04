@@ -120,9 +120,9 @@ lchange(int flag)
 	}
 	for (wp = wheadp; wp != NULL; wp = wp->w_wndp) {
 		if (wp->w_bufp == curbp) {
-			wp->w_flag |= flag;
+			wp->w_rflag |= flag;
 			if (wp != curwp)
-				wp->w_flag |= WFFULL;
+				wp->w_rflag |= WFFULL;
 		}
 	}
 }

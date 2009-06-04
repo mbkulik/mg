@@ -150,14 +150,14 @@ displaymatch(struct line *clp, int cbo)
 
 		curwp->w_dotp = clp;	/* move to new position */
 		curwp->w_doto = cbo;
-		curwp->w_flag |= WFMOVE;
+		curwp->w_rflag |= WFMOVE;
 
 		update();		/* show match */
 		ttwait(1000);		/* wait for key or 1 second */
 
 		curwp->w_dotp = tlp;	/* return to old position */
 		curwp->w_doto = tbo;
-		curwp->w_flag |= WFMOVE;
+		curwp->w_rflag |= WFMOVE;
 		update();
 	} else {
 		/* match is not in this window, so display line in echo area */

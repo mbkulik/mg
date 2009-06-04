@@ -319,7 +319,7 @@ fail:
 	free(line);
 	if (curwp->w_dotp != blastlp(curbp)) {
 		curwp->w_dotp = lforw(curwp->w_dotp);
-		curwp->w_flag |= WFMOVE;
+		curwp->w_rflag |= WFMOVE;
 		goto retry;
 	}
 	ewprintf("No more hits");
@@ -341,7 +341,7 @@ next_error(int f, int n)
 		return (FALSE);
 	}
 	curwp->w_dotp = lforw(curwp->w_dotp);
-	curwp->w_flag |= WFMOVE;
+	curwp->w_rflag |= WFMOVE;
 
 	return (compile_goto_error(f, n));
 }

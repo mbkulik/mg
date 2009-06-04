@@ -189,7 +189,7 @@ retry:
 	}
 
 stopsearch:
-	curwp->w_flag |= WFFULL;
+	curwp->w_rflag |= WFFULL;
 	update();
 	if (!inmacro) {
 		if (rcnt == 0)
@@ -329,7 +329,7 @@ re_forwsrch(void)
 		} else {
 			curwp->w_doto = re_match[0].rm_eo;
 			curwp->w_dotp = clp;
-			curwp->w_flag |= WFMOVE;
+			curwp->w_rflag |= WFMOVE;
 			return (TRUE);
 		}
 	}
@@ -387,7 +387,7 @@ re_backsrch(void)
 			memcpy(&re_match[0], &lastmatch, sizeof(regmatch_t));
 			curwp->w_doto = re_match[0].rm_so;
 			curwp->w_dotp = clp;
-			curwp->w_flag |= WFMOVE;
+			curwp->w_rflag |= WFMOVE;
 			return (TRUE);
 		}
 	}
@@ -530,7 +530,7 @@ killmatches(int cond)
 			count++;
 			s = ldelete(llength(clp) + 1, KNONE);
 			clp = curwp->w_dotp;
-			curwp->w_flag |= WFMOVE;
+			curwp->w_rflag |= WFMOVE;
 			if (s == FALSE)
 				return (FALSE);
 		} else
@@ -539,7 +539,7 @@ killmatches(int cond)
 
 	ewprintf("%d line(s) deleted", count);
 	if (count > 0)
-		curwp->w_flag |= WFMOVE;
+		curwp->w_rflag |= WFMOVE;
 
 	return (TRUE);
 }
