@@ -117,6 +117,7 @@ typedef int	(*PF)(int, int);	/* generally useful type */
 struct region {
 	struct line	*r_linep;	/* Origin line address.		 */
 	int		 r_offset;	/* Origin line offset.		 */
+	int		 r_lineno;	/* Origin line number		 */
 	RSIZE		 r_size;	/* Length in characters.	 */
 };
 
