@@ -67,7 +67,7 @@ theo(int f, int n)
 	bp->b_modes[1] = name_mode("theo");
 	bp->b_nmodes = 1;
 
-	if ((wp = popbuf(bp)) == NULL)
+	if ((wp = popbuf(bp, WNONE)) == NULL)
 		return (FALSE);
 
 	curbp = bp;

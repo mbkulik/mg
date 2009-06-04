@@ -121,7 +121,7 @@ wallchart(int f, int n)
 	if ((addline(bp, "Global bindings:") == FALSE) ||
 	    (showall(bp, fundamental_map, "") == FALSE))
 		return (FALSE);
-	return (popbuftop(bp));
+	return (popbuftop(bp, WNONE));
 }
 
 static int
@@ -205,7 +205,7 @@ apropos_command(int f, int n)
 		}
 	}
 	free_file_list(fnames);
-	return (popbuftop(bp));
+	return (popbuftop(bp, WNONE));
 }
 
 static int

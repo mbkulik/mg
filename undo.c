@@ -381,7 +381,7 @@ undo_dump(int f, int n)
 		return (FALSE);
 	bp->b_flag |= BFREADONLY;
 	bclear(bp);
-	popbuf(bp);
+	popbuf(bp, WNONE);
 
 	for (wp = wheadp; wp != NULL; wp = wp->w_wndp) {
 		if (wp->w_bufp == bp) {
