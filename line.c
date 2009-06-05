@@ -438,7 +438,7 @@ ldelete(RSIZE n, int kflag)
 		return (FALSE);
 	end = 0;
 
-	undo_add_delete(curwp->w_dotp, curwp->w_doto, n);
+	undo_add_delete(curwp->w_dotp, curwp->w_doto, n, (kflag & KREG));
 
 	while (n != 0) {
 		dotp = curwp->w_dotp;
