@@ -155,7 +155,8 @@ static const char *talk[] = {
 	"the acpi stabs you in the back.  the acpi stabs you in the back. you die ...",
 	"My cats are more observant than you.",
 	"our kernels have no bugs",
-	"style(9) has all these fascist rules, and i have a problem with some of them because i didn't come up with them"
+	"style(9) has all these fascist rules, and i have a problem with some of them because i didn't come up with them",
+	"I'm not very reliable"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
