@@ -156,7 +156,8 @@ static const char *talk[] = {
 	"My cats are more observant than you.",
 	"our kernels have no bugs",
 	"style(9) has all these fascist rules, and i have a problem with some of them because i didn't come up with them",
-	"I'm not very reliable"
+	"I'm not very reliable",
+	"I don't like control"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
