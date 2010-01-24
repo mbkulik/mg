@@ -161,7 +161,7 @@ static const char *talk[] = {
 	"You aren't being conservative -- you are trying to be a caveman."
 };
 
-static const int ntalk = sizeof(talk)/sizeof(talk[0]);
+static const int ntalk = nitems(talk);
 
 /* ARGSUSED */
 static int
