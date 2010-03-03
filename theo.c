@@ -158,7 +158,8 @@ static const char *talk[] = {
 	"style(9) has all these fascist rules, and i have a problem with some of them because i didn't come up with them",
 	"I'm not very reliable",
 	"I don't like control",
-	"You aren't being conservative -- you are trying to be a caveman."
+	"You aren't being conservative -- you are trying to be a caveman.",
+	"nfs loves everyone"
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
