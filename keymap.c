@@ -241,7 +241,7 @@ static PF metasqf[] = {
 
 static PF metal[] = {
 	lowerword,		/* l */
-	rescan,			/* m */
+	backtoindent,		/* m */
 	rescan,			/* n */
 	rescan,			/* o */
 	rescan,			/* p */

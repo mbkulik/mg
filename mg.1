@@ -230,6 +230,8 @@ kill-word
 forward-word
 .It M-l
 downcase-word
+.It M-m
+back-to-indentation
 .It M-q
 fill-paragraph
 .It M-r
@@ -304,6 +306,8 @@ where text inserted past the fill column is automatically wrapped
 to a new line.
 .It auto-indent-mode
 Toggle indent mode, where indentation is preserved after a newline.
+.It back-to-indentation
+Move the dot to the first non-whitespace character on the current line.
 .It backward-char
 Move cursor backwards one character.
 .It backward-kill-word

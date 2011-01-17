@@ -440,3 +440,16 @@ space_to_tabstop(int f, int n)
 	return (linsert((n << 3) - (curwp->w_doto & 7), ' '));
 }
 #endif /* NOTAB */
+
+/*
+ * Move the dot to the first non-whitespace character of the current line.
+ */
+int
+backtoindent(int f, int n)
+{
+	gotobol(FFRAND, 1);
+	while (curwp->w_doto < llength(curwp->w_dotp) &&
+	    (isspace(lgetc(curwp->w_dotp, curwp->w_doto))))
+		++curwp->w_doto;
+	return (TRUE);
+}

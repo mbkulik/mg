@@ -511,6 +511,7 @@ int		 indent(int, int);
 int		 forwdel(int, int);
 int		 backdel(int, int);
 int		 space_to_tabstop(int, int);
+int		 backtoindent(int, int);
 
 /* extend.c X */
 int		 insert(int, int);
