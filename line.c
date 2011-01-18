@@ -618,11 +618,11 @@ lreplace(RSIZE plen, char *st)
 char *
 linetostr(const struct line *ln)
 {
-	size_t	 len;
+	int	 len;
 	char	*line;
 
 	len = llength(ln);
-	if (len == SIZE_MAX)  /* (len + 1) overflow */
+	if (len == INT_MAX)  /* (len + 1) overflow */
 		return (NULL);
 
 	if ((line = malloc(len + 1)) == NULL)
