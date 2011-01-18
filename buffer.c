@@ -15,6 +15,8 @@
 static struct buffer  *makelist(void);
 static struct buffer *bnew(const char *);
 
+static int usebufname(const char *);
+
 /* Flag for global working dir */
 extern int globalwd;
 

@@ -36,6 +36,7 @@ static int	 d_rename(int, int);
 static int	 d_shell_command(int, int);
 static int	 d_create_directory(int, int);
 static int	 d_makename(struct line *, char *, size_t);
+static void	 reaper(int);
 
 extern struct keymap_s helpmap, cXmap, metamap;
 
