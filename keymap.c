@@ -228,7 +228,7 @@ static PF metasqf[] = {
 	NULL,			/* [ */
 	delwhite,		/* \ */
 	rescan,			/* ] */
-	rescan,			/* ^ */
+	joinline,		/* ^ */
 	rescan,			/* _ */
 	rescan,			/* ` */
 	rescan,			/* a */

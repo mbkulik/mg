@@ -453,3 +453,33 @@ backtoindent(int f, int n)
 		++curwp->w_doto;
 	return (TRUE);
 }
+
+/*
+ * Join the current line to the previous, or with arg, the next line
+ * to the current one.  If the former line is not empty, leave exactly
+ * one space at the joint.  Otherwise, leave no whitespace.
+ */
+int
+joinline(int f, int n)
+{
+	int doto;
+
+	undo_boundary_enable(FFRAND, 0);
+	if (f & FFARG) {
+		gotoeol(FFRAND, 1);
+		forwdel(FFRAND, 1);
+	} else {
+		gotobol(FFRAND, 1);
+		backdel(FFRAND, 1);
+	}
+
+	delwhite(FFRAND, 1);
+
+	if ((doto = curwp->w_doto) > 0) {
+		linsert(1, ' ');
+		curwp->w_doto = doto;
+	}
+	undo_boundary_enable(FFRAND, 1);
+
+	return (TRUE);
+}

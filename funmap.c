@@ -103,6 +103,7 @@ static struct funmap functnames[] = {
 	{fillword, "insert-with-wrap",},
 	{backisearch, "isearch-backward",},
 	{forwisearch, "isearch-forward",},
+	{joinline, "join-line",},
 	{justone, "just-one-space",},
 	{ctrlg, "keyboard-quit",},
 	{killbuffer_cmd, "kill-buffer",},

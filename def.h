@@ -512,6 +512,7 @@ int		 forwdel(int, int);
 int		 backdel(int, int);
 int		 space_to_tabstop(int, int);
 int		 backtoindent(int, int);
+int		 joinline(int, int);
 
 /* extend.c X */
 int		 insert(int, int);
