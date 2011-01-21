@@ -529,10 +529,8 @@ make_file_list(char *buf)
 
 	while ((dent = readdir(dirp)) != NULL) {
 		int isdir;
-
-		if (dent->d_namlen < len || memcmp(cp, dent->d_name, len) != 0)
+		if (strncmp(cp, dent->d_name, len) != 0)
 			continue;
-
 		isdir = 0;
 		if (dent->d_type == DT_DIR) {
 			isdir = 1;
