@@ -6,9 +6,9 @@
  *	File commands.
  */
 
-#include <libgen.h>
-
 #include "def.h"
+
+#include <libgen.h>
 
 static char *xdirname(const char *);
 

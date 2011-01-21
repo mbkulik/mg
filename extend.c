@@ -5,13 +5,13 @@
 /*
  *	Extended (M-X) commands, rebinding, and	startup file processing.
  */
-#include <sys/types.h>
-#include <ctype.h>
-
 #include "chrdef.h"
 #include "def.h"
 #include "kbd.h"
 #include "funmap.h"
+
+#include <sys/types.h>
+#include <ctype.h>
 
 #ifndef NO_MACRO
 #include "macro.h"

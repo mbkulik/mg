@@ -12,6 +12,7 @@
  */
 
 #include "def.h"
+
 #include <ctype.h>
 
 #ifndef NO_MACRO

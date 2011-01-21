@@ -10,6 +10,7 @@
  */
 
 #include "def.h"
+
 #include <ctype.h>
 
 /*

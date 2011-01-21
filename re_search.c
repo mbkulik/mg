@@ -14,10 +14,11 @@
  */
 
 #ifdef REGEX
+#include "def.h"
+
 #include <sys/types.h>
 #include <regex.h>
 
-#include "def.h"
 #include "macro.h"
 
 #define SRCH_BEGIN	(0)		/* search sub-codes		    */

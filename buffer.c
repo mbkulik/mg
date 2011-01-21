@@ -6,11 +6,11 @@
  *		Buffer handling.
  */
 
-#include <libgen.h>
-#include <stdarg.h>
-
 #include "def.h"
 #include "kbd.h"		/* needed for modes */
+
+#include <libgen.h>
+#include <stdarg.h>
 
 static struct buffer  *makelist(void);
 static struct buffer *bnew(const char *);
