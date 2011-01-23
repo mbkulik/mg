@@ -357,6 +357,7 @@ int		 buffsave(struct buffer *);
 int		 makebkfile(int, int);
 int		 writeout(struct buffer *, char *);
 void		 upmodes(struct buffer *);
+size_t		 xbasename(char *, const char *, size_t);
 
 /* line.c X */
 struct line	*lalloc(int);

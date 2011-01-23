@@ -666,8 +666,7 @@ augbname(char *bn, const char *fn, size_t bs)
 	int	 count;
 	size_t	 remain, len;
 
-	len = strlcpy(bn, basename(fn), bs);
-	if (len >= bs)
+	if ((len = xbasename(bn, fn, bs)) >= bs)
 		return (FALSE);
 
 	remain = bs - len;
