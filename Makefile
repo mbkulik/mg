@@ -26,4 +26,9 @@ SRCS=	autoexec.c basic.c buffer.c cinfo.c dir.c display.c \
 #
 SRCS+=	cmode.c dired.c grep.c theo.c
 
+afterinstall:
+	${INSTALL} -d ${DESTDIR}${DOCDIR}/mg
+	${INSTALL} -m ${NONBINMODE} -c ${.CURDIR}/tutorial \
+		${DESTDIR}${DOCDIR}/mg
+
 .include <bsd.prog.mk>
