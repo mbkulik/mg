@@ -161,7 +161,8 @@ static const char *talk[] = {
 	"You aren't being conservative -- you are trying to be a caveman.",
 	"nfs loves everyone",
 	"basically, dung beetles fucking.  that's what kerberosV + openssl is like",
-	"I would rather run Windows than use vi."
+	"I would rather run Windows than use vi.",
+	"if you assign that responsibility to non-hikers I will walk over and cripple you now."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
