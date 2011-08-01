@@ -121,7 +121,7 @@ nextwind(int f, int n)
 	return (TRUE);
 }
 
-/* not in Gnu Emacs */
+/* not in GNU Emacs */
 /*
  * This command makes the previous window (previous => up the screen) the
  * current window. There are no errors, although the command does not do
