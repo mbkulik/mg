@@ -175,8 +175,8 @@ fillpara(int f, int n)
 				wbuf[wordlen++] = c;
 			else {
 				/*
-				 * You loose chars beyond MAXWORD if the word
-				 * is to long. I'm to lazy to fix it now; it
+				 * You lose chars beyond MAXWORD if the word
+				 * is too long. I'm too lazy to fix it now; it
 				 * just silently truncated the word before,
 				 * so I get to feel smug.
 				 */
