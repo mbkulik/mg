@@ -19,7 +19,12 @@
  * character set, and lets me ask some questions that the
  * standard "ctype" macros cannot ask.
  */
-const char cinfo[256] = {
+/*
+ * Due to incompatible behaviour between "standard" emacs and
+ * ctags word traversing, '_' character's value is changed on 
+ * the fly in ctags mode, hence non-const.
+ */
+char cinfo[256] = {
 	_MG_C, _MG_C, _MG_C, _MG_C,				      /* 0x0X */
 	_MG_C, _MG_C, _MG_C, _MG_C,
 	_MG_C, _MG_C, _MG_C, _MG_C,

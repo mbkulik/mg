@@ -515,6 +515,11 @@ int		 space_to_tabstop(int, int);
 int		 backtoindent(int, int);
 int		 joinline(int, int);
 
+/* tags.c X */
+int		 findtag(int, int);
+int 		 poptag(int, int);
+int		 tagsvisit(int, int);
+
 /* extend.c X */
 int		 insert(int, int);
 int		 bindtokey(int, int);
@@ -674,7 +679,7 @@ extern int		 ttbot;
 extern int		 tthue;
 extern int		 defb_nmodes;
 extern int		 defb_flag;
-extern const char	 cinfo[];
+extern char	 	 cinfo[];
 extern char		*keystrings[];
 extern char		 pat[NPAT];
 #ifndef NO_DPROMPT

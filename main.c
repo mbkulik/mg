@@ -30,6 +30,7 @@ static void	 edinit(PF);
 static __dead void usage(void);
 
 extern char	*__progname;
+extern void     closetags(void);
 
 static __dead void
 usage()
@@ -235,6 +236,7 @@ quit(int f, int n)
 #ifdef SYSCLEANUP
 		SYSCLEANUP;
 #endif	/* SYSCLEANUP */
+		closetags();
 		exit(GOOD);
 	}
 	return (TRUE);
