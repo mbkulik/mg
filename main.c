@@ -204,11 +204,13 @@ edinit(PF init_fcn)
 
 	bheadp = NULL;
 	bp = bfind("*init*", TRUE);		/* Text buffer.		 */
+	if (bp == NULL)
+		panic("edinit");
+
 	wp = new_window(bp);
 	if (wp == NULL)
 		panic("Out of memory");
-	if (bp == NULL || wp == NULL)
-		panic("edinit");
+
 	curbp = bp;				/* Current ones.	 */
 	wheadp = wp;
 	curwp = wp;
