@@ -9,7 +9,6 @@
 #include "def.h"
 #include "funmap.h"
 
-#ifndef NO_HELP
 #include "kbd.h"
 #include "key.h"
 #ifndef NO_MACRO
@@ -233,4 +232,3 @@ findbind(KEYMAP *map, PF fun, char *buf, size_t len)
 	}
 	return (FALSE);
 }
-#endif /* !NO_HELP */
