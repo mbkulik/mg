@@ -551,6 +551,7 @@ make_file_list(char *buf)
 
 		if ((current = malloc(sizeof(struct list))) == NULL) {
 			free_file_list(last);
+			closedir(dirp);
 			return (NULL);
 		}
 		ret = snprintf(fl_name, sizeof(fl_name),
