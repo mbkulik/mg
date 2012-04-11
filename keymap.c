@@ -135,7 +135,7 @@ static PF cXcar[] = {
 #endif /* !NO_MACRO */
 	setfillcol,		/* f */
 	gotoline,		/* g */
-	rescan,			/* h */
+	markbuffer,		/* h */
 	fileinsert,		/* i */
 	rescan,			/* j */
 	killbuffer_cmd,		/* k */
@@ -257,7 +257,7 @@ static PF metal[] = {
 	rescan,			/* y */
 	rescan,			/* z */
 	gotobop,		/* { */
-	rescan,			/* | */
+	piperegion,		/* | */
 	gotoeop			/* } */
 };
 
