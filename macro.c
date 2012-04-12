@@ -6,7 +6,6 @@
  *	Keyboard macros.
  */
 
-#ifndef NO_MACRO
 #include "def.h"
 #include "key.h"
 #include "macro.h"
@@ -105,4 +104,3 @@ executemacro(int f, int n)
 	inmacro = FALSE;
 	return (TRUE);
 }
-#endif	/* NO_MACRO */
