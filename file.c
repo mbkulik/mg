@@ -549,7 +549,10 @@ static int	makebackup = MAKEBACKUP;
 int
 filesave(int f, int n)
 {
-	return (buffsave(curbp));
+	if (curbp->b_fname[0] == '\0')
+		return (filewrite(f, n));
+	else
+		return (buffsave(curbp));
 }
 
 /*
