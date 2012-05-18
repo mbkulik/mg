@@ -378,7 +378,7 @@ indent(int f, int n)
 	(void)gotobol(FFRAND, 1);
 	if (
 #ifdef	NOTAB
-	    curbp->b_flag & BFNOTAB) ? linsert(n, ' ') == FALSE :
+	    (curbp->b_flag & BFNOTAB) ? linsert(n, ' ') == FALSE :
 #endif /* NOTAB */
 	    (((i = n / 8) != 0 && linsert(i, '\t') == FALSE) ||
 	    ((i = n % 8) != 0 && linsert(i, ' ') == FALSE)))

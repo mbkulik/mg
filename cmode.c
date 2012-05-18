@@ -243,7 +243,7 @@ getindent(const struct line *lp, int *curi)
 			break;
 		if (c == '\t'
 #ifdef NOTAB
-		    && !(curbp-b_flag & BFNOTAB)
+		    && !(curbp->b_flag & BFNOTAB)
 #endif /* NOTAB */
 		    ) {
 			nicol |= 0x07;
