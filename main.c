@@ -227,9 +227,6 @@ quit(int f, int n)
 	if (s == FALSE
 	    || eyesno("Modified buffers exist; really exit") == TRUE) {
 		vttidy();
-#ifdef SYSCLEANUP
-		SYSCLEANUP;
-#endif	/* SYSCLEANUP */
 		closetags();
 		exit(GOOD);
 	}
