@@ -276,7 +276,7 @@ forwpage(int f, int n)
 	curwp->w_rflag |= WFFULL;
 
 	/* if in current window, don't move dot */
-	for (n = curwp->w_ntrows; n--; lp = lforw(lp))
+	for (n = curwp->w_ntrows; n-- && lp != curbp->b_headp; lp = lforw(lp))
 		if (lp == curwp->w_dotp)
 			return (TRUE);
 
