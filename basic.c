@@ -269,8 +269,11 @@ forwpage(int f, int n)
 
 	lp = curwp->w_linep;
 	while (n--)
-		if ((lp = lforw(lp)) == curbp->b_headp)
+		if ((lp = lforw(lp)) == curbp->b_headp) {
+			ttbeep();
+			ewprintf("End of buffer");
 			return(TRUE);
+		}
 
 	curwp->w_linep = lp;
 	curwp->w_rflag |= WFFULL;
@@ -314,6 +317,10 @@ backpage(int f, int n)
 
 	while (n-- && lback(lp) != curbp->b_headp) {
 		lp = lback(lp);
+	}
+	if (lp == curwp->w_linep) {
+		ttbeep();
+		ewprintf("Beginning of buffer");
 	}
 	curwp->w_linep = lp;
 	curwp->w_rflag |= WFFULL;
