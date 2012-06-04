@@ -72,6 +72,8 @@ theo(int f, int n)
 
 	curbp = bp;
 	curwp = wp;
+	onlywind(f, n);
+
 	return (TRUE);
 }
 
