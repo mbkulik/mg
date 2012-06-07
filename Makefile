@@ -24,7 +24,7 @@ SRCS=	autoexec.c basic.c buffer.c cinfo.c dir.c display.c \
 #
 # More or less standalone extensions.
 #
-SRCS+=	cmode.c dired.c grep.c tags.c theo.c
+SRCS+=	cmode.c cscope.c dired.c grep.c tags.c theo.c
 
 afterinstall:
 	${INSTALL} -d ${DESTDIR}${DOCDIR}/mg

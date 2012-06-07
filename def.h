@@ -103,6 +103,8 @@ typedef int	(*PF)(int, int);	/* generally useful type */
 #define KBACK	0x02		/* Backwards insert into kill ring */
 #define KREG	0x04		/* This is a region-based kill */
 
+#define MAX_TOKEN 64
+
 /*
  * This structure holds the starting position
  * (as a line/offset pair) and the number of characters in a
@@ -513,6 +515,22 @@ int		 joinline(int, int);
 int		 findtag(int, int);
 int 		 poptag(int, int);
 int		 tagsvisit(int, int);
+int		 curtoken(int, int, char *);
+
+/* cscope.c */
+int		cssymbol(int, int);
+int		csdefinition(int, int);
+int		csfuncalled(int, int);
+int		cscallerfuncs(int, int);
+int		csfindtext(int, int);
+int		csegrep(int, int);
+int		csfindfile(int, int);
+int		csfindinc(int, int);
+int		csnextfile(int, int);
+int		csnextmatch(int, int);
+int		csprevfile(int, int);
+int		csprevmatch(int, int);
+int		cscreatelist(int, int);
 
 /* extend.c X */
 int		 insert(int, int);
