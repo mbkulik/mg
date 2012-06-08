@@ -309,7 +309,7 @@ backpage(int f, int n)
 	if (!(f & FFARG)) {
 		n = curwp->w_ntrows - 2;	/* Default scroll.	 */
 		if (n <= 0)			/* Don't blow up if the  */
-			n = 1;			/* window is tiny.	 */
+			return (backline(f, 1));/* window is tiny.	 */
 	} else if (n < 0)
 		return (forwpage(f | FFRAND, -n));
 
