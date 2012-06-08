@@ -334,6 +334,8 @@ backpage(int f, int n)
 
 	/* Move the dot the slow way, for line nos */
 	while (curwp->w_dotp != lp2) {
+                if (curwp->w_dotline <= curwp->w_ntrows)
+                        return (TRUE);
 		curwp->w_dotp = lback(curwp->w_dotp);
 		curwp->w_dotline--;
 	}
