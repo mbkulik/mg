@@ -211,7 +211,7 @@ fbackupfile(const char *fn)
 	}
 
 	if (asprintf(&nname, "%s~", fn) == -1) {
-		ewprintf("Can't allocate temp file name : %s", strerror(errno));
+		ewprintf("Can't allocate backup file name : %s", strerror(errno));
 		return (ABORT);
 	}
 
