@@ -446,6 +446,8 @@ struct list	*make_file_list(char *);
 int		 fisdir(const char *);
 int		 fchecktime(struct buffer *);
 int		 fupdstat(struct buffer *);
+int		 backuptohomedir(int, int);
+int		 toggleleavetmp(int, int);
 
 /* kbd.c X */
 int		 do_meta(int, int);
