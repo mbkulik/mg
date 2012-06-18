@@ -28,7 +28,7 @@ SRCS+=	cmode.c cscope.c dired.c grep.c tags.c theo.c
 
 afterinstall:
 	${INSTALL} -d ${DESTDIR}${DOCDIR}/mg
-	${INSTALL} -m ${NONBINMODE} -c ${.CURDIR}/tutorial \
+	${INSTALL} -m ${DOCMODE} -c ${.CURDIR}/tutorial \
 		${DESTDIR}${DOCDIR}/mg
 
 .include <bsd.prog.mk>
