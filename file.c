@@ -222,12 +222,10 @@ readin(char *fname)
 
 	for (wp = wheadp; wp != NULL; wp = wp->w_wndp) {
 		if (wp->w_bufp == curbp) {
-			if ((fisdir(fname)) != TRUE) {
-				wp->w_dotp = wp->w_linep = bfirstlp(curbp);
-				wp->w_doto = 0;
-				wp->w_markp = NULL;
-				wp->w_marko = 0;
-				}
+			wp->w_dotp = wp->w_linep = bfirstlp(curbp);
+			wp->w_doto = 0;
+			wp->w_markp = NULL;
+			wp->w_marko = 0;
 		}
 	}
 
