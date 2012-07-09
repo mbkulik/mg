@@ -165,7 +165,8 @@ static const char *talk[] = {
 	"basically, dung beetles fucking.  that's what kerberosV + openssl is like",
 	"I would rather run Windows than use vi.",
 	"if you assign that responsibility to non-hikers I will walk over and cripple you now.",
-	"i ojbect two yoru splelng of achlhlocis."
+	"i ojbect two yoru splelng of achlhlocis.",
+	"We have two kinds of developers - those that deal with their own shit and those that deal with other people's shit."
 };
 
 static const int ntalk = sizeof(talk)/sizeof(talk[0]);
