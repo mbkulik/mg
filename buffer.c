@@ -614,8 +614,6 @@ showbuffer(struct buffer *bp, struct mgwin *wp, int flags)
 
 	if (wp->w_bufp == bp) {	/* Easy case! */
 		wp->w_rflag |= flags;
-		wp->w_dotp = bp->b_dotp;
-		wp->w_doto = bp->b_doto;
 		return (TRUE);
 	}
 	/* First, detach the old buffer from the window */
