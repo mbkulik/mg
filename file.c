@@ -669,6 +669,7 @@ writeout(FILE ** ffp, struct buffer *bp, char *fn)
 	dp = dirname(fn);
 
 	if (stat(fn, &statbuf) == -1 && errno == ENOENT) {
+		errno = 0;
 		if (access(dp, W_OK) && errno == EACCES) {
 			ewprintf("Directory %s%s write-protected", dp,
 			    (dp[0] == '/' && dp[1] == '\0') ? "" : "/");
