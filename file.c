@@ -662,8 +662,23 @@ makebkfile(int f, int n)
 int
 writeout(FILE ** ffp, struct buffer *bp, char *fn)
 {
+	struct stat	statbuf;
 	int	 s;
+	char    *dp;
 
+	dp = dirname(fn);
+
+	if (stat(fn, &statbuf) == -1 && errno == ENOENT) {
+		if (access(dp, W_OK) && errno == EACCES) {
+			ewprintf("Directory %s%s write-protected", dp,
+			    (dp[0] == '/' && dp[1] == '\0') ? "" : "/");
+			return (FIOERR);
+		} else if (errno == ENOENT) {
+                        ewprintf("%s%s: no such directory", dp,
+                            (dp[0] == '/' && dp[1] == '\0') ? "" : "/");
+			return (FIOERR);
+		}
+        }
 	/* open writes message */
 	if ((s = ffwopen(ffp, fn, bp)) != FIOSUC)
 		return (FALSE);
