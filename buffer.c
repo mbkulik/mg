@@ -459,7 +459,7 @@ anycb(int f)
 			    bp->b_fname);
 			if (ret < 0 || ret >= sizeof(pbuf)) {
 				ewprintf("Error: filename too long!");
-				return (ABORT);
+				return (UERROR);
 			}
 			if ((f == TRUE || (save = eyorn(pbuf)) == TRUE) &&
 			    (save2 = buffsave(bp)) == TRUE) {

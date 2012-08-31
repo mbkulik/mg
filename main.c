@@ -224,7 +224,7 @@ quit(int f, int n)
 
 	if ((s = anycb(FALSE)) == ABORT)
 		return (ABORT);
-	if (s == FIOERR)
+	if (s == FIOERR || s == UERROR)
 		return (FALSE);
 	if (s == FALSE
 	    || eyesno("Modified buffers exist; really exit") == TRUE) {

@@ -36,6 +36,7 @@ typedef int	(*PF)(int, int);	/* generally useful type */
 #define FALSE	0		/* False, no, bad, etc.		 */
 #define TRUE	1		/* True, yes, good, etc.	 */
 #define ABORT	2		/* Death, ^G, abort, etc.	 */
+#define UERROR	3		/* User Error.			 */
 
 #define KCLEAR	2		/* clear echo area		 */
 
