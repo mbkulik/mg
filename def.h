@@ -414,6 +414,7 @@ int		 notmodified(int, int);
 int		 popbuftop(struct buffer *, int);
 int		 getbufcwd(char *, size_t);
 int		 checkdirty(struct buffer *);
+int		 revertbuffer(int, int);
 
 /* display.c */
 int		vtresize(int, int, int);
@@ -494,6 +495,7 @@ int		 setmark(int, int);
 int		 clearmark(int, int);
 int		 swapmark(int, int);
 int		 gotoline(int, int);
+int		 setlineno(int);
 
 /* random.c X */
 int		 showcpos(int, int);

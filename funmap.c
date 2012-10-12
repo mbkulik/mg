@@ -196,7 +196,8 @@ static struct funmap functnames[] = {
 	{csprevmatch, "cscope-prev-symbol",},
 	{csnextfile, "cscope-next-file",},
 	{csprevfile, "cscope-prev-file",},
-	{cscreatelist, "cscope-create-list-of-files-to-index"},
+	{cscreatelist, "cscope-create-list-of-files-to-index",},
+	{revertbuffer, "revert-buffer",},
 	{NULL, NULL,}
 };
 

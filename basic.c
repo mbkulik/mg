@@ -485,7 +485,6 @@ swapmark(int f, int n)
 int
 gotoline(int f, int n)
 {
-	struct line  *clp;
 	char   buf[32], *bufp;
 	const char *err;
 
@@ -501,6 +500,17 @@ gotoline(int f, int n)
 			return (FALSE);
 		}
 	}
+	return(setlineno(n));
+}
+
+/*
+ * Set the line number and switch to it.
+ */
+int
+setlineno(int n)
+{
+	struct line  *clp;
+
 	if (n >= 0) {
 		if (n == 0)
 			n++;
