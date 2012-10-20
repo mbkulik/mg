@@ -228,6 +228,7 @@ pushtag(char *tok)
 		}
 		if ((s->bname = strdup(bname)) == NULL) {
 			ewprintf("Out of memory");
+			free(s);
 			return (FALSE);
 		}
 		s->doto = doto;
