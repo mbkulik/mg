@@ -850,7 +850,11 @@ int
 checkdirty(struct buffer *bp)
 {
 	int s;
-	
+
+	if ((bp->b_flag & (BFCHG | BFDIRTY)) == 0)
+		if (fchecktime(bp) != TRUE)
+			bp->b_flag |= BFDIRTY;
+
 	if ((bp->b_flag & (BFDIRTY | BFIGNDIRTY)) == BFDIRTY) {
 		if ((s = eyorn("File changed on disk; really edit the buffer"))
 		    != TRUE)
