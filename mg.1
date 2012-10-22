@@ -51,6 +51,13 @@ At present, windows may only be split horizontally, so each window is
 delineated by a modeline at the bottom.
 If changes are made to a buffer, it will be reflected in all open windows.
 .Pp
+If a file is changed outside
+.Nm
+and its buffer is about to be changed,
+.Nm
+prompts if the change should go ahead (y), not go ahead (n) or if the buffer
+should be reverted (r) to the latest file on disk.
+.Pp
 If a buffer name begins and ends with an asterisk, the buffer is considered
 throwaway; i.e. the user will not be prompted to save changes when
 the buffer is killed.

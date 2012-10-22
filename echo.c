@@ -72,6 +72,36 @@ eyorn(const char *sp)
 }
 
 /*
+ * Ask a "yes", "no" or "revert" question.  Return ABORT if the user answers
+ * the question with the abort ("^G") character.  Return FALSE for "no",
+ * TRUE for "yes" and REVERT for "revert". No formatting services are
+ * available.  No newline required.
+ */
+int
+eynorr(const char *sp)
+{
+	int	 s;
+
+	if (inmacro)
+		return (TRUE);
+
+	ewprintf("%s? (y, n or r) ", sp);
+	for (;;) {
+		s = getkey(FALSE);
+		if (s == 'y' || s == 'Y' || s == ' ')
+			return (TRUE);
+		if (s == 'n' || s == 'N' || s == CCHR('M'))
+			return (FALSE);
+		if (s == 'r' || s == 'R')
+			return (REVERT);
+		if (s == CCHR('G'))
+			return (ctrlg(FFRAND, 1));
+		ewprintf("Please answer y, n or r.");
+	}
+	/* NOTREACHED */
+}
+
+/*
  * Like eyorn, but for more important questions.  User must type all of
  * "yes" or "no" and the trailing newline.
  */
