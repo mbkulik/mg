@@ -416,7 +416,7 @@ int		 popbuftop(struct buffer *, int);
 int		 getbufcwd(char *, size_t);
 int		 checkdirty(struct buffer *);
 int		 revertbuffer(int, int);
-int		 dorevert();
+int		 dorevert(void);
 
 /* display.c */
 int		vtresize(int, int, int);

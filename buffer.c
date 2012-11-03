@@ -897,7 +897,7 @@ revertbuffer(int f, int n)
 }
 
 int
-dorevert()
+dorevert(void)
 {
 	int lineno;
 
