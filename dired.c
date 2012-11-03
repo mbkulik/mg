@@ -724,9 +724,10 @@ struct buffer *
 dired_(char *dname)
 {
 	struct buffer	*bp;
-	int		 len, i;
+	int		 i;
+	size_t		 len;
 
-	if ((fopen(dname,"r")) == NULL) {
+	if ((access(dname, R_OK | X_OK)) == -1) {
 		if (errno == EACCES)
 			ewprintf("Permission denied");
 		return (NULL);
