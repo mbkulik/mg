@@ -543,7 +543,6 @@ bnew(const char *bname)
 	bp->b_nmodes = defb_nmodes;
 	TAILQ_INIT(&bp->b_undo);
 	bp->b_undoptr = NULL;
-	memset(&bp->b_undopos, 0, sizeof(bp->b_undopos));
 	i = 0;
 	do {
 		bp->b_modes[i] = defb_modes[i];
