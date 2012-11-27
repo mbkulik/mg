@@ -122,6 +122,7 @@ static struct funmap functnames[] = {
 	{localbind, "local-set-key",},
 	{localunbind, "local-unset-key",},
 	{makebkfile, "make-backup-files",},
+	{makedir, "make-directory",},
 	{markbuffer, "mark-whole-buffer",},
 	{do_meta, "meta-key-mode",},	/* better name, anyone? */
 	{negative_argument, "negative-argument",},
