@@ -25,7 +25,6 @@
 
 static char *bkuplocation(const char *);
 static int   bkupleavetmp(const char *);
-char	    *expandtilde(const char *);
 
 static char *bkupdir;
 static int   leavetmp = 0;	/* 1 = leave any '~' files in tmp dir */
