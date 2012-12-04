@@ -40,6 +40,7 @@ static struct funmap functnames[] = {
 	{capword, "capitalize-word",},
 	{changedir, "cd",},
 	{clearmark, "clear-mark",},
+	{colnotoggle, "column-number-mode",},
 	{copyregion, "copy-region-as-kill",},
 #ifdef	REGEX
 	{cntmatchlines, "count-matches",},

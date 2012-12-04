@@ -424,6 +424,7 @@ void		vtinit(void);
 void		vttidy(void);
 void		update(void);
 int		linenotoggle(int, int);
+int		colnotoggle(int, int);
 
 /* echo.c X */
 void		 eerase(void);
