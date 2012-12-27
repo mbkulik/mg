@@ -591,6 +591,8 @@ int		 region_get_data(struct region *, char *, int);
 void		 region_put_data(const char *, int);
 int		 markbuffer(int, int);
 int		 piperegion(int, int);
+int		 pipeio(const char * const, char * const[], char * const, int,
+		     struct buffer *);
 
 /* search.c X */
 int		 forwsearch(int, int);
