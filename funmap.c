@@ -74,6 +74,7 @@ static struct funmap functnames[] = {
 	{delwind, "delete-window",},
 	{wallchart, "describe-bindings",},
 	{desckey, "describe-key-briefly",},
+	{diffbuffer, "diff-buffer-with-file",},
 	{digit_argument, "digit-argument",},
 	{lowerregion, "downcase-region",},
 	{lowerword, "downcase-word",},

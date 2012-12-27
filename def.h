@@ -417,6 +417,7 @@ int		 getbufcwd(char *, size_t);
 int		 checkdirty(struct buffer *);
 int		 revertbuffer(int, int);
 int		 dorevert(void);
+int		 diffbuffer(int, int);
 
 /* display.c */
 int		vtresize(int, int, int);
