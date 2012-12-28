@@ -12,6 +12,7 @@
 #include "macro.h"
 
 #include <err.h>
+#include <locale.h>
 
 int		 thisflag;			/* flags, this command	*/
 int		 lastflag;			/* flags, last command	*/
@@ -62,6 +63,8 @@ main(int argc, char **argv)
 		}
 	argc -= optind;
 	argv += optind;
+
+	setlocale(LC_CTYPE, "");
 
 	maps_init();		/* Keymaps and modes.		*/
 	funmap_init();		/* Functions.			*/
