@@ -173,7 +173,9 @@ ttgetc(void)
 				redraw(0, 0);
 				winch_flag = 0;
 			}
-		} else if (ret == 1)
+		} else if (ret == -1 && errno == EIO)
+			panic("lost stdin");
+		else if (ret == 1)
 			break;
 	} while (1);
 	return ((int) c) & 0xFF;
@@ -196,6 +198,12 @@ charswaiting(void)
 void
 panic(char *s)
 {
+	static int panicking = 0;
+
+	if (panicking)
+		return;
+	else
+		panicking = 1;
 	ttclose();
 	(void) fputs("panic: ", stderr);
 	(void) fputs(s, stderr);
