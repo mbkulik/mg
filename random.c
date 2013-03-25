@@ -68,12 +68,12 @@ showcpos(int f, int n)
 	/* NOSTRICT */
 	ratio = nchar ? (100L * cchar) / nchar : 100;
 	ewprintf("Char: %c (0%o)  point=%ld(%d%%)  line=%d  row=%d  col=%d",
-	    cbyte, cbyte, cchar, ratio, cline, row, getcolpos());
+	    cbyte, cbyte, cchar, ratio, cline, row, getcolpos(curwp));
 	return (TRUE);
 }
 
 int
-getcolpos(void)
+getcolpos(struct mgwin *wp)
 {
 	int	col, i, c;
 	char tmp[5];
@@ -81,11 +81,11 @@ getcolpos(void)
 	/* determine column */
 	col = 0;
 
-	for (i = 0; i < curwp->w_doto; ++i) {
-		c = lgetc(curwp->w_dotp, i);
+	for (i = 0; i < wp->w_doto; ++i) {
+		c = lgetc(wp->w_dotp, i);
 		if (c == '\t'
 #ifdef NOTAB
-		    && !(curbp->b_flag & BFNOTAB)
+		    && !(wp->w_bufp->b_flag & BFNOTAB)
 #endif /* NOTAB */
 			) {
 			col |= 0x07;

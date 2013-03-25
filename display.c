@@ -851,11 +851,11 @@ modeline(struct mgwin *wp)
 
 	if (linenos && colnos)
 		len = snprintf(sl, sizeof(sl), "--L%d--C%d", wp->w_dotline,
-		    getcolpos());
+		    getcolpos(wp));
 	else if (linenos)
 		len = snprintf(sl, sizeof(sl), "--L%d", wp->w_dotline);
 	else if (colnos)
-		len = snprintf(sl, sizeof(sl), "--C%d", getcolpos());
+		len = snprintf(sl, sizeof(sl), "--C%d", getcolpos(wp));
 	if ((linenos || colnos) && len < sizeof(sl) && len != -1)
 		n += vtputs(sl);
 

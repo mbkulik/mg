@@ -505,7 +505,7 @@ int		 setlineno(int);
 
 /* random.c X */
 int		 showcpos(int, int);
-int		 getcolpos(void);
+int		 getcolpos(struct mgwin *);
 int		 twiddle(int, int);
 int		 openline(int, int);
 int		 newline(int, int);
