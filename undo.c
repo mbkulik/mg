@@ -239,7 +239,13 @@ undo_add_boundary(int f, int n)
 void
 undo_add_modified(void)
 {
-	struct undo_rec *rec;
+	struct undo_rec *rec, *trec;
+
+	TAILQ_FOREACH_SAFE(rec, &curbp->b_undo, next, trec)
+		if (rec->type == MODIFIED) {
+			TAILQ_REMOVE(&curbp->b_undo, rec, next);
+			free_undo_record(rec);
+		}
 
 	rec = new_undo_record();
 	rec->type = MODIFIED;
