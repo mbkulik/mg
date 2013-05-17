@@ -116,7 +116,11 @@ makedir(int f, int n)
 		*slash = '\0';
 
 		ishere = !stat(path, &sb);
-		if (!finished && ishere && S_ISDIR(sb.st_mode)) {
+		if (finished && ishere) {
+			ewprintf("Cannot create directory %s: file exists",
+			     path);
+			return(FALSE);
+		} else if (!finished && ishere && S_ISDIR(sb.st_mode)) {
 			*slash = '/';
 			continue;
 		}
