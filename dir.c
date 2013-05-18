@@ -86,24 +86,22 @@ makedir(int f, int n)
 	struct stat	 sb;
 	int		 finished, ishere;
 	mode_t		 dir_mode, mode, oumask;
-	char		 bufc[NFILEN], path[MAXPATHLEN];
-	char		*slash,	*tpath, *fpath;
+	char		 bufc[NFILEN];
+	char		*slash,	*path;
 
 	if (getbufcwd(bufc, sizeof(bufc)) != TRUE)
 		return (ABORT);
-	if ((tpath = eread("Make directory: ", bufc, NFILEN,
+	if ((path = eread("Make directory: ", bufc, NFILEN,
 	    EFDEF | EFNEW | EFCR | EFFILE)) == NULL)
 		return (ABORT);
-	else if (tpath[0] == '\0')
+	else if (path[0] == '\0')
 		return (FALSE);
 
-	if ((fpath = expandtilde(tpath)) == NULL)
+	if ((path = adjustname(path, TRUE)) == NULL)
 		return (FALSE);
-
-	(void)strlcpy(path, fpath, sizeof(path));
-	free(fpath);
 
 	slash = path;
+
 	oumask = umask(0);
 	mode = 0777 & ~oumask;
 	dir_mode = mode | S_IWUSR | S_IXUSR;
