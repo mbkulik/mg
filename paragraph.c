@@ -7,6 +7,8 @@
  * and GNU-ified by mwm@ucbvax.	 Several bug fixes by blarson@usc-oberon.
  */
 
+#include <ctype.h>
+
 #include "def.h"
 
 static int	fillcol = 70;
@@ -22,36 +24,30 @@ static int	fillcol = 70;
 int
 gotobop(int f, int n)
 {
+	int col;
+	int nospace = 0;
+
 	/* the other way... */
 	if (n < 0)
 		return (gotoeop(f, -n));
 
 	while (n-- > 0) {
-		/* first scan back until we are in a word */
-		while (backchar(FFRAND, 1) && inword() == 0);
+		while (lback(curwp->w_dotp) != curbp->b_headp) {
+			curwp->w_dotp = lback(curwp->w_dotp);
+			curwp->w_dotline--;
+			curwp->w_doto = 0;
+			col = 0;
 
-		/* and go to the B-O-Line */
-		curwp->w_doto = 0;
+			while (col < llength(curwp->w_dotp) &&
+			    (isspace(lgetc(curwp->w_dotp, col))))
+				col++;
 
-		/*
-		 * and scan back until we hit a <NL><SP> <NL><TAB> or
-		 * <NL><NL>
-		 */
-		while (lback(curwp->w_dotp) != curbp->b_headp)
-			if (llength(lback(curwp->w_dotp)) &&
-			    lgetc(curwp->w_dotp, 0) != ' ' &&
-			    lgetc(curwp->w_dotp, 0) != '.' &&
-			    lgetc(curwp->w_dotp, 0) != '\t') {
-				curwp->w_dotp = lback(curwp->w_dotp);
-				curwp->w_dotline--;
-			} else {
-				if (llength(lback(curwp->w_dotp)) &&
-				    lgetc(curwp->w_dotp, 0) == '.') {
-					curwp->w_dotp = lforw(curwp->w_dotp);
-					curwp->w_dotline++;	 
-				}
-				break;
-			}
+			if (col >= llength(curwp->w_dotp)) {
+				if (nospace)
+					break;
+			} else
+				nospace = 1;
+		}
 	}
 	/* force screen update */
 	curwp->w_rflag |= WFMOVE;
