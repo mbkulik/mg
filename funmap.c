@@ -179,6 +179,7 @@ static struct funmap functnames[] = {
 	{setfillcol, "set-fill-column",},
 	{setmark, "set-mark-command",},
 	{setprefix, "set-prefix-string",},
+	{shellcommand, "shell-command",},
 	{piperegion, "shell-command-on-region",},
 	{shrinkwind, "shrink-window",},
 #ifdef NOTAB

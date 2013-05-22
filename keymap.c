@@ -217,8 +217,9 @@ static PF metacV[] = {
 	pagenext		/* ^V */
 };
 
-static PF metasp[] = {
-	justone			/* space */
+static PF metaspex[] = {
+	justone,		/* space */
+	shellcommand		/* ! */
 };
 
 static PF metapct[] = {
@@ -317,7 +318,7 @@ struct KEYMAPE (8 + IMAPEXT) metamap = {
 			CCHR('V'), CCHR('V'), metacV, NULL
 		},
 		{
-			' ', ' ', metasp, NULL
+			' ', '!', metaspex, NULL
 		},
 		{
 			'%', '%', metapct, NULL
