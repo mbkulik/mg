@@ -182,6 +182,7 @@ dired_init(void)
 {
 	funmap_add(dired, "dired");
 	funmap_add(d_undelbak, "dired-backup-unflag");
+	funmap_add(d_create_directory, "dired-create-directory");
 	funmap_add(d_copy, "dired-copy-file");
 	funmap_add(d_expunge, "dired-do-deletions");
 	funmap_add(d_findfile, "dired-find-file");
