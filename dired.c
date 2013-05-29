@@ -654,8 +654,10 @@ refreshbuffer(struct buffer *bp)
 	char	*tmp;
 
 	tmp = strdup(bp->b_fname);
-	if (tmp == NULL)
-		err(1, NULL);
+	if (tmp == NULL) {
+		ewprintf("Out of memory");
+		return (FALSE);
+	}
 
 	killbuffer(bp);
 
