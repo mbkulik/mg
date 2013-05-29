@@ -275,8 +275,7 @@ d_del(int f, int n)
 			curwp->w_dotp = lforw(curwp->w_dotp);
 	}
 	curwp->w_rflag |= WFEDIT | WFMOVE;
-	curwp->w_doto = 0;
-	return (TRUE);
+	return (d_warpdot(curwp->w_dotp, &curwp->w_doto));
 }
 
 /* ARGSUSED */
@@ -292,8 +291,7 @@ d_undel(int f, int n)
 			curwp->w_dotp = lforw(curwp->w_dotp);
 	}
 	curwp->w_rflag |= WFEDIT | WFMOVE;
-	curwp->w_doto = 0;
-	return (TRUE);
+	return (d_warpdot(curwp->w_dotp, &curwp->w_doto));
 }
 
 /* ARGSUSED */
@@ -308,9 +306,8 @@ d_undelbak(int f, int n)
 		if (lback(curwp->w_dotp) != curbp->b_headp)
 			curwp->w_dotp = lback(curwp->w_dotp);
 	}
-	curwp->w_doto = 0;
 	curwp->w_rflag |= WFEDIT | WFMOVE;
-	return (TRUE);
+	return (d_warpdot(curwp->w_dotp, &curwp->w_doto));
 }
 
 /* ARGSUSED */
