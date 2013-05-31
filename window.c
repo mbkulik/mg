@@ -97,7 +97,7 @@ do_redraw(int f, int n, int force)
 		}
 		wp->w_ntrows = nrow - wp->w_toprow - 2;
 		sgarbf = TRUE;
-		update();
+		update(CMODE);
 	} else
 		sgarbf = TRUE;
 	return (TRUE);

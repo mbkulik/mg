@@ -81,7 +81,7 @@ getkey(int flag)
 			/* avoid problems with % */
 			ewprintf("%s", prompt);
 			/* put the cursor back */
-			update();
+			update(CMODE);
 			epresf = KCLEAR;
 		}
 		if (promptp > prompt)

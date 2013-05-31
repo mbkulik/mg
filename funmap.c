@@ -21,6 +21,7 @@ static struct funmap *funs;
 
 static struct funmap functnames[] = {
 	{apropos_command, "apropos",},
+	{toggleaudiblebell, "audible-bell",},
 	{auto_execute, "auto-execute",},
 	{fillmode, "auto-fill-mode",},
 	{indentmode, "auto-indent-mode",},
@@ -200,6 +201,7 @@ static struct funmap functnames[] = {
 	{universal_argument, "universal-argument",},
 	{upperregion, "upcase-region",},
 	{upperword, "upcase-word",},
+	{togglevisiblebell, "visible-bell",},
 	{tagsvisit, "visit-tags-table",},
 	{showcpos, "what-cursor-position",},
 	{filewrite, "write-file",},

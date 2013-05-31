@@ -149,7 +149,7 @@ re_queryrepl(int f, int n)
 	 */
 	while (re_forwsrch() == TRUE) {
 retry:
-		update();
+		update(CMODE);
 		switch (getkey(FALSE)) {
 		case ' ':
 			plen = re_match[0].rm_eo - re_match[0].rm_so;
@@ -191,7 +191,7 @@ retry:
 
 stopsearch:
 	curwp->w_rflag |= WFFULL;
-	update();
+	update(CMODE);
 	if (!inmacro) {
 		if (rcnt == 0)
 			ewprintf("(No replacements done)");
