@@ -24,8 +24,7 @@ static int	fillcol = 70;
 int
 gotobop(int f, int n)
 {
-	int col;
-	int nospace = 0;
+	int col, nospace;
 
 	/* the other way... */
 	if (n < 0)
@@ -63,8 +62,7 @@ gotobop(int f, int n)
 int
 gotoeop(int f, int n)
 {
-	int col;
-	int nospace;
+	int col, nospace;
 
 	/* the other way... */
 	if (n < 0)
