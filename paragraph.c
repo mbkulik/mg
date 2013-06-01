@@ -257,9 +257,6 @@ killpara(int f, int n)
 		/* and delete it */
 		if ((status = killregion(FFRAND, 1)) != TRUE)
 			return (status);
-
-		/* and clean up the 2 extra lines */
-		(void)ldelete((RSIZE) 1, KFORW);
 	}
 	return (TRUE);
 }
