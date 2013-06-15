@@ -49,6 +49,7 @@ gotobop(int f, int n)
 			} else
 				nospace = 1;
 		}
+		nospace = 0;
 	}
 	/* force screen update */
 	curwp->w_rflag |= WFMOVE;
