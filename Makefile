@@ -1,4 +1,4 @@
-# $OpenBSD$
+# $OpenBSD: Makefile,v 1.28 2013/05/31 18:03:43 lum Exp $
 
 PROG=	mg
 
@@ -13,7 +13,7 @@ DPADD+=	${LIBCURSES} ${LIBUTIL}
 #	XKEYS		-- use termcap function key definitions.
 #				note: XKEYS and bsmap mode do _not_ get along.
 #
-CFLAGS+=-Wall -DFKEYS -DREGEX -DXKEYS
+CFLAGS+=-Wall -DFKEYS -DREGEX -DXKEYS -DSTARTUP
 
 SRCS=	autoexec.c basic.c bell.c buffer.c cinfo.c dir.c display.c \
 	echo.c extend.c file.c fileio.c funmap.c help.c kbd.c keymap.c \
@@ -26,9 +26,18 @@ SRCS=	autoexec.c basic.c bell.c buffer.c cinfo.c dir.c display.c \
 #
 SRCS+=	cmode.c cscope.c dired.c grep.c tags.c theo.c
 
+#
+# needed to build on macosx
+#
+SRCS+= bsd-arc4random.c strtonum.c strndup.c
+
 afterinstall:
 	${INSTALL} -d ${DESTDIR}${DOCDIR}/mg
 	${INSTALL} -m ${DOCMODE} -c ${.CURDIR}/tutorial \
 		${DESTDIR}${DOCDIR}/mg
+
+install:
+	cp mg /usr/local/bin/
+	cp mg.1 /usr/local/share/man/man1
 
 .include <bsd.prog.mk>

@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: region.c,v 1.33 2013/05/22 19:23:45 lum Exp $	*/
 
 /* This file is in the public domain. */
 
@@ -20,6 +20,10 @@
 #include "def.h"
 
 #define TIMEOUT 10000
+
+#if __APPLE__
+	#define MSG_NOSIGNAL SO_NOSIGPIPE
+#endif
 
 static char leftover[BUFSIZ];
 

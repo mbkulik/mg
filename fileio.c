@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: fileio.c,v 1.96 2013/05/18 05:53:58 lum Exp $	*/
 
 /* This file is in the public domain. */
 
@@ -22,6 +22,10 @@
 
 #include "kbd.h"
 #include "pathnames.h"
+
+#if __APPLE__
+	#define LOGIN_NAME_MAX MAXLOGNAME
+#endif
 
 static char *bkuplocation(const char *);
 static int   bkupleavetmp(const char *);

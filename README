@@ -1,3 +1,27 @@
+To Install:
+
+On 10.7+ install bsdmake via homebrew (not needed on 10.6)
+	* brew install bsdmake
+
+* bsdmake
+* bsdmake install
+
+
+Added the following to get mg to build with minimal changes against 
+the OpenBSD version 
+
+1. strndup.c : http://opensource.apple.com/source/gcc/gcc-5575.11/libiberty/strndup.c
+
+2. strtonum.c : http://www.openssh.com/portable.html 
+
+3. sys-tree.h : http://www.openssh.com/portable.html
+
+4. bsd-arc4random.c : http://www.openssh.com/portable.html
+
+
+-------------------------------------------------------------------------
+
+
 [This is an edited version of the original mg README, updated slightly to
 reflect changes in the last 20 years.]
 

@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: tags.c,v 1.6 2012/10/20 09:05:33 jasper Exp $	*/
 
 /*
  * This file is in the public domain.
@@ -8,7 +8,13 @@
 
 #include <sys/queue.h>
 #include <sys/stat.h>
-#include <sys/tree.h>
+
+#if __APPLE__
+	#include "sys-tree.h"
+#else
+	#include <sys/tree.h>
+#endif
+
 #include <sys/types.h>
 
 #include <ctype.h>
