@@ -1,23 +1,19 @@
-To Install:
+Installation Requirements:
 
-On 10.7+ install bsdmake via homebrew (not needed on 10.6)
-	* brew install bsdmake
+1. clens library (https://github.com/conformal/clens)
 
-* bsdmake
-* bsdmake install
+	git clone https://github.com/conformal/clens
+	make
+	sudo make install
 
+2. bsdmake is needed on Mac OS X 10.7+
 
-Added the following to get mg to build with minimal changes against 
-the OpenBSD version 
+	brew install bsdmake (via homebrew)
+	
+Installation Steps:
 
-1. strndup.c : http://opensource.apple.com/source/gcc/gcc-5575.11/libiberty/strndup.c
-
-2. strtonum.c : http://www.openssh.com/portable.html 
-
-3. sys-tree.h : http://www.openssh.com/portable.html
-
-4. bsd-arc4random.c : http://www.openssh.com/portable.html
-
+	bsdmake
+	bsdmake install
 
 -------------------------------------------------------------------------
 
