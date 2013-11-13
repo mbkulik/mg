@@ -9,12 +9,11 @@
 #include <sys/queue.h>
 #include <sys/stat.h>
 
-#if __APPLE__
-	#include "sys-tree.h"
-#else
-	#include <sys/tree.h>
+#ifdef NEED_LIBCLENS
+	#include <clens.h>
 #endif
 
+#include <sys/tree.h>
 #include <sys/types.h>
 
 #include <ctype.h>

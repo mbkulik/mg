@@ -21,7 +21,7 @@
 
 #define TIMEOUT 10000
 
-#if __APPLE__
+#if !defined(MSG_NOSIGNAL)
 	#define MSG_NOSIGNAL SO_NOSIGPIPE
 #endif
 

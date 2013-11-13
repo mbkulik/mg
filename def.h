@@ -16,6 +16,10 @@
 
 typedef int	(*PF)(int, int);	/* generally useful type */
 
+#ifdef NEED_LIBCLENS
+	#include <clens.h>
+#endif
+
 /*
  * Table sizes, etc.
  */
@@ -686,17 +690,6 @@ void		 bellinit(void);
 int		 toggleaudiblebell(int, int);
 int		 togglevisiblebell(int, int);
 void		 dobeep(void);
-
-#if __APPLE__
-	/* strndup.c */
-	char*	strndup(const char*, size_t);
-
-	/* strtonum.c */
-	long long strtonum(const char*, long long, long long, const char**);
-
-	/* bsd-arc4random.c */
-	u_int32_t arc4random_uniform(u_int32_t);
-#endif
 
 /*
  * Externals.
