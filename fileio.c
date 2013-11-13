@@ -23,7 +23,7 @@
 #include "kbd.h"
 #include "pathnames.h"
 
-#if __APPLE__
+#if !defined(LOGIN_NAME_MAX)
 	#define LOGIN_NAME_MAX MAXLOGNAME
 #endif
 
