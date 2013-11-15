@@ -2,7 +2,7 @@
 
 PROG=	mg
 
-LDADD+=	-lcurses -lutil -lclens
+LDADD+=	-L/usr/local/lib -lcurses -lutil -lclens
 DPADD+=	${LIBCURSES} ${LIBUTIL}
 
 # (Common) compile-time options:
